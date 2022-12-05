@@ -22,7 +22,7 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Demo',
       last_name: 'Lition',
-      phone_number: '6466441749'
+      birth_date: '1994-09-16'
     )
   
     puts "Done!"

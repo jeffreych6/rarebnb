@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupForm.css";
+import moment from 'moment';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [birthDate, setBirthDate] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
@@ -21,7 +22,7 @@ function SignupFormPage() {
 
     setErrors([]);
     return dispatch(
-        sessionActions.signup({ email, password, firstName, lastName, phoneNumber })
+        sessionActions.signup({ email, password, firstName, lastName, birthDate })
     ).catch(async (res) => {
     let data;
         try {
@@ -34,8 +35,6 @@ function SignupFormPage() {
         else if (data) return setErrors([data]);
         else return setErrors([res.statusText]);
     });
-    
-
   };
 
   return (
@@ -47,51 +46,52 @@ function SignupFormPage() {
       </ul>
       <br />
       <label>
-        Email
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
           required
         />
       </label>
       <br />
       <label>
-        Password
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           required
         />
       </label>
       <br />
       <label>
-        First Name
         <input
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
+          placeholder="First Name"
           required
         />
       </label>
       <br />
       <label>
-        Last Name
         <input
           type="text"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
+          placeholder="Last Name"
           required
         />
       </label>
       <br />
       <label>
-        Phone Number
         <input
-          type="text"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          type="date"
+          value={birthDate}
+          max={moment().format("YYYY-MM-DD")}
+          onChange={(e) => setBirthDate(e.target.value)}
+          placeholder="Birth Date"
           required
         />
       </label>

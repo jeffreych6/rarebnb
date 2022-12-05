@@ -6,19 +6,21 @@
 #  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
-#  phone_number    :string           not null
+#  phone_number    :string
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  birth_date      :date             not null
 #
 class User < ApplicationRecord
     has_secure_password
 
-    validates :first_name, :last_name, :phone_number, :password_digest, :session_token, presence: true
-    validates :email, :session_token, :phone_number, uniqueness: true
+    validates :first_name, :last_name, :birth_date, :password_digest, :session_token, presence: true
+    validates :email, :session_token, uniqueness: true
     validates :email, length: { in: 3..30 }, format: { with: URI::MailTo::EMAIL_REGEXP}
     validates :password, length: { in: 8..255 }, allow_nil: true
+    validate :age_cannot_be_minor
 
     before_validation :ensure_session_token
 
@@ -40,6 +42,17 @@ class User < ApplicationRecord
         self.session_token = generate_unique_session_token
         self.save!
         self.session_token
+    end
+
+    def age
+      age = (Date.today - self.birth_date)/365
+      age.to_i
+    end
+
+    def age_cannot_be_minor
+      return unless birth_date.present? && age < 18
+  
+      errors.add(:birth_date, "You must be 18 or older to use RareBnB. Other people won’t see your birthday.")
     end
 
     private

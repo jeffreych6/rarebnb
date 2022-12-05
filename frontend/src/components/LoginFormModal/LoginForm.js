@@ -33,23 +33,26 @@ function LoginForm() {
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
       <label>
-        Email
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
           required
         />
       </label>
+      <br />
       <label>
-        Password
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           required
         />
       </label>
+      <br />
+      <br />
       <button type="submit">Log In</button>
     </form>
   );
