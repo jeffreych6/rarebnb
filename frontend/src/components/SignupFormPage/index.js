@@ -9,7 +9,6 @@ function SignupFormPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -19,26 +18,24 @@ function SignupFormPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors([]);
-      return dispatch(
+
+    setErrors([]);
+    return dispatch(
         sessionActions.signup({ email, password, firstName, lastName, phoneNumber })
-      ).catch(async (res) => {
-        let data;
+    ).catch(async (res) => {
+    let data;
         try {
-          // .clone() essentially allows you to read the response body twice
-          data = await res.clone().json();
+            // .clone() essentially allows you to read the response body twice
+            data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if the server is down
+            data = await res.text(); // Will hit this case if the server is down
         }
         if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
-    }
-    return setErrors([
-      "Confirm Password field must be the same as the Password field",
-    ]);
+        else if (data) return setErrors([data]);
+        else return setErrors([res.statusText]);
+    });
+    
+
   };
 
   return (
@@ -65,16 +62,6 @@ function SignupFormPage() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <br />
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
       </label>
