@@ -27,34 +27,62 @@ function LoginForm() {
       });
   };
 
+  const loginDemo = () => {
+    setEmail("demo@user.io")
+    setPassword("password")
+    dispatch(sessionActions.login({email, password}))
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label>
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-      </label>
-      <br />
-      <label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-      </label>
-      <br />
-      <br />
-      <button type="submit">Log In</button>
-    </form>
+    <div class="modal-content">
+      <header class="formHeader">
+        <h1>Login</h1>
+      </header>
+      <div class="formContent">
+        <form onSubmit={handleSubmit}>
+          <ul>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+          <div class="formTextBox">
+            <label>
+              <div class="formTextBoxPlaceholder">
+                <div class="formTextBoxText">Email</div>
+              </div>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+              />
+            </label>
+          </div>
+          <br />
+          <div class="formTextBox">
+            <label>
+            <div class="formTextBoxPlaceholder">
+                <div class="formTextBoxText">Password</div>
+              </div>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+            </label>
+          </div>
+          <br />
+          <br />
+          <div class="loginFormButtons">
+            <button type="submit">Log In</button>
+            <br />
+            <br />
+            <button onClick={loginDemo}>Demo User</button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
