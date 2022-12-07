@@ -18,7 +18,9 @@ function Navigation() {
   return (
     <header className="nav-bar">
       <NavLink exact to="/">
-        <h1>RareBnB</h1>
+        <button className="logoButton">
+          <h1><i className="fa-brands fa-airbnb"></i> rarebnb</h1>
+        </button>
       </NavLink>
       <div>Search Bar</div>
       <ul>
