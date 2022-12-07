@@ -9,18 +9,31 @@ function FormModals() {
 
   return (
     <>
-      <button onClick={() => setShowSignupModal(true)}>Sign Up</button>
+      <li className="click"onClick={() => setShowSignupModal(true)}>
+        <button>Sign Up</button>
+      {/* {showSignupModal && (
+          <Modal onClose={() => setShowSignupModal(false)}>
+              <SignupForm />
+          </Modal>
+      )} */}
+      </li>
+      <li onClick={() => setShowLoginModal(true)}>
+      <button>Log In</button>
+      {/* {showLoginModal && (
+          <Modal onClose={() => setShowLoginModal(false)}>
+              <LoginForm />
+          </Modal>
+      )} */}
+      </li>
       {showSignupModal && (
-        <Modal onClose={() => setShowSignupModal(false)}>
-          <SignupForm />
-        </Modal>
+          <Modal onClose={() => setShowSignupModal(false)}>
+              <SignupForm />
+          </Modal>
       )}
-      <br />
-      <button onClick={() => setShowLoginModal(true)}>Log In</button>
-      {showLoginModal && (
-        <Modal onClose={() => setShowLoginModal(false)}>
-          <LoginForm />
-        </Modal>
+            {showLoginModal && (
+          <Modal onClose={() => setShowLoginModal(false)}>
+              <LoginForm />
+          </Modal>
       )}
     </>
   );

@@ -190,3 +190,8 @@ li > i {
     height: 16px;
     width: 16px;
 }
+
+.click {
+    height: 100px;
+    width: 100px;
+}

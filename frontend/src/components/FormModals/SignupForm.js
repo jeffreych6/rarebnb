@@ -58,20 +58,20 @@ function SignupForm() {
 }
 
   return (
-    <div class="modal-content">
-      <header class="formHeader">
+    <div className="modal-content">
+      <header className="formHeader">
         <div></div>
         <h1>Sign up</h1>
         <div></div>
       </header>
-      <div class="formContent">
-        <div class="formContentContainer">
-          <h3 class="loginWelcome">Welcome to RareBnB</h3>
+      <div className="formContent">
+        <div className="formContentContainer">
+          <h3 className="loginWelcome">Welcome to RareBnB</h3>
           <form onSubmit={handleSubmit}>
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box">
-              <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">First Name</div>
+              <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">First Name</div>
                 </div>
                 <input
                   type="text"
@@ -82,10 +82,10 @@ function SignupForm() {
                 />
               </label>
             </div>
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box">
-              <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">Last Name</div>
+              <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">Last Name</div>
                 </div>
                 <input
                   type="text"
@@ -102,10 +102,10 @@ function SignupForm() {
             {handleErrors("First name")}
             {handleErrors("Last name")}
             <br />
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box-birth-date">
-              <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">Birthdate</div>
+              <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">Birthdate</div>
                 </div>
                 <input
                   type="date"
@@ -122,10 +122,10 @@ function SignupForm() {
             </div>
             {handleErrors("Birth date")}
             <br />
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box">
-                <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">Email</div>
+                <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">Email</div>
                 </div>
                 <input
                   type="text"
@@ -141,10 +141,10 @@ function SignupForm() {
             </div>
             {handleErrors("Email")}
             <br />
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box">
-              <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">Password</div>
+              <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">Password</div>
                 </div>
                 <input
                   type="password"
@@ -168,7 +168,7 @@ function SignupForm() {
             <span className="form-tos-links"> Privacy Policy</span>.
             </h3>
             <br />
-            <div class="loginFormButtons">
+            <div className="loginFormButtons">
               <button type="submit">Agree and continue</button>
             </div>
           </form>

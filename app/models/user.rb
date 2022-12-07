@@ -16,10 +16,12 @@
 class User < ApplicationRecord
     has_secure_password
 
-    validates :first_name, :last_name, :birth_date, :password_digest, :session_token, presence: true
+    validates :first_name, presence: { message: "First name is required." }
+    validates :last_name, presence: { message: "Last name is required." }
+    validates :birth_date, :password_digest, :session_token, presence: true
     validates :email, :session_token, uniqueness: true
-    validates :email, length: { in: 3..30 }, format: { with: URI::MailTo::EMAIL_REGEXP}
-    validates :password, length: { in: 8..255 }, allow_nil: true
+    validates :email, length: { in: 3..30, message: "Email is too short (minimum is 3 characters)" }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Enter a valid email." }
+    validates :password, length: { in: 8..255, message: "Your password must be at least 8 characters. Please try again." }, allow_nil: true
     validate :age_cannot_be_minor
 
     before_validation :ensure_session_token

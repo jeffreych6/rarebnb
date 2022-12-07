@@ -24,7 +24,6 @@ function LoginForm() {
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
-        console.log(errors)
       });
   };
 
@@ -45,20 +44,20 @@ function LoginForm() {
   }
 
   return (
-    <div class="modal-content">
-      <header class="formHeader">
+    <div className="modal-content">
+      <header className="formHeader">
         <div></div>
         <h1>Login</h1>
         <div></div>
       </header>
-      <div class="formContent">
-        <div class="formContentContainer">
-          <h3 class="loginWelcome">Welcome to RareBnB</h3>
+      <div className="formContent">
+        <div className="formContentContainer">
+          <h3 className="loginWelcome">Welcome to RareBnB</h3>
           <form onSubmit={handleSubmit}>
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box">
-                <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">Email</div>
+                <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">Email</div>
                 </div>
                 <input
                   type="text"
@@ -70,10 +69,10 @@ function LoginForm() {
               </label>
             </div>
             <br />
-            <div class="formTextBox">
+            <div className="formTextBox">
               <label className="form-field-box">
-              <div class="formTextBoxPlaceholder">
-                  <div class="formTextBoxText">Password</div>
+              <div className="formTextBoxPlaceholder">
+                  <div className="formTextBoxText">Password</div>
                 </div>
                 <input
                   type="password"
@@ -87,7 +86,7 @@ function LoginForm() {
             <div className="form-field-help">
             </div>
             {handleErrors()}
-            <div class="loginFormButtons">
+            <div className="loginFormButtons">
               <button type="submit">Log In</button>
               <br />
               <br />
