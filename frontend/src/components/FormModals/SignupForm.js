@@ -51,7 +51,7 @@ function SignupForm() {
     })
 
     return (
-      <ul className="formFieldError">
+      <ul className="form-field-error">
           {errorList.map(error => <li key={error}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{error}</li>)}
       </ul>
     )
@@ -59,19 +59,19 @@ function SignupForm() {
 
   return (
     <div className="modal-content">
-      <header className="formHeader">
+      <header className="form-header">
         <div></div>
         <h1>Sign up</h1>
         <div></div>
       </header>
-      <div className="formContent">
-        <div className="formContentContainer">
-          <h3 className="loginWelcome">Welcome to RareBnB</h3>
+      <div className="form-content">
+        <div className="form-content-container">
+          <h3 className="login-welcome">Welcome to RareBnB</h3>
           <form onSubmit={handleSubmit}>
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box">
-              <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">First Name</div>
+              <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">First Name</div>
                 </div>
                 <input
                   type="text"
@@ -82,10 +82,10 @@ function SignupForm() {
                 />
               </label>
             </div>
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box">
-              <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">Last Name</div>
+              <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">Last Name</div>
                 </div>
                 <input
                   type="text"
@@ -102,10 +102,10 @@ function SignupForm() {
             {handleErrors("First name")}
             {handleErrors("Last name")}
             <br />
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box-birth-date">
-              <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">Birthdate</div>
+              <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">Birthdate</div>
                 </div>
                 <input
                   type="date"
@@ -122,10 +122,10 @@ function SignupForm() {
             </div>
             {handleErrors("Birth date")}
             <br />
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box">
-                <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">Email</div>
+                <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">Email</div>
                 </div>
                 <input
                   type="text"
@@ -141,10 +141,10 @@ function SignupForm() {
             </div>
             {handleErrors("Email")}
             <br />
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box">
-              <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">Password</div>
+              <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">Password</div>
                 </div>
                 <input
                   type="password"
@@ -168,7 +168,7 @@ function SignupForm() {
             <span className="form-tos-links"> Privacy Policy</span>.
             </h3>
             <br />
-            <div className="loginFormButtons">
+            <div className="login-form-buttons">
               <button type="submit">Agree and continue</button>
             </div>
           </form>

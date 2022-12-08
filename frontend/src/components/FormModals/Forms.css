@@ -1,4 +1,4 @@
-.formHeader {
+.form-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,11 +10,11 @@
     font-weight: 800;
 }
 
-.formContent {
+.form-content {
     padding: 24px;
 }
 
-.loginWelcome {
+.login-welcome {
     font-size: 22px;
     line-height: 26px;
     font-weight: 600;
@@ -22,7 +22,7 @@
     margin-bottom: 24px;
 }
 
-.formFieldError {
+.form-field-error {
     display: flex;
     flex-direction: column;
     color: rgb(193, 53, 21);
@@ -42,7 +42,7 @@
     margin-right: 25px;
 }
 
-.formTextBox {
+.form-text-box {
     position: relative;
     cursor: text;
     display: flex;
@@ -55,7 +55,7 @@
     font-weight: 400;
 }
 
-.formTextBox input {
+.form-text-box input {
     width: 100%;
     border: none;
     outline: none;
@@ -68,7 +68,7 @@
     line-height: inherit;
 }
 
-.formTextBoxPlaceholder {
+.form-text-box-placeholder {
     position: absolute;
     top: 18px;
     left: 12px;
@@ -81,12 +81,12 @@
     transform: translateY(-8px) scale(0.75);
 }
 
-.loginFormButtons {
+.login-form-buttons {
     margin-top: 16px;
     margin-bottom: 24px;
 }
 
-.loginFormButtons  button {
+.login-form-buttons  button {
     cursor: pointer;
     display: inline-block;
     position: relative;

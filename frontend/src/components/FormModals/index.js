@@ -9,16 +9,16 @@ function FormModals() {
 
   return (
     <>
-      <li onClick={() => setShowSignupModal(true)}>
-        <button>Sign Up</button>
+      <li className="drop-down-menu-options-container" onClick={() => setShowSignupModal(true)}>
+        <div className="drop-down-menu-options">Sign Up</div>
       {/* {showSignupModal && (
           <Modal onClose={() => setShowSignupModal(false)}>
               <SignupForm />
           </Modal>
       )} */}
       </li>
-      <li onClick={() => setShowLoginModal(true)}>
-      <button>Log In</button>
+      <li className="drop-down-menu-options-container" onClick={() => setShowLoginModal(true)}>
+        <div className="drop-down-menu-options">Log In</div>
       {/* {showLoginModal && (
           <Modal onClose={() => setShowLoginModal(false)}>
               <LoginForm />

@@ -36,7 +36,7 @@ function LoginForm() {
   const handleErrors = () => {
     if (errors[0]) {
       return (
-        <ul className="formFieldError">
+        <ul className="form-field-error">
           <li key={errors[0]}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{errors[0]}</li>
         </ul>
       )
@@ -45,19 +45,19 @@ function LoginForm() {
 
   return (
     <div className="modal-content">
-      <header className="formHeader">
+      <header className="form-header">
         <div></div>
         <h1>Login</h1>
         <div></div>
       </header>
-      <div className="formContent">
-        <div className="formContentContainer">
-          <h3 className="loginWelcome">Welcome to RareBnB</h3>
+      <div className="form-content">
+        <div className="form-content-container">
+          <h3 className="login-welcome">Welcome to RareBnB</h3>
           <form onSubmit={handleSubmit}>
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box">
-                <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">Email</div>
+                <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">Email</div>
                 </div>
                 <input
                   type="text"
@@ -69,10 +69,10 @@ function LoginForm() {
               </label>
             </div>
             <br />
-            <div className="formTextBox">
+            <div className="form-text-box">
               <label className="form-field-box">
-              <div className="formTextBoxPlaceholder">
-                  <div className="formTextBoxText">Password</div>
+              <div className="form-text-box-placeholder">
+                  <div className="form-text-box-text">Password</div>
                 </div>
                 <input
                   type="password"
@@ -86,7 +86,7 @@ function LoginForm() {
             <div className="form-field-help">
             </div>
             {handleErrors()}
-            <div className="loginFormButtons">
+            <div className="login-form-buttons">
               <button type="submit">Log In</button>
               <br />
               <br />

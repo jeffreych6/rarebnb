@@ -33,9 +33,10 @@ function NavDropDown({ user }) {
   }, [showMenu]);
 
   return (
-    <div>
-      <button onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
+    <div className="right-nav">
+      <button className="menu-button" onClick={openMenu}>
+        <i id="hamburger-icon" className="fa-sharp fa-solid fa-bars" />
+        <i id="user-icon" className="fa-solid fa-user-circle" />
       </button>
       
       {showMenu && (

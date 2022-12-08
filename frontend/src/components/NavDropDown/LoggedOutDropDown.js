@@ -5,7 +5,13 @@ import FormModals from '../FormModals';
 
 function LoggedOutDropDown() {
   return (
-    <FormModals />
+    <>
+      <FormModals />
+      <div className="drop-down-menu-divider"></div>
+      <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Rarebnb your home</div></li>
+      <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Host an experience</div></li>
+      <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>
+      </>
   )
 }
 

@@ -19,15 +19,17 @@ function Navigation() {
   }
 
   return (
-    <header className="nav-bar">
+    <nav className="nav-bar-container">
+      <div className="nav-bar">
       <NavLink exact to="/">
-        <button className="logoButton">
+        <button className="logo-button">
           <h1><i className="fa-brands fa-airbnb"></i> rarebnb</h1>
         </button>
       </NavLink>
-      <div>Search Bar</div>
+      <div className="search-bar">Search Bar</div>
       {sessionLinks}
-    </header>
+      </div>
+    </nav>
   );
 }
 
