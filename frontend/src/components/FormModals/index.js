@@ -9,7 +9,7 @@ function FormModals() {
 
   return (
     <>
-      <li className="click"onClick={() => setShowSignupModal(true)}>
+      <li onClick={() => setShowSignupModal(true)}>
         <button>Sign Up</button>
       {/* {showSignupModal && (
           <Modal onClose={() => setShowSignupModal(false)}>

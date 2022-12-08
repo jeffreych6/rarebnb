@@ -1,14 +1,10 @@
 .formHeader {
-    -webkit-box-pack: justify;
-    -webkit-box-align: center;
     display: flex;
-    flex: 0 0 auto;
     align-items: center;
     justify-content: space-between;
     padding: 0px 24px;
-    min-height: 64px;
+    height: 64px;
     border-bottom: 1px solid rgb(235, 235, 235);
-    color: rgb(34, 34, 34);
     font-size: 16px;
     line-height: 20px;
     font-weight: 800;
@@ -16,15 +12,11 @@
 
 .formContent {
     padding: 24px;
-    flex: 1 1 auto;
-    overflow-y: auto;
-    outline: none;
 }
 
 .loginWelcome {
     font-size: 22px;
     line-height: 26px;
-    color: rgb(34, 34, 34);
     font-weight: 600;
     margin-top: 8px;
     margin-bottom: 24px;
@@ -42,29 +34,22 @@
 .form-field-box {
     position: relative;
     flex: 1 1 0%;
-    padding: 0px;
 }
 
 .form-field-box-birth-date {
     position: relative;
     flex: 1 1 0%;
     margin-right: 25px;
-    padding: 0px;
 }
 
 .formTextBox {
     position: relative;
     cursor: text;
     display: flex;
-    min-height: 56px;
+    height: 56px;
     width: 100%;
-    margin: 0px;
-    border: none;
-    color: rgb(34, 34, 34);
-    background-color: rgb(255, 255, 255);
     border-radius: 8px;
     box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
@@ -74,16 +59,13 @@
     width: 100%;
     border: none;
     outline: none;
-    padding: 0px;
     margin: 26px 12px 6px;
     min-height: 1px;
-    color: inherit;
     background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
-    appearance: none;
 }
 
 .formTextBoxPlaceholder {
@@ -91,27 +73,13 @@
     top: 18px;
     left: 12px;
     right: 12px;
-    margin: 0px;
-    padding: 0px;
     color: rgb(113, 113, 113);
     pointer-events: none;
     transform-origin: 0% 0%;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     line-height: 20px;
-    transition: -ms-transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     transform: translateY(-8px) scale(0.75);
-    font-weight: 400;
 }
-
-.formTextBoxText {
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap
-}
-
-
 
 .loginFormButtons {
     margin-top: 16px;
@@ -121,20 +89,16 @@
 .loginFormButtons  button {
     cursor: pointer;
     display: inline-block;
-    margin: 0px;
     position: relative;
     text-align: center;
     text-decoration: none;
     touch-action: manipulation;
-    font-family: var(--e-ls-qkw);
-    font-size: var(--iw-ehf-f);
-    line-height: var(---s-l-myu);
-    font-weight: var(--jx-zk-pv);
-    border-radius: var(--go-h-jh-l);
-    outline: none;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
     padding: 14px 24px;
-    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
-    -webkit-tap-highlight-color: transparent;
     border: none;
     background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
     color: rgb(255, 255, 255);
@@ -147,12 +111,9 @@
 }
 
 .form-field-help-text {
-    display: flex;
     color: rgb(113, 113, 113);
     font-size: 12px;
     line-height: 16px;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-weight: 400;
 }
 
 .form-terms-of-service {
@@ -167,31 +128,11 @@
 .form-tos-links {
     color: rgb(0, 76, 196);
     text-decoration: underline;
-    border-radius: 4px;
     font-weight: 600;
-    outline: none;
-}
-
-.butttt {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    -webkit-mask-image: -webkit-radial-gradient(center, white, black);
-    overflow: hidden;
-    border-radius: 8px;
 }
 
 li > i {
-    display: block;
     height: 16px;
     width: 16px;
 }
 
-.click {
-    height: 100px;
-    width: 100px;
-}
