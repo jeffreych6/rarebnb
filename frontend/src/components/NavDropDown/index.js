@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LoggedInDropDown from "./LoggedInDropDown";
 import LoggedOutDropDown from "./LoggedOutDropDown";
-// import { useDispatch } from "react-redux";
-// import * as sessionActions from "../../store/session";
 import "./NavDropDown.css";
 
 function NavDropDown({ user }) {
