@@ -128,6 +128,206 @@ ApplicationRecord.transaction do
       parking: false,
       wifi: false
     )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+    
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
+
+    Listing.create!(
+      host_id: 1,
+      title: "Mahjong Parlor",
+      description: "Come play!",
+      price: 50,
+      city: 'Long Island',
+      state: 'New York',
+      country: 'United States',
+      lat: 40.7891,
+      lng: -73.1350,
+      zip_code: 11779,
+      guests: 2,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+      kitchen: false,
+      parking: false,
+      wifi: false
+    )
   
     puts "Done!"
   end

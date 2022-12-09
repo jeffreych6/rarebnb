@@ -25,7 +25,7 @@ function NavDropDown({ user }) {
       setShowMenu(false);
     };
 
-    // document.addEventListener("click", closeMenu);
+    document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);

@@ -31,4 +31,8 @@ class Listing < ApplicationRecord
         foreign_key: :host_id,
         class_name: :User
 
+    # using listings > title for now to test AWS
+    # has_one_attached :photo
+    # has_many_attached :photos IF multiple photos
+
 end

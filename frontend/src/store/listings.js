@@ -1,7 +1,7 @@
 import csrfFetch from "./csrf";
 
-export const SET_LISTINGS = "listings/setListings"
-export const ADD_LISTING = "listings/addListings"
+export const SET_LISTINGS = "listings/SET_LISTINGS"
+export const ADD_LISTING = "listings/ADD_LISTING"
 
 export const setListings = (listings) => ({
     type: SET_LISTINGS,
@@ -13,6 +13,14 @@ export const addListing = (listing) => ({
     listing
 })
 
+export const getListing = (listingId) => (state) => {
+    return state.listings ? state.listings[listingId] : null
+}
+
+export const getListings = (state) => {
+    return state.listings ? Object.values(state.listings) : []
+}
+
 export const fetchListings = () => async (dispatch) => {
     const response = await csrfFetch(`/api/listings`);
     const data = await response.json();
@@ -22,7 +30,8 @@ export const fetchListings = () => async (dispatch) => {
 export const fetchListing = (listingId) => async (dispatch) => {
     const response = await csrfFetch(`/api/listings/${listingId}`);
     const data = await response.json();
-    dispatch(addListing(data));
+    // debugger
+    dispatch(addListing(data.listing));
 };
 
 const listingsReducer = (state = {}, action) => {

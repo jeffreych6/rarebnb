@@ -19,7 +19,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        @listing = Listing.find_by(id: params[:id])
+        @listing = Listing.find(params[:id])
 
         render :show
     end

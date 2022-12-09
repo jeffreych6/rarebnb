@@ -1,0 +1,55 @@
+.filter-bar {
+    height: 78px;
+}
+
+.listings-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 70px;
+}
+
+.listing-index-links {
+    text-decoration: none;
+}
+.listing-index-container {
+    margin: 20px 11px;
+}
+
+.listing-index-image {
+    height: 277px;
+    width: 291px;
+    border-radius: 10px;
+}
+
+.listing-index-description-container {
+    color: #222222;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+.listing-index-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.listing-index-location {
+    font-weight: 600;
+}
+
+.listing-index-rating i {
+    font-size: 12px;
+}
+
+.listing-index-description {
+    color: rgb(113, 113, 113);
+}
+
+.listing-index-price {
+    margin-top: 8px;
+}
+
+.listing-index-price span {
+    font-weight: 600;
+}
