@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Navigation.css";
 import NavDropDown from '../NavDropDown';

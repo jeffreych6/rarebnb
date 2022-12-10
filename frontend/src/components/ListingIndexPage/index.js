@@ -44,7 +44,7 @@ function ListingIndexPage() {
     return (
         <>
             <div className="filter-bar"></div>
-            <div className="listings-container">
+            <div className="listing-index">
                 {listing}
             </div>
         </>

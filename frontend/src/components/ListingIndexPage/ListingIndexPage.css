@@ -2,16 +2,17 @@
     height: 78px;
 }
 
-.listings-container {
+.listing-index-links {
+    text-decoration: none;
+}
+
+.listing-index {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 70px;
 }
 
-.listing-index-links {
-    text-decoration: none;
-}
 .listing-index-container {
     margin: 20px 11px;
 }

@@ -10,8 +10,15 @@
     align-items: center;
     position: relative;
     margin: 0 70px;
-    /* border: 1px solid black; */
 }
+
+/* .nav-bar-show {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 17%;
+} */
 
 .logo-button {
     color: #ff385c;

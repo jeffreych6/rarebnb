@@ -1,0 +1,54 @@
+.listing-show-container {
+    margin: 0 17%;
+}
+
+.listing-show-header-title-container {
+    height: 90px;
+    padding: 24px 0;
+}
+
+.listing-show-header-title {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 600
+}
+
+.listing-show-header-description {
+    margin: 8px 0;
+    font-weight: 400;
+}
+
+.listing-show-header-description i {
+    font-size: 12px;
+}
+
+.listing-show-header-description span {
+    margin-left: 3px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.listing-show-image {
+    height: 491px;
+    width: 1120px;
+}
+
+.listing-show-details-container {
+    display: flex;
+    border: 1px solid black;
+}
+
+.listing-show-details {
+    width: 100%
+}
+
+.listing-show-details-title {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.listing-show-reservations-container {
+    border: 1px solid black;
+    width: 100%
+}
