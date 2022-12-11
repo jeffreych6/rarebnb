@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Navigation.css";
-import NavDropDown from '../NavDropDown';
+import LoggedInDropDown from './LoggedInDropDown';
+import LoggedOutDropDown from "./LoggedOutDropDown";
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <NavDropDown user={sessionUser} />;
+    sessionLinks = <LoggedInDropDown />;
   } else {
-    sessionLinks = <NavDropDown />;
+    sessionLinks = <LoggedOutDropDown />;
   }
 
   return (

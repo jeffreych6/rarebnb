@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import "./NavDropDown.css";
+import "./Navigation.css";
 import moment from 'moment';
 
 function SignupForm() {
@@ -25,10 +25,9 @@ function SignupForm() {
     ).catch(async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if the server is down
+          data = await res.text();
         }
 
         if (data?.errors) setErrors(data.errors);
