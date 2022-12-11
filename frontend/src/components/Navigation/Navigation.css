@@ -12,13 +12,13 @@
     margin: 0 70px;
 }
 
-/* .nav-bar-show {
+.nav-bar-show {
     display: flex;
     justify-content:space-between;
     align-items: center;
     position: relative;
     margin: 0 17%;
-} */
+}
 
 .logo-button {
     color: #ff385c;

@@ -28,6 +28,10 @@
     text-decoration: underline;
 }
 
+.listing-show-images-container {
+    /* border: 1px solid black; */
+}
+
 .listing-show-image {
     height: 491px;
     width: 1120px;
@@ -35,20 +39,39 @@
 
 .listing-show-details-container {
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .listing-show-details {
-    width: 100%
+    width: 100%;
 }
 
-.listing-show-details-title {
+.listing-show-details-title-container {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    padding: 48px 0 28px; 
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.listing-show-details-title h1 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 8px;
+}
+
+.listing-show-details-title h2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.listing-show-details-title-image {
+    font-size: 40px;
+    margin-right: 5px;
 }
 
 .listing-show-reservations-container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%
 }
