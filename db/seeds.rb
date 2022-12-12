@@ -9,17 +9,16 @@
 require 'open-uri'
 
 puts "Destroying tables..."
-# Unnecessary if using `rails db:seed:replant`
 User.destroy_all
 Listing.destroy_all
+Reservation.destroy_all
 
 puts "Resetting primary keys..."
-# For easy testing, so that after seeding, the first `User` has `id` of 1
 ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('listings')
+ApplicationRecord.connection.reset_pk_sequence!('reservations')
 
 puts "Creating users..."
-# Create one user with an easy to remember username, email, and password:
 demo = User.create!(
   email: 'demo@user.io', 
   password: 'password',
@@ -37,7 +36,6 @@ jeffrey = User.create!(
 )
 
 puts "Creating listings..."
-# Create one user with an easy to remember username, email, and password:
 wilderness_tower = Listing.create!(
   host_id: jeffrey.id,
   title: "Wilderness Tower",
@@ -155,6 +153,16 @@ log_cabin = Listing.create!(
   washer: true,
   air_con: true,
   pets: true
+)
+
+puts "Creating reservations..."
+
+Reservation.create!(
+  guest_id: demo.id,
+  listing_id: guard_tower.id,
+  start_date: '2022-12-01',
+  end_date: '2022-12-10',
+  num_guests: 3
 )
 
 puts "Attaching listing photos..."

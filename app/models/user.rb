@@ -33,6 +33,13 @@ class User < ApplicationRecord
       inverse_of: :host,
       dependent: :destroy
 
+    has_many :reservations,
+      primary_key: :id,
+      foreign_key: :guest_id,
+      class_name: :Reservation,
+      inverse_of: :guest,
+      dependent: :destroy
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
   
