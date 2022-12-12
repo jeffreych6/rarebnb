@@ -17,7 +17,7 @@ function ListingIndexPage() {
             <NavLink className="listing-index-links" to={`listings/${listing.id}`}>
                 <div className="listing-index-container" key={listing.id}>
                     <div className="listing-index-image-container">
-                        <img className="listing-index-image" src="https://a0.muscache.com/im/pictures/9c5d7336-ebdd-492d-bca1-bc5868d539bf.jpg?im_w=1200" />
+                        <img className="listing-index-image" src={listing.photosUrl[0]} />
                     </div>
 
                     <div className="listing-index-description-container">

@@ -23,55 +23,23 @@ puts "Creating users..."
 demo = User.create!(
   email: 'demo@user.io', 
   password: 'password',
+  first_name: 'Demo',
+  last_name: 'User',
+  birth_date: '1994-09-16'
+)
+
+jeffrey = User.create!(
+  email: 'jeffrey@user.io', 
+  password: 'password',
   first_name: 'Jeffrey',
-  last_name: 'HomeServices',
-  birth_date: '1994-09-16'
-)
-
-justin = User.create!(
-  email: 'justin@user.io', 
-  password: 'password',
-  first_name: 'Justin',
-  last_name: 'H',
-  birth_date: '1994-09-16'
-)
-
-bonnie = User.create!(
-  email: 'bonnie@user.io', 
-  password: 'password',
-  first_name: 'Bonnie',
-  last_name: 'L',
-  birth_date: '1994-09-16'
-)
-
-gleb = User.create!(
-  email: 'gleb@user.io', 
-  password: 'password',
-  first_name: 'Gleb',
-  last_name: 'M',
-  birth_date: '1994-09-16'
-)
-
-daniel = User.create!(
-  email: 'daniel@user.io', 
-  password: 'password',
-  first_name: 'Daniel',
-  last_name: 'K',
-  birth_date: '1994-09-16'
-)
-
-jeremy = User.create!(
-  email: 'jeremy@user.io', 
-  password: 'password',
-  first_name: 'Jeremy',
-  last_name: 'S',
+  last_name: 'Cheng',
   birth_date: '1994-09-16'
 )
 
 puts "Creating listings..."
 # Create one user with an easy to remember username, email, and password:
 wilderness_tower = Listing.create!(
-  host_id: demo.id,
+  host_id: jeffrey.id,
   title: "Wilderness Tower",
   description: "Located in the middle of the Sørland wilderness between two ponds far from people and roads. Tree top cabin on 4 floors - a real return to nature experience! Great level of comfort with good beds, panoramic views and well-equipped kitchen. The only heat source is the wood stove and the cabin is only lit with candles and  battery lamp.  Good old-fashioned outhouse down on the forest floor.",
   property_type: "treehouse",
@@ -86,16 +54,16 @@ wilderness_tower = Listing.create!(
   bedrooms: 1,
   beds: 5,
   baths: 1,
-  kitchen: false,
+  kitchen: true,
   parking: true,
   wifi: false,
-  washer: false,
+  washer: true,
   air_con: false,
   pets: true
 )
 
 the_grand_tiki = Listing.create!(
-  host_id: demo.id,
+  host_id: jeffrey.id,
   title: "The Grand Tiki",
   description: "Come relax and enjoy the beautiful and serene waters of Key West in a truly unique way!",
   property_type: "boat",
@@ -110,83 +78,82 @@ the_grand_tiki = Listing.create!(
   bedrooms: 1,
   beds: 1,
   baths: 1,
-  kitchen: false,
+  kitchen: true,
+  parking: false,
+  wifi: false,
+  washer: true,
+  air_con: true,
+  pets: true
+)
+
+the_shepherdess_hut = Listing.create!(
+  host_id: jeffrey.id,
+  title: "The Shepherdess Hut",
+  description: "Reconnect with nature at this unforgettable rural retreat. Wake up to bird song on our little family-run nut orchard, take in the incredible views, explore the banks of the nearby river Taw and drift off to sleep under starry skies at night. ",
+  property_type: "hut",
+  price: 88,
+  city: 'Devon',
+  state: 'England',
+  country: 'United Kingdom',
+  lat: 50.7156,
+  lng: -3.5309,
+  guests: 3,
+  bedrooms: 1,
+  beds: 3,
+  baths: 1,
+  kitchen: true,
   parking: true,
   wifi: false,
+  washer: true,
+  air_con: false,
+  pets: true
+)
+
+guard_tower = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Guard Tower",
+  description: "The ULTIMATE 'GLAMPING' experience!  Featured on HGTV: The Castle House Estate brings Tiny Home living to another level, located in the heart of Joshua Tree and minutes from the National Park. This unique medieval piece of architecture blends indoor-outdoor living with an emphasis on entertaining.",
+  property_type: "tower",
+  price: 322,
+  city: 'Joshua Tree',
+  state: 'California',
+  country: 'United States',
+  lat: 34.1347,
+  lng: -116.3131,
+  zip_code: 92252,
+  guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  baths: 1,
+  kitchen: false,
+  parking: true,
+  wifi: true,
   washer: false,
   air_con: true,
   pets: true
 )
 
-Listing.create!(
-  host_id: demo.id,
-  title: "Bonnie's Basement",
-  description: "No water, heating, or electricity. Perfect for extended stays. Cash ONLY!",
-  property_type: "house",
-  price: 250,
-  city: 'Long Island',
-  state: 'New York',
+log_cabin = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Log Cabin",
+  description: "This beautiful private island property with stunning views, luxury amenities, and gorgeous landscapes is the perfect get away to relax on your very own private island paradise in upper Michigan. There is swimming, boating, fishing, campfires, hiking, ping pong, board games, BBQ's, and many more relaxing family fun activities!",
+  property_type: "island",
+  price: 949,
+  city: 'Lupton',
+  state: 'Michigan',
   country: 'United States',
-  lat: 40.7891,
-  lng: -73.1350,
-  zip_code: 11779,
-  guests: 8,
-  bedrooms: 2,
-  beds: 2,
-  baths: 1,
+  lat: 44.4311,
+  lng: -84.0258,
+  zip_code: 48635,
+  guests: 12,
+  bedrooms: 3,
+  beds: 6,
+  baths: 2,
   kitchen: true,
-  parking: false,
+  parking: true,
   wifi: true,
-  washer: false,
-  air_con: false,
-  pets: true
-)
-
-Listing.create!(
-  host_id: demo.id,
-  title: "Daniel's Closet",
-  description: "No water, heating, or electricity. Perfect for a change in environment!",
-  property_type: "house",
-  price: 120,
-  city: 'Long Island',
-  state: 'New York',
-  country: 'United States',
-  lat: 40.7891,
-  lng: -73.1350,
-  zip_code: 11779,
-  guests: 2,
-  bedrooms: 0,
-  beds: 0,
-  baths: 0,
-  kitchen: false,
-  parking: false,
-  wifi: true,
-  washer: false,
-  air_con: false,
-  pets: true
-)
-
-Listing.create!(
-  host_id: demo.id,
-  title: "Jeremy's Bike",
-  description: "No water, heating, or electricity. Perfect for a brief stay. Just take a seat!",
-  property_type: "house",
-  price: 50,
-  city: 'Long Island',
-  state: 'New York',
-  country: 'United States',
-  lat: 40.7891,
-  lng: -73.1350,
-  zip_code: 11779,
-  guests: 2,
-  bedrooms: 0,
-  beds: 0,
-  baths: 0,
-  kitchen: false,
-  parking: false,
-  wifi: false,
-  washer: false,
-  air_con: false,
+  washer: true,
+  air_con: true,
   pets: true
 )
 
@@ -198,5 +165,28 @@ wilderness_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.
 wilderness_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/wilderness_tower/wilderness_tower_4.webp'), filename: 'wilderness_tower_4.webp')
 wilderness_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/wilderness_tower/wilderness_tower_5.webp'), filename: 'wilderness_tower_5.webp')
 
+the_grand_tiki.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_grand_tiki/the_grand_tiki_1.webp'), filename: 'the_grand_tiki_1.webp')
+the_grand_tiki.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_grand_tiki/the_grand_tiki_2.webp'), filename: 'the_grand_tiki_2.webp')
+the_grand_tiki.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_grand_tiki/the_grand_tiki_3.webp'), filename: 'the_grand_tiki_3.webp')
+the_grand_tiki.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_grand_tiki/the_grand_tiki_4.webp'), filename: 'the_grand_tiki_4.webp')
+the_grand_tiki.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_grand_tiki/the_grand_tiki_5.webp'), filename: 'the_grand_tiki_5.webp')
+
+the_shepherdess_hut.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_shepherdess_hut/the_shepherdess_hut_1.webp'), filename: 'the_shepherdess_hut_1.webp')
+the_shepherdess_hut.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_shepherdess_hut/the_shepherdess_hut_2.webp'), filename: 'the_shepherdess_hut_2.webp')
+the_shepherdess_hut.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_shepherdess_hut/the_shepherdess_hut_3.webp'), filename: 'the_shepherdess_hut_3.webp')
+the_shepherdess_hut.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_shepherdess_hut/the_shepherdess_hut_4.webp'), filename: 'the_shepherdess_hut_4.webp')
+the_shepherdess_hut.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_shepherdess_hut/the_shepherdess_hut_5.webp'), filename: 'the_shepherdess_hut_5.webp')
+
+guard_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/guard_tower/guard_tower_1.webp'), filename: 'guard_tower_1.webp')
+guard_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/guard_tower/guard_tower_2.webp'), filename: 'guard_tower_2.webp')
+guard_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/guard_tower/guard_tower_3.webp'), filename: 'guard_tower_3.webp')
+guard_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/guard_tower/guard_tower_4.webp'), filename: 'guard_tower_4.webp')
+guard_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/guard_tower/guard_tower_5.webp'), filename: 'guard_tower_5.webp')
+
+log_cabin.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/log_cabin/log_cabin_1.webp'), filename: 'log_cabin_1.webp')
+log_cabin.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/log_cabin/log_cabin_2.webp'), filename: 'log_cabin_2.webp')
+log_cabin.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/log_cabin/log_cabin_3.webp'), filename: 'log_cabin_3.webp')
+log_cabin.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/log_cabin/log_cabin_4.webp'), filename: 'log_cabin_4.webp')
+log_cabin.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/log_cabin/log_cabin_5.webp'), filename: 'log_cabin_5.webp')
 
 puts "Done!"
