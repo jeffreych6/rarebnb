@@ -32,8 +32,15 @@ function ListingShowPage() {
                     </div>
 
                     <div className="listing-show-images-container">
-                        <img className="listing-show-image" src={listing.photosUrl[0]}></img>
-                        {/* <img className="listing-show-image" src="https://a0.muscache.com/im/pictures/user/31db696d-ead3-4f95-beaa-31e75c79172c.jpg?aki_policy=profile_large"></img> */}
+
+                            <img className="listing-show-image-large" src={listing.photosUrl[0]}></img>
+
+                        <div className="listing-show-image-small-container">
+                            <img className="listing-show-image-small" src={listing.photosUrl[1]}></img>
+                            <img id="image-2" className="listing-show-image-small" src={listing.photosUrl[2]}></img>
+                            <img className="listing-show-image-small" src={listing.photosUrl[3]}></img>
+                            <img id="image-4" className="listing-show-image-small" src={listing.photosUrl[4]}></img>
+                        </div>
                     </div>
 
                     <div className="listing-show-details-container">
