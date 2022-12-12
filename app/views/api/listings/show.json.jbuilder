@@ -27,7 +27,7 @@ json.listing do
       json.photos_url @listing.photos.map{|photo| url_for(photo)}
     end
 
-  json.extract! @host,
+  json.extract! @listing.host,
     :first_name,
     :last_name
 end

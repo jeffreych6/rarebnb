@@ -15,10 +15,28 @@ function Reservations() {
 
     if (!sessionUser) return <Redirect to="/" />;
 
+    const titleize = (word) => {
+        return word[0].toUpperCase() + word.slice(1)
+    }
+
     const reservation = reservations.map((reservation) => {
         return (
-            <div key={reservation.id}>
-                {reservation.id}
+            <div className="reservation-container" key={reservation.id}>
+                <div className="reservation-detail-container">
+                    <div className="reservation-detail-title">
+                        <h1>{reservation.title}</h1>
+                        <h2>{titleize(reservation.propertyType)} hosted by {reservation.firstName} {reservation.lastName}</h2>
+                    </div>
+                    <div className="reservation-detail-description">
+                        <div className="reservation-detail-description-dates">
+                            {reservation.startDate} - {reservation.endDate}
+                        </div>
+                        <div className="reservation-detail-description-location">
+                            <h1>{reservation.state}</h1>
+                            <h2>{reservation.country}</h2>
+                        </div>
+                    </div>
+                </div>
                 <img src={reservation.photosUrl[0]}></img>
             </div>
         )
