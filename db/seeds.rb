@@ -165,6 +165,14 @@ Reservation.create!(
   num_guests: 3
 )
 
+Reservation.create!(
+  guest_id: demo.id,
+  listing_id: log_cabin.id,
+  start_date: '2022-12-01',
+  end_date: '2022-12-10',
+  num_guests: 3
+)
+
 puts "Attaching listing photos..."
 
 wilderness_tower.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/wilderness_tower/wilderness_tower_1.webp'), filename: 'wilderness_tower_1.webp')

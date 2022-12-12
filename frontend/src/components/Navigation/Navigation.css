@@ -95,6 +95,11 @@
     font-size: 14px;
 }
 
+.drop-down-reservations-link {
+    text-decoration: none;
+    color: #222222;
+}
+
 .drop-down-menu-options-container:hover {
     cursor: pointer;
     background-color: #F7F7F7;

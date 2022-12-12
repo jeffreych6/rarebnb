@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 
@@ -39,7 +40,9 @@ function LoggedInDropDown() {
         {showMenu && (
           <ul className="profile-dropdown">
             <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Messages</div></li>
-            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Trips</div></li>
+            <NavLink className="drop-down-reservations-link" to="/reservations">
+              <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Trips</div></li>
+            </NavLink>
             <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Wishlist</div></li>
             <div className="drop-down-menu-divider"></div>
             <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>

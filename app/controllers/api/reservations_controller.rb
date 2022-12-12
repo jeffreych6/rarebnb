@@ -4,8 +4,11 @@ class Api::ReservationsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        guest_id = current_user.id
-        @reservations = Reservation.find_by(guest_id: guest_id)
+        if current_user
+            guest_id = current_user.id
+        end
+        
+        @reservations = Reservation.all.where(guest_id: guest_id)
 
         render :index
     end

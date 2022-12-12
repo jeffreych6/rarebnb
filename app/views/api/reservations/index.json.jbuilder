@@ -7,5 +7,9 @@
             :start_date,
             :end_date,
             :num_guests
+
+            if reservation.listing.photos.attached?
+                json.photos_url reservation.listing.photos.map{|photo| url_for(photo)}
+            end
     end
 end
