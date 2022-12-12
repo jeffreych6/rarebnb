@@ -19,7 +19,11 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        @listing = Listing.find(params[:id])
+        @listing = Listing.find_by(id: params[:id])
+        
+        if @listing
+            @host = User.find_by(id: @listing.host_id)
+        end
 
         render :show
     end

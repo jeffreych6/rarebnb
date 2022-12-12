@@ -66,10 +66,31 @@
     line-height: 20px;
 }
 
-.listing-show-details-title-image {
-    font-size: 40px;
+.listing-show-details-title-image img {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
     margin-right: 5px;
 }
+
+.listing-show-details-description {
+    padding: 32px 0 48px;
+    border-bottom: 1px solid #DDDDDD;
+
+}
+
+.listing-show-details-amenities {
+    padding: 48px 0;
+    border-bottom: 1px solid #DDDDDD;
+
+}
+
+
+
+
+
+
+
 
 .listing-show-reservations-container {
     /* border: 1px solid black; */

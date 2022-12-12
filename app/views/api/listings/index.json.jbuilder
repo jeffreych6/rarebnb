@@ -2,8 +2,10 @@
     json.set! listing.id do
         json.extract! listing,
             :id,
+            :host_id,
             :title,
             :description,
+            :property_type,
             :price,
             :city,
             :state,
@@ -17,7 +19,14 @@
             :baths,
             :kitchen,
             :parking,
-            :wifi
+            :wifi,
+            :washer,
+            :air_con,
+            :pets
+
+            if listing.photos.attached?
+                json.photos_url listing.photos.map{|photo| url_for(photo)}
+            end
     end
 end
 

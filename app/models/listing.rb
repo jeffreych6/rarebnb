@@ -33,6 +33,6 @@ class Listing < ApplicationRecord
 
     # using listings > title for now to test AWS
     # has_one_attached :photo
-    # has_many_attached :photos IF multiple photos
+    has_many_attached :photos
 
 end
