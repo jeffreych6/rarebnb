@@ -24,9 +24,7 @@ class Api::ReservationsController < ApplicationController
     def update
         @reservation = Reservation.find_by(id: params[:id])
 
-        if @reservation.update
-            render :index
-        else
+        if !(@reservation.update(reservation_params))
             render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
         end
     end
@@ -34,8 +32,8 @@ class Api::ReservationsController < ApplicationController
     def destroy
         @reservation = Reservation.find_by(id: params[:id])
 
-        if @reservation && @reservation.delete
-            render :index
+        if !(@reservation && @reservation.delete)
+            render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
         end
     end
 

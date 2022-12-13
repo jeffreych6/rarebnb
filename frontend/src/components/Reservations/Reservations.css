@@ -1,3 +1,5 @@
+/* Reservation Index */
+
 .reservations-index-container {
     margin: 0 17%;
 }
@@ -16,6 +18,7 @@
 .reservation-container {
     display: flex;
     padding: 20px 0;
+    cursor: pointer;
 }
 
 .reservation-detail-container {
@@ -98,3 +101,6 @@
     border-bottom-right-radius: 12px;
     border: 1px solid #DDDDDD;
 }
+
+/* Reservation Modal */
+

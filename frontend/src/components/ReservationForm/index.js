@@ -24,13 +24,19 @@ function ReservationForm({ listing }) {
     return (`${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`)
   }
 
+  const calculateDays = (startDate, endDate) => {
+    return (Date.parse(endDate) - Date.parse(startDate)) / (1000 * 3600 * 24)
+  }
+
   const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"))
   const [endDate, setEndDate] = useState(calculateEndDate(startDate, 6))
   const [numGuests, setNumGuests] = useState("1")
   const [errors, setErrors] = useState([]);
+  const cleaningFee = Math.round(parseInt(listing.price) * 0.5)
+  const serviceFee = Math.round(parseInt(listing.price) * 0.15)
 
   let guestId;
-  if (sessionUser != null) {
+  if (sessionUser) {
     guestId = sessionUser.id
   }
 
@@ -43,11 +49,6 @@ function ReservationForm({ listing }) {
         reservationsActions.createReservation({ guestId, listingId, startDate, endDate, numGuests })
     ).catch(async (res) => {
         let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
 
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
@@ -83,6 +84,7 @@ function ReservationForm({ listing }) {
           type="date"
           value={startDate}
           min={moment().format("YYYY-MM-DD")}
+          max={calculateEndDate(endDate, -0.5)}
           onChange={(e) => setStartDate(e.target.value)}
         />
         <br/>
@@ -99,6 +101,7 @@ function ReservationForm({ listing }) {
           type="number"
           value={numGuests}
           min="1"
+          max={listing.guests}
           onChange={(e) => setNumGuests(e.target.value)}
         />
         {handleErrors("End date")}
@@ -110,21 +113,21 @@ function ReservationForm({ listing }) {
 
 
       <div className="reservation-form-rows">
-        <div>${listing.price} x {(Date.parse(endDate) - Date.parse(startDate)) / (1000 * 3600 * 24)} nights</div>
-        <div>${listing.price * ((Date.parse(endDate) - Date.parse(startDate)) / (1000 * 3600 * 24))}</div>
+        <div>${listing.price.toLocaleString("en-US")} x {calculateDays(startDate, endDate)} nights</div>
+        <div>${(listing.price * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
       </div>
       <div className="reservation-form-rows">
         <div>Cleaning fee</div>
-        <div>$69</div>
+        <div>${cleaningFee.toLocaleString("en-US")}</div>
       </div>
       <div className="reservation-form-rows">
         <div>Service fee</div>
-        <div>$69</div>
+        <div>${(serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
       </div>
       <div className="reservation-form-divider"></div>
       <div className="reservation-form-rows">
         <div>Total before tax</div>
-        <div>$69</div>
+        <div>${(listing.price * calculateDays(startDate, endDate) + cleaningFee + serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
       </div>
     </div>
   );

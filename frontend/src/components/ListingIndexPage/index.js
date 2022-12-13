@@ -11,7 +11,7 @@ function ListingIndexPage() {
     useEffect(() => {
         dispatch(listingsActions.fetchListings())
     },[])
-    console.log(listings)
+
     const listing = listings.map((listing) => {
         return (
             <NavLink className="listing-index-links" to={`listings/${listing.id}`} key={listing.id}>

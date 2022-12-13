@@ -40,28 +40,40 @@ export const fetchReservations = () => async (dispatch) => {
     dispatch(receiveReservations(data));
 };
 
-// export const fetchListing = (reservationId) => async (dispatch) => {
-//     const response = await csrfFetch(`/api/reservations/${reservationId}`);
-//     const data = await response.json();
-//     dispatch(addListing(data.reservation));
-// };
-
 export const createReservation = (reservation) => async (dispatch) => {
     const { guestId, listingId, startDate, endDate, numGuests } = reservation;
     const response = await csrfFetch("/api/reservations", {
-      method: "POST",
-      body: JSON.stringify({
-        guestId,
-        listingId,
-        startDate,
-        endDate,
-        numGuests
-      }),
+        method: "POST",
+        body: JSON.stringify({
+            guestId,
+            listingId,
+            startDate,
+            endDate,
+            numGuests
+        }),
     });
     const data = await response.json();
     dispatch(addReservation(data.reservation));
     return response;
-  };
+};
+
+export const modifyReservation = (reservation) => async (dispatch) => {
+    const { id, guestId, listingId, startDate, endDate, numGuests } = reservation;
+    const response = await csrfFetch(`/api/reservations/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+            id,
+            guestId,
+            listingId,
+            startDate,
+            endDate,
+            numGuests
+        }),
+    });
+    const data = await response.json();
+    dispatch(updateReservation(data.reservation));
+    return response
+};
 
 export const deleteReservation = (reservationId) => async (dispatch) => {
     const response = await csrfFetch(`/api/reservations/${reservationId}`, {

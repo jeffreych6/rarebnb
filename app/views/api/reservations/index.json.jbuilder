@@ -13,7 +13,8 @@
             :property_type,
             :city,
             :state,
-            :country
+            :country,
+            :price
 
         json.extract! reservation.listing.host,
             :first_name,

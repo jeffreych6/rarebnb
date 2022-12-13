@@ -54,10 +54,10 @@ function LoggedOutDropDown() {
               <SignupFormModal />
           </Modal>
       )}
-            {showLoginModal && (
-          <Modal onClose={() => setShowLoginModal(false)}>
-              <LoginFormModal />
-          </Modal>
+      {showLoginModal && (
+        <Modal onClose={() => setShowLoginModal(false)}>
+          <LoginFormModal />
+        </Modal>
       )}
     </>
   )
