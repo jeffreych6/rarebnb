@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import * as reservationsActions from "../../store/reservations";
 import { useSelector, useDispatch } from "react-redux";
 import "./ReservationForm.css";
@@ -6,6 +7,7 @@ import moment from 'moment';
 
 function ReservationForm({ listing }) {
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const listingId = listing.id;
 
@@ -22,18 +24,19 @@ function ReservationForm({ listing }) {
     return (`${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`)
   }
 
-  const [guestId, setGuestId] = useState("")
   const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"))
   const [endDate, setEndDate] = useState(calculateEndDate(startDate, 6))
   const [numGuests, setNumGuests] = useState("1")
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) {
-    setGuestId = sessionUser.id
+  let guestId;
+  if (sessionUser != null) {
+    guestId = sessionUser.id
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push("/reservations")
 
     setErrors([]);
     return dispatch(
@@ -45,7 +48,7 @@ function ReservationForm({ listing }) {
         } catch {
           data = await res.text();
         }
-        debugger
+
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
@@ -100,7 +103,9 @@ function ReservationForm({ listing }) {
         />
         {handleErrors("End date")}
         <br />
-        <button type="submit">Reserve</button>
+        {sessionUser ? 
+          <button type="submit">Reserve</button> : <button type="submit" disabled>Reserve</button>
+        }
       </form>
 
 
