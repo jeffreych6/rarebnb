@@ -79,35 +79,47 @@ function ReservationForm({ listing }) {
   return (
     <div className="reservation-form-container">
       <form className="reservation-form" onSubmit={handleSubmit}>
-        CHECK-IN
-        <input 
-          type="date"
-          value={startDate}
-          min={moment().format("YYYY-MM-DD")}
-          max={calculateEndDate(endDate, -0.5)}
-          onChange={(e) => setStartDate(e.target.value)}
-        />
-        <br/>
-        CHECKOUT
-        <input 
-          type="date"
-          value={endDate}
-          min={calculateEndDate(startDate, 2)}
-          onChange={(e) => setEndDate(e.target.value)}
-        />
-        <br />
-        GUESTS
-        <input 
-          type="number"
-          value={numGuests}
-          min="1"
-          max={listing.guests}
-          onChange={(e) => setNumGuests(e.target.value)}
-        />
+        <div className="reservation-form-inputs">
+          <div className="reservation-form-dates-container">
+              <label className="reservation-form-start-date">
+                  <div className="reservation-form-date-text">CHECK-IN</div>
+                  <input 
+                    className="reservation-form-date-input"
+                    type="date"
+                    value={startDate}
+                    min={moment().format("YYYY-MM-DD")}
+                    max={calculateEndDate(endDate, -0.5)}
+                    onChange={(e) => setStartDate(e.target.value)}
+                  />
+              </label>
+
+              <label className="reservation-form-end-date">
+                <div className="reservation-form-date-text">CHECKOUT</div>
+                <input 
+                  className="reservation-form-date-input"
+                  type="date"
+                  value={endDate}
+                  min={calculateEndDate(startDate, 2)}
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </label>
+          </div>
+          <label className="reservation-form-guests">
+            <div className="reservation-form-guests-text">GUESTS</div>
+            <input 
+              className="reservation-form-guests-input"
+              type="number"
+              value={numGuests}
+              min="1"
+              max={listing.guests}
+              onChange={(e) => setNumGuests(e.target.value)}
+            />
+          </label>
+        </div>
         {handleErrors("End date")}
         <br />
         {sessionUser ? 
-          <button type="submit">Reserve</button> : <button type="submit" disabled>Reserve</button>
+          <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button" type="submit" disabled>Reserve</button>
         }
       </form>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import * as reservationsActions from "../../store/reservations";
 import * as sessionActions from "../../store/session";
@@ -37,7 +37,7 @@ function ReservationModal({ reservation }) {
 
   const handleSubmit = (e) => {
     // e.preventDefault();
-
+    
     setErrors([]);
     return dispatch(
         reservationsActions.modifyReservation({ id, guestId, listingId, startDate, endDate, numGuests })

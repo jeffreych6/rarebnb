@@ -9,6 +9,73 @@
     margin: 5%;
 }
 
+.reservation-form-dates-container {
+    display: flex;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px 8px 0 0;
+    min-height: 56px;
+
+}
+
+.reservation-form-start-date {
+    border-right: 1px solid #DDDDDD;
+    width: 50%;
+    /* min-height: 56px; */
+    margin-left: 10%
+}
+
+.reservation-form-date-text {
+    /* position: absolute; */
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 800;
+    /* margin-top: 8px */
+}
+
+.reservation-form-date-input {
+    cursor: pointer;
+    border: none;
+    /* min-height: 56px; */
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 20px;
+}
+
+.reservation-form-end-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* border-right: 1px solid #DDDDDD; */
+    width: 50%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.reservation-form-button {
+    cursor: pointer;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    line-height: 20px;
+    padding: 14px 24px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
 .reservation-form-rows {
     display: flex;
     justify-content: space-between;
@@ -21,3 +88,4 @@
     margin: 5%;
     border: 1px solid #DDDDDD;
 }
+

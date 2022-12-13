@@ -41,31 +41,6 @@ function Reservations() {
 
     const reservation = reservations.map((reservation) => {
         return (
-            // <div className="reservation-container" key={reservation.id} onClick={() => setShowReservationModal(true)}>
-            //     <div className="reservation-detail-container">
-            //         <div className="reservation-detail-title">
-            //             <h1>{reservation.title}</h1>
-            //             <h2>{titleize(reservation.propertyType)} hosted by {reservation.firstName} {reservation.lastName}</h2>
-            //         </div>
-            //         <div className="reservation-detail-description">
-            //             <div className="reservation-detail-description-dates">
-            //                 <h1>{month[reservation.startDate.slice(5, 7)]} {reservation.startDate.slice(8)} -</h1>
-            //                 <h1>{month[reservation.endDate.slice(5, 7)]} {reservation.endDate.slice(8)}</h1>
-            //                 <h2>{reservation.endDate.slice(0, 4)}</h2>
-            //             </div>
-            //             <div className="reservation-detail-description-location">
-            //                 <h1>{reservation.city}, {reservation.state}</h1>
-            //                 <h2>{reservation.country}</h2>
-            //             </div>
-            //         </div>
-            //     </div>
-            //     <img className="reservation-image" src={reservation.photosUrl[0]}></img>
-            //     {showReservationModal && (
-            //         <Modal onClose={() => setShowReservationModal(false)}>
-            //             <ReservationModal reservation = {reservation} />
-            //         </Modal>
-            //     )}
-            // </div>
             <ReservationIndexItem key={reservation.id} reservation={reservation} />
         )
     })

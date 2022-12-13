@@ -28,10 +28,6 @@ function ReservationIndexItem({ reservation }) {
         '12': 'Dec',
     };
 
-    // useEffect(() => {
-    //     setShowReservationModal(false)
-    // }, [reservation.startDate, reservation.endDate])
-
     return (
         <>
             <div className="reservation-container" onClick={() => setShowReservationModal(true)}>
