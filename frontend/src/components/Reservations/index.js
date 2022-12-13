@@ -19,6 +19,21 @@ function Reservations() {
         return word[0].toUpperCase() + word.slice(1)
     }
 
+    const month = {
+        '01': 'Jan',
+        '02': 'Feb',
+        '03': 'Mar',
+        '04': 'Apr',
+        '05': 'May',
+        '06': 'Jun',
+        '07': 'Jul',
+        '08': 'Aug',
+        '09': 'Sep',
+        '10': 'Oct',
+        '11': 'Nov',
+        '12': 'Dec',
+      };
+
     const reservation = reservations.map((reservation) => {
         return (
             <div className="reservation-container" key={reservation.id}>
@@ -29,15 +44,17 @@ function Reservations() {
                     </div>
                     <div className="reservation-detail-description">
                         <div className="reservation-detail-description-dates">
-                            {reservation.startDate} - {reservation.endDate}
+                            <h1>{month[reservation.startDate.slice(5, 7)]} {reservation.startDate.slice(8)} -</h1>
+                            <h1>{month[reservation.endDate.slice(5, 7)]} {reservation.endDate.slice(8)}</h1>
+                            <h2>{reservation.endDate.slice(0, 4)}</h2>
                         </div>
                         <div className="reservation-detail-description-location">
-                            <h1>{reservation.state}</h1>
+                            <h1>{reservation.city}, {reservation.state}</h1>
                             <h2>{reservation.country}</h2>
                         </div>
                     </div>
                 </div>
-                <img src={reservation.photosUrl[0]}></img>
+                <img className="reservation-image" src={reservation.photosUrl[0]}></img>
             </div>
         )
     })
