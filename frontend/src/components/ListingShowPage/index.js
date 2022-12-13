@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../store/listings";
+import ReservationForm from "../ReservationForm"
 import "./ListingShowPage.css";
 
 function ListingShowPage() {
@@ -98,7 +99,7 @@ function ListingShowPage() {
                         </div>
 
                         <div className="listing-show-reservations-container">
-                            Reservations
+                            <ReservationForm listing={listing} />
                         </div>
                     </div>
                 </div>

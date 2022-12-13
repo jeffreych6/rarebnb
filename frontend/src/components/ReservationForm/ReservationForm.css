@@ -1,0 +1,23 @@
+.reservation-form-container {
+    margin-top: 10%;
+    margin-left: 15%;
+    border-radius: 12px;
+    border: 1px solid #DDDDDD;
+}
+
+.reservation-form {
+    margin: 5%;
+}
+
+.reservation-form-rows {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    margin: 5%;
+
+}
+
+.reservation-form-divider {
+    margin: 5%;
+    border: 1px solid #DDDDDD;
+}

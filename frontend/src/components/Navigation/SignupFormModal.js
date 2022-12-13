@@ -54,7 +54,7 @@ function SignupForm() {
           {errorList.map(error => <li key={error}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{error}</li>)}
       </ul>
     )
-}
+  }
 
   return (
     <div className="modal-content">

@@ -1,7 +1,7 @@
 import csrfFetch from "./csrf";
 
 export const RECEIVE_RESERVATIONS = "reservations/RECEIVE_RESERVATIONS"
-export const CREATE_RESERVATION = "reservations/CREATE_RESERVATIONS"
+export const ADD_RESERVATION = "reservations/ADD_RESERVATION"
 export const UPDATE_RESERVATION = "reservations/UPDATE_RESERVATIONS"
 export const REMOVE_RESERVATION = "reservations/REMOVE_RESERVATIONS"
 
@@ -11,8 +11,8 @@ export const receiveReservations = (reservations) => ({
     reservations
 })
 
-export const createReservation = (reservation) => ({
-    type: CREATE_RESERVATION,
+export const addReservation = (reservation) => ({
+    type: ADD_RESERVATION,
     reservation
 })
 
@@ -46,6 +46,23 @@ export const fetchReservations = () => async (dispatch) => {
 //     dispatch(addListing(data.reservation));
 // };
 
+export const createReservation = (reservation) => async (dispatch) => {
+    const { guestId, listingId, startDate, endDate, numGuests } = reservation;
+    const response = await csrfFetch("/api/reservations", {
+      method: "POST",
+      body: JSON.stringify({
+        guestId,
+        listingId,
+        startDate,
+        endDate,
+        numGuests
+      }),
+    });
+    const data = await response.json();
+    dispatch(addReservation(data.reservation));
+    return response;
+  };
+
 export const deleteReservation = (reservationId) => async (dispatch) => {
     const response = await csrfFetch(`/api/reservations/${reservationId}`, {
         method: 'DELETE'
@@ -60,6 +77,8 @@ const reservationsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_RESERVATIONS:
             return {...nextState, ...action.reservations}
+        case ADD_RESERVATION:
+            return {...nextState, ...action.reservation}
         case REMOVE_RESERVATION:
             delete nextState[action.reservationId]
             return nextState;
