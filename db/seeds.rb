@@ -63,7 +63,7 @@ wilderness_tower = Listing.create!(
 the_grand_tiki = Listing.create!(
   host_id: jeffrey.id,
   title: "The Grand Tiki",
-  description: "Come relax and enjoy the beautiful and serene waters of Key West in a truly unique way!",
+  description: "Building upon the success of the Original Tiki Suite, the 2021 Grand Tiki luxury model was designed and built with many improvements in quality including an artistic roof design, tempered peak windows, Ipe hardwood deck and flooring, an automatic-start generator charging system, 50' LED TV and Blu-ray player hidden in the footboard of the custom oak bed, handmade king-size mattress, integrated blinds in the French doors, oak and reed glass bathroom pocket door, expanded 30 gallon per day fresh water tank, electric mini refrigerator, plus underwater and exterior soffit lighting!",
   property_type: "boat",
   price: 799,
   city: 'Key West',
@@ -154,6 +154,152 @@ log_cabin = Listing.create!(
   air_con: true,
   pets: true
 )
+
+glamping = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Glamping",
+  description: "Off-grid Tiny Cabin Upstate NY at Bellfire Farm - this rustic artisan cabin is our third unique lodging experience that builds on the same principles of sustainability and connection to nature via lovingly handcrafted structures. Cook over an open fire, stargaze, enjoy miles of forest and the sprawling, lush landscape. Perfect for groups of 4 and families.",
+  property_type: "tiny home",
+  price: 192,
+  city: 'Roxbury',
+  state: 'New York',
+  country: 'United States',
+  lat: 42.3002,
+  lng: -74.5698,
+  zip_code: 12076,
+  guests: 4,
+  bedrooms: 1,
+  beds: 2,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: false,
+  washer: false,
+  air_con: false,
+  pets: true
+)
+
+aura_house = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Aura House",
+  description: "Aura house is a beautiful & unique eco bamboo house built on the west bank of the River Ayung facing east to catch sunrise. Aura House is situated 25min away from Ubud, and 35min away from Canggu. ",
+  property_type: "entire villa",
+  price: 360,
+  city: 'Abiansemal',
+  state: 'Bali',
+  country: 'Indonesia',
+  lat: -8.5646,
+  lng: 115.2207,
+  zip_code: 80115,
+  guests: 4,
+  bedrooms: 2,
+  beds: 2,
+  baths: 2,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: false,
+  air_con: true,
+  pets: true
+)
+
+highland_castles = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Highlands Castle",
+  description: "Highlands Castle is a hidden jewel in a private setting, yet only 3-minutes from downtown Bolton Landing with conveniences of a supermarket, gourmet restaurants, wine store, brewery, unique shops, 2-public parks with picnic areas, 2-public beaches, swimming, fishing, kayaking, tennis, golf, miniature golf, hiking trails, bicycling, boat rentals, scenic boat cruises, and more!",
+  property_type: "castle",
+  price: 8295,
+  city: 'Bolton',
+  state: 'New York',
+  country: 'United States',
+  lat: 43.5571,
+  lng: -73.6551,
+  zip_code: 12804,
+  guests: 8,
+  bedrooms: 4,
+  beds: 4,
+  baths: 3,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: true,
+  air_con: true,
+  pets: true
+)
+
+cabane_jacuzzi = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Cabane Jacuzzi",
+  description: "You will be alone in the world in your treehouse. You observe the forest through the windows of your cozy nest. The jacuzzi is heated to 38°C on your terrace. In the early morning, enjoy a gourmet breakfast with bird songs. For your comfort, you have on the floor a small cabin with private bathroom and dining area. Ideal for a break of nature 1h from Paris and 30mn from Disney.",
+  property_type: "treehouse",
+  price: 291,
+  city: 'Rosoy-en-Multien',
+  state: 'Hauts-de-France',
+  country: 'France',
+  lat: 49.0953,
+  lng: 2.9875,
+  zip_code: 60620,
+  guests: 2,
+  bedrooms: 1,
+  beds: 2,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: false,
+  air_con: false,
+  pets: true
+)
+
+earthouse = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Unique 'Earthouse' Retreat",
+  description: "Enjoy living at its finest with an unforgettable stay at this modern underground 3-bed, 3-bath home! Earthouse offers unique architectural design providing guests with an open inviting interior complete with high-end furnishings, modern decor, and abundant natural light. Whether you're exploring Springfield, visiting local colleges, making your way to Branson for the day, or getting away, this luxurious, one-of-a-kind abode will be your ideal home base!",
+  property_type: "earthen home",
+  price: 385,
+  city: 'Springfield',
+  state: 'Missouri',
+  country: 'United States',
+  lat: 37.2090,
+  lng: -93.2923,
+  zip_code: 65619,
+  guests: 8,
+  bedrooms: 3,
+  beds: 4,
+  baths: 3,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: true,
+  air_con: true,
+  pets: true
+)
+
+# Listing.create!(
+#   host_id: jeffrey.id,
+#   title: "",
+#   description: "",
+#   property_type: "",
+#   price: 192,
+#   city: '',
+#   state: '',
+#   country: 'United States',
+#   lat: 42.3002,
+#   lng: -74.5698,
+#   zip_code: 12076,
+#   guests: 4,
+#   bedrooms: 1,
+#   beds: 2,
+#   baths: 1,
+#   kitchen: true,
+#   parking: true,
+#   wifi: false,
+#   washer: false,
+#   air_con: false,
+#   pets: true
+# )
+
+
 
 puts "Creating reservations..."
 

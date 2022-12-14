@@ -27,9 +27,11 @@ function LoginForm() {
   };
 
   const loginDemo = () => {
-    // setEmail("demo@user.io")
-    // setPassword("password")
-    dispatch(sessionActions.login({email: "demo@user.io", password: "password"}))
+    setEmail("demo@user.io")
+    setPassword("password")
+    if (email && password) {
+      dispatch(sessionActions.login({email, password}))
+    }
   }
 
   const handleErrors = () => {
