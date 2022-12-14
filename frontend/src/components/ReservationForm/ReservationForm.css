@@ -135,6 +135,22 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 }
 
+.reservation-form-button-disabled {
+    cursor: pointer;
+    background: rgb(128, 128, 128);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    line-height: 20px;
+    padding: 14px 24px;
+    margin-bottom: 40px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+
 .reservation-form-rows {
     display: flex;
     justify-content: space-between;

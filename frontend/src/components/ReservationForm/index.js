@@ -129,9 +129,7 @@ function ReservationForm({ listing }) {
           </div>
           {handleErrors("End date")}
           <br />
-          {sessionUser ? 
-            <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button" type="submit" disabled>Reserve</button>
-          }
+          {sessionUser ? <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button-disabled" type="submit" disabled>Reserve</button>}
         </form>
 
         <div className="reservation-form-rows">
@@ -163,7 +161,6 @@ function ReservationForm({ listing }) {
             </div>
           </div>
       </div>
-
     </>
   );
 }

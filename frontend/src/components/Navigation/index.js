@@ -24,7 +24,9 @@ function Navigation() {
           <h1><img src={logo} /> rarebnb</h1>
         </button>
       </NavLink>
-      <div className="search-bar">Search Bar</div>
+      <div className="search-bar">Search Bar
+        
+      </div>
       {sessionLinks}
       </div>
     </nav>
