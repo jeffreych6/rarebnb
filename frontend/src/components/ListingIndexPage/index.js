@@ -48,7 +48,7 @@ function ListingIndexPage() {
         <>
             <div className="filter-bar"></div>
             <div className="listing-index">
-                {listings && (listing)}
+                {listing}
             </div>
         </>
 
