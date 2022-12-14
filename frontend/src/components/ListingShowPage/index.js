@@ -4,6 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../store/listings";
 import ReservationForm from "../ReservationForm"
 import "./ListingShowPage.css";
+import airCon from "../../assets/airCon.png"
+import kitchen from "../../assets/kitchen.png"
+import parking from "../../assets/parking.png"
+import pets from "../../assets/pets.png"
+import washer from "../../assets/washer.png"
+import wifi from "../../assets/wifi.png"
+import profile from "../../assets/profile.webp"
+import aircover from "../../assets/aircover.png"
 
 function ListingShowPage() {
     const dispatch = useDispatch();
@@ -52,8 +60,13 @@ function ListingShowPage() {
                                     <h2>{listing.guests} {listing.guests > 1 ? "guests" : "guest"} · {listing.bedrooms} {listing.bedrooms > 1 ? "bedrooms" : "bedroom"} · {listing.beds} {listing.beds > 1 ? "beds" : "bed"} · {listing.baths} {listing.baths > 1 ? "baths" : "bath"}</h2>
                                 </div>
                                 <div className="listing-show-details-title-image">
-                                    <img src="https://a0.muscache.com/im/pictures/user/31db696d-ead3-4f95-beaa-31e75c79172c.jpg?aki_policy=profile_large"></img>
+                                    <img src={profile}></img>
                                 </div>
+                            </div>
+
+                            <div className="listing-show-aircover">
+                                <img src={aircover}/>
+                                <h1>Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</h1>
                             </div>
 
                             <div className="listing-show-details-description">
@@ -65,32 +78,32 @@ function ListingShowPage() {
                                 <div className="listing-show-details-amenities-list">
                                     {listing.kitchen && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <i className="fa-thin fa-utensils"></i> Kitchen
+                                            <img src={kitchen} />Kitchen
                                             </div>
                                     )}
                                     {listing.wifi && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <i className="fa-light fa-wifi"></i> Wifi
+                                            <img src={wifi} /> Wifi
                                         </div>
                                     )}
                                     {listing.parking && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <i className="fa-regular fa-car"></i> Parking
+                                            <img src={parking} /> Parking
                                         </div>
                                     )}
                                     {listing.airCon && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <i className="fa-light fa-snowflake" /> Air Conditioning
+                                            <img src={airCon} /> Air Conditioning
                                         </div>
                                     )}
                                     {listing.washer && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <i className="fa-regular fa-washing-machine"></i> Washer
+                                            <img src={washer} /> Washer
                                         </div>
                                     )}
                                     {listing.pets && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <i className="fa-thin fa-paw-simple"></i> Pets allowed
+                                            <img src={pets}/> Pets allowed
                                         </div>
                                     )}
                                 </div>

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "./Navigation.css";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
+import logo from "../../assets/logo.png"
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -20,7 +21,7 @@ function Navigation() {
       <div className="nav-bar">
       <NavLink exact to="/">
         <button className="logo-button">
-          <h1><i className="fa-brands fa-airbnb"></i> rarebnb</h1>
+          <h1><img src={logo} /> rarebnb</h1>
         </button>
       </NavLink>
       <div className="search-bar">Search Bar</div>

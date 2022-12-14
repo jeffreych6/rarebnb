@@ -21,5 +21,8 @@
   "homepage": "https://github.com/jeffreych6/airbnb#readme",
   "engines": {
     "node": "16.x"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.17.1"
   }
 }

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import * as reservationsActions from "../../store/reservations";
 import { useSelector, useDispatch } from "react-redux";
 import "./ReservationForm.css";
+import logo from "../../assets/logo.png"
 import moment from 'moment';
 
 function ReservationForm({ listing }) {
@@ -77,71 +78,93 @@ function ReservationForm({ listing }) {
   }
 
   return (
-    <div className="reservation-form-container">
-      <form className="reservation-form" onSubmit={handleSubmit}>
-        <div className="reservation-form-inputs">
-          <div className="reservation-form-dates-container">
-              <label className="reservation-form-start-date">
-                  <div className="reservation-form-date-text">CHECK-IN</div>
+    <>
+      <div className="reservation-form-container">
+        <div className="reservation-form-header">
+          <div className="reservation-form-header-price">
+            <span>${listing.price}</span> night
+          </div>
+          <div className="reservation-form-header-rating">
+            <i className="fa-sharp fa-solid fa-star"></i><span>5.0</span>
+          </div>
+        </div>
+
+        <form className="reservation-form" onSubmit={handleSubmit}>
+          <div className="reservation-form-inputs">
+            <div className="reservation-form-dates-container">
+                <label className="reservation-form-start-date">
+                    <div className="reservation-form-date-text">CHECK-IN</div>
+                    <input 
+                      className="reservation-form-date-input"
+                      type="date"
+                      value={startDate}
+                      min={moment().format("YYYY-MM-DD")}
+                      max={calculateEndDate(endDate, -0.5)}
+                      onChange={(e) => setStartDate(e.target.value)}
+                    />
+                </label>
+
+                <label className="reservation-form-end-date">
+                  <div className="reservation-form-date-text">CHECKOUT</div>
                   <input 
                     className="reservation-form-date-input"
                     type="date"
-                    value={startDate}
-                    min={moment().format("YYYY-MM-DD")}
-                    max={calculateEndDate(endDate, -0.5)}
-                    onChange={(e) => setStartDate(e.target.value)}
+                    value={endDate}
+                    min={calculateEndDate(startDate, 2)}
+                    onChange={(e) => setEndDate(e.target.value)}
                   />
-              </label>
-
-              <label className="reservation-form-end-date">
-                <div className="reservation-form-date-text">CHECKOUT</div>
-                <input 
-                  className="reservation-form-date-input"
-                  type="date"
-                  value={endDate}
-                  min={calculateEndDate(startDate, 2)}
-                  onChange={(e) => setEndDate(e.target.value)}
-                />
-              </label>
+                </label>
+            </div>
+            <label className="reservation-form-guests">
+              <div className="reservation-form-guests-text">GUESTS</div>
+              <input 
+                className="reservation-form-guests-input"
+                type="number"
+                value={numGuests}
+                min="1"
+                max={listing.guests}
+                onChange={(e) => setNumGuests(e.target.value)}
+              />
+            </label>
           </div>
-          <label className="reservation-form-guests">
-            <div className="reservation-form-guests-text">GUESTS</div>
-            <input 
-              className="reservation-form-guests-input"
-              type="number"
-              value={numGuests}
-              min="1"
-              max={listing.guests}
-              onChange={(e) => setNumGuests(e.target.value)}
-            />
-          </label>
+          {handleErrors("End date")}
+          <br />
+          {sessionUser ? 
+            <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button" type="submit" disabled>Reserve</button>
+          }
+        </form>
+
+        <div className="reservation-form-rows">
+          <div className="reservation-form-row-type">${listing.price.toLocaleString("en-US")} x {calculateDays(startDate, endDate)} nights</div>
+          <div className="reservation-form-row-price">${(listing.price * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
         </div>
-        {handleErrors("End date")}
-        <br />
-        {sessionUser ? 
-          <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button" type="submit" disabled>Reserve</button>
-        }
-      </form>
+        <div className="reservation-form-rows">
+          <div className="reservation-form-row-type">Cleaning fee</div>
+          <div className="reservation-form-row-price">${cleaningFee.toLocaleString("en-US")}</div>
+        </div>
+        <div className="reservation-form-rows">
+          <div className="reservation-form-row-type">Service fee</div>
+          <div className="reservation-form-row-price">${(serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+        </div>
+        <div className="reservation-form-divider"></div>
+        <div className="reservation-form-rows">
+          <div className="reservation-form-row-total">Total before tax</div>
+          <div className="reservation-form-row-total">${(listing.price * calculateDays(startDate, endDate) + cleaningFee + serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+        </div>
+      </div>
 
+      <div className="rare-find-container">
+          <div className="rare-find">
+            <div className="rare-find-text">
+              <span>This is a rare find.</span> {listing.firstName}'s place on RareBnb is usually fully booked.
+            </div>
+            <div className="rare-find-logo">
+              <img src={logo}/>
+            </div>
+          </div>
+      </div>
 
-      <div className="reservation-form-rows">
-        <div>${listing.price.toLocaleString("en-US")} x {calculateDays(startDate, endDate)} nights</div>
-        <div>${(listing.price * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
-      </div>
-      <div className="reservation-form-rows">
-        <div>Cleaning fee</div>
-        <div>${cleaningFee.toLocaleString("en-US")}</div>
-      </div>
-      <div className="reservation-form-rows">
-        <div>Service fee</div>
-        <div>${(serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
-      </div>
-      <div className="reservation-form-divider"></div>
-      <div className="reservation-form-rows">
-        <div>Total before tax</div>
-        <div>${(listing.price * calculateDays(startDate, endDate) + cleaningFee + serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
-      </div>
-    </div>
+    </>
   );
 }
 

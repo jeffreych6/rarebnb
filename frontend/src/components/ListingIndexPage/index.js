@@ -30,7 +30,10 @@ function ListingIndexPage() {
                             </div>
                         </div>
                         <div className="listing-index-description">
-                            {listing.beds} {listing.beds > 1 ? "beds" : "bed"}
+                            {listing.title}
+                        </div>
+                        <div className="listing-index-description">
+                            {listing.beds} {listing.beds > 1 ? "beds" : "bed"} · {listing.baths} {listing.baths > 1 ? "baths" : "bath"}
                         </div>
                         <div className="listing-index-price">
                             <span className="listing-index-description-styles">${listing.price}</span> night

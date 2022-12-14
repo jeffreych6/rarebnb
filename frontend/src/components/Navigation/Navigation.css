@@ -31,8 +31,9 @@
     letter-spacing: -1px;
 }
 
-.logo-button  i {
-    font-size: 36px;
+.logo-button  img {
+    height: 35px;
+    width: 35px;
     padding-right: 5px;
 }
 
