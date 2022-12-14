@@ -3,6 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../store/listings";
 import ReservationForm from "../ReservationForm"
+import MapContainer from "../MapContainer"
 import "./ListingShowPage.css";
 import airCon from "../../assets/airCon.png"
 import kitchen from "../../assets/kitchen.png"
@@ -114,6 +115,12 @@ function ListingShowPage() {
                         <div className="listing-show-reservations-container">
                             <ReservationForm listing={listing} />
                         </div>
+                    </div>
+                    
+                    <div className="listing-show-map-container">
+                        <h1>Where you'll be</h1>
+                        <MapContainer listing={listing} />
+                        <h2>{listing.city}, {listing.state}, {listing.country}</h2>
                     </div>
                 </div>
             )}

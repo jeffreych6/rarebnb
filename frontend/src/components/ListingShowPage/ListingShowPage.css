@@ -67,7 +67,7 @@
 
 .listing-show-details-container {
     display: flex;
-    /* border: 1px solid black; */
+    border-bottom: 1px solid #DDDDDD;
 }
 
 .listing-show-details {
@@ -126,7 +126,7 @@
 
 .listing-show-details-amenities {
     padding: 48px 0;
-    border-bottom: 1px solid #DDDDDD;
+    /* border-bottom: 1px solid #DDDDDD; */
 }
 
 .listing-show-details-amenities h1 {
@@ -157,4 +157,22 @@
 .listing-show-reservations-container {
     /* border: 1px solid black; */
     width: 70%
+}
+
+.listing-show-map-container {
+    padding: 48px 0;
+}
+
+.listing-show-map-container h1 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    padding: 0 0 24px
+}
+
+.listing-show-map-container h2 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    margin: 24px 0 16px;
 }

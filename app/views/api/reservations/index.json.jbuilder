@@ -14,6 +14,7 @@
             :city,
             :state,
             :country,
+            :guests,
             :price
 
         json.extract! reservation.listing.host,

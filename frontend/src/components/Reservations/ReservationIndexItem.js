@@ -50,9 +50,10 @@ function ReservationIndexItem({ reservation }) {
                 </div>
                 <img className="reservation-image" src={reservation.photosUrl[0]}></img>
             </div>
+            
             {showReservationModal && (
                 <Modal onClose={() => setShowReservationModal(false)}>
-                    <ReservationModal reservation = {reservation} />
+                    <ReservationModal reservation={reservation} />
                 </Modal>
             )}
         </>
