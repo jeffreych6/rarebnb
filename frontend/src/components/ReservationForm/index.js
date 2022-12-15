@@ -43,7 +43,7 @@ function ReservationForm({ listing }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/reservations")
+    history.push("/reservations") 
 
     setErrors([]);
     return dispatch(
@@ -55,27 +55,28 @@ function ReservationForm({ listing }) {
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
+
   };
 
-  const handleErrors = (formFieldType) => {
-    const errorList = []
+  // const handleErrors = (formFieldType) => {
+  //   const errorList = []
 
-    errors.map(error => {
-      const fieldType = formFieldType.split(" ").length > 1 ? error.split(" ")[0] + " " + error.split(" ")[1] : error.split(" ")[0]
-      const errorMessage = formFieldType.split(" ").length > 1 ? error.split(" ").slice(2).join(" ") : error.split(" ").slice(1).join(" ")
+  //   errors.map(error => {
+  //     const fieldType = formFieldType.split(" ").length > 1 ? error.split(" ")[0] + " " + error.split(" ")[1] : error.split(" ")[0]
+  //     const errorMessage = formFieldType.split(" ").length > 1 ? error.split(" ").slice(2).join(" ") : error.split(" ").slice(1).join(" ")
 
-      if (fieldType === formFieldType && !errorList.includes(errorMessage)) {
-        errorList.push(errorMessage)
-      }
-      return null;
-    })
+  //     if (fieldType === formFieldType && !errorList.includes(errorMessage)) {
+  //       errorList.push(errorMessage)
+  //     }
+  //     return null;
+  //   })
 
-    return (
-      <ul className="form-field-error">
-          {errorList.map(error => <li key={error}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{error}</li>)}
-      </ul>
-    )
-  }
+  //   return (
+  //     <ul className="form-field-error">
+  //         {errorList.map(error => <li key={error}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{error}</li>)}
+  //     </ul>
+  //   )
+  // }
 
   return (
     <>
@@ -127,7 +128,7 @@ function ReservationForm({ listing }) {
               />
             </label>
           </div>
-          {handleErrors("End date")}
+          {/* {handleErrors("End date")} */}
           <br />
           {sessionUser ? <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button-disabled" type="submit" disabled>Reserve</button>}
         </form>

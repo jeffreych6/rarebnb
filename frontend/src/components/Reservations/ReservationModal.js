@@ -36,7 +36,7 @@ function ReservationModal({ reservation }) {
   }
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     
     setErrors([]);
     return dispatch(

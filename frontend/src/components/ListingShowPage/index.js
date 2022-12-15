@@ -124,12 +124,13 @@ function ListingShowPage() {
                         </div>
 
                         <div className="listing-show-reservations-container">
-                            <ReservationForm listing={listing} />
+                            <div className="listing-show-reservations-form">
+                                <ReservationForm listing={listing} />
+                            </div>
                         </div>
                     </div>
 
                     <div className="listing-show-reviews-container">
-                        <h1><i className="fa-sharp fa-solid fa-star"></i> {averageRating(listing.reviews)} · {listing.reviews.length} reviews</h1>
                         <Reviews listing={listing} />
                     </div>
                     

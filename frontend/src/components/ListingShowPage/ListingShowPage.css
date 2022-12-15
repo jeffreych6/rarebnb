@@ -156,7 +156,13 @@
 
 .listing-show-reservations-container {
     /* border: 1px solid black; */
-    width: 70%
+    width: 70%;
+}
+
+.listing-show-reservations-form {
+    position: sticky;
+    top: 80px;
+    padding-bottom: 48px;
 }
 
 .listing-show-map-container {
@@ -178,12 +184,6 @@
 }
 
 .listing-show-reviews-container {
+    padding: 48px 0;
     border-bottom: 1px solid #DDDDDD;
-}
-
-.reviews-container h1 {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 26px;
-    padding: 0 0 24px
 }

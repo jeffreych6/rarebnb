@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink, Redirect, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal } from '../../context/Modal';
 import ReservationModal from './ReservationModal'
@@ -7,7 +7,21 @@ import * as reservationsActions from "../../store/reservations";
 import "./Reservations.css";
 
 function ReservationIndexItem({ reservation }) {
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const reservations = useSelector(state => Object.values(state.reservations))
+
+
     const [showReservationModal, setShowReservationModal] = useState(false);
+    // debugger
+
+    const handleClose = () => {
+        // const payload = reservations[reservation.id]
+        // dispatch()
+        history.push("/reservations")
+
+        setShowReservationModal(false)
+    }
 
     const titleize = (word) => {
         return word[0].toUpperCase() + word.slice(1)
@@ -52,7 +66,8 @@ function ReservationIndexItem({ reservation }) {
             </div>
             
             {showReservationModal && (
-                <Modal onClose={() => setShowReservationModal(false)}>
+                // <Modal onClose={(() => setShowReservationModal(false))}>
+                <Modal onClose={() => handleClose()}>
                     <ReservationModal reservation={reservation} />
                 </Modal>
             )}
