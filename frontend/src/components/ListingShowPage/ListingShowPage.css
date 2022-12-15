@@ -176,3 +176,14 @@
     font-weight: 600;
     margin: 24px 0 16px;
 }
+
+.listing-show-reviews-container {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.reviews-container h1 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    padding: 0 0 24px
+}

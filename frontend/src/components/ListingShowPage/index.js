@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../store/listings";
 import ReservationForm from "../ReservationForm"
 import MapContainer from "../MapContainer"
+import Reviews from "../Reviews"
 import "./ListingShowPage.css";
 import airCon from "../../assets/airCon.png"
 import kitchen from "../../assets/kitchen.png"
@@ -23,6 +24,16 @@ function ListingShowPage() {
         return word[0].toUpperCase() + word.slice(1)
     }
 
+    const averageRating = (listingReviews) => {
+        let totalRating = 0
+
+        listingReviews.forEach((review) => {
+            totalRating += review.rating
+        })
+
+        return totalRating / listingReviews.length
+    }
+
     useEffect(() => {
         dispatch(listingsActions.fetchListing(listingId))
     },[listingId])
@@ -36,7 +47,7 @@ function ListingShowPage() {
                             <h1>{listing.title}</h1>
                         </div>
                         <div className="listing-show-header-description">
-                            <i className="fa-sharp fa-solid fa-star"></i> 5.0 · 
+                            <i className="fa-sharp fa-solid fa-star"></i> {averageRating(listing.reviews)} · 
                             <span>{listing.city}, {listing.state}, {listing.country}</span>
                         </div>
                     </div>
@@ -115,6 +126,11 @@ function ListingShowPage() {
                         <div className="listing-show-reservations-container">
                             <ReservationForm listing={listing} />
                         </div>
+                    </div>
+
+                    <div className="listing-show-reviews-container">
+                        <h1><i className="fa-sharp fa-solid fa-star"></i> {averageRating(listing.reviews)} · {listing.reviews.length} reviews</h1>
+                        <Reviews listing={listing} />
                     </div>
                     
                     <div className="listing-show-map-container">

@@ -40,6 +40,13 @@ class User < ApplicationRecord
       inverse_of: :guest,
       dependent: :destroy
 
+    has_many :reviews,
+      primary_key: :id,
+      foreign_key: :author_id,
+      class_name: :Review,
+      inverse_of: :author,
+      dependent: :destroy
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
   

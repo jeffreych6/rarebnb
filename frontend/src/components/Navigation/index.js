@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Navigation.css";
 import LoggedInDropDown from './LoggedInDropDown';
@@ -27,7 +27,7 @@ function Navigation() {
       <div className="search-bar">Search Bar
         
       </div>
-      {sessionLinks}
+        {sessionLinks}
       </div>
     </nav>
   );

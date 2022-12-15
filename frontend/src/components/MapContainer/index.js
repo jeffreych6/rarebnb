@@ -16,7 +16,7 @@ const MapContainer = ({listing}) => {
   ]
 
   const mapStyles = {        
-    height: "100vh",
+    height: "50vh",
     width: "100%"};
   
   const defaultCenter = {
