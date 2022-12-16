@@ -44,7 +44,6 @@ const MapContainer = ({listing}) => {
             <InfoWindow position={selected.location} clickable={true} onCloseClick={() => setSelected({})}>
               <>
                 <p>{selected.name}</p>
-                <p>hellooooooooooooooo this working!!!!!</p>
               </>
             </InfoWindow>
             )

@@ -58,26 +58,6 @@ function ReservationForm({ listing, rating }) {
 
   };
 
-  // const handleErrors = (formFieldType) => {
-  //   const errorList = []
-
-  //   errors.map(error => {
-  //     const fieldType = formFieldType.split(" ").length > 1 ? error.split(" ")[0] + " " + error.split(" ")[1] : error.split(" ")[0]
-  //     const errorMessage = formFieldType.split(" ").length > 1 ? error.split(" ").slice(2).join(" ") : error.split(" ").slice(1).join(" ")
-
-  //     if (fieldType === formFieldType && !errorList.includes(errorMessage)) {
-  //       errorList.push(errorMessage)
-  //     }
-  //     return null;
-  //   })
-
-  //   return (
-  //     <ul className="form-field-error">
-  //         {errorList.map(error => <li key={error}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{error}</li>)}
-  //     </ul>
-  //   )
-  // }
-
   return (
     <>
       <div className="reservation-form-container">
@@ -128,7 +108,6 @@ function ReservationForm({ listing, rating }) {
               />
             </label>
           </div>
-          {/* {handleErrors("End date")} */}
           <br />
           {sessionUser ? <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button-disabled" type="submit" disabled>Reserve</button>}
         </form>

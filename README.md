@@ -1,24 +1,141 @@
-# README
+# RareBnB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Background
 
-Things you may want to cover:
+<a href='https://rarebnb.onrender.com'>RareBnb</a> is a full-stack clone of AirBnb which not only displays listings of rare places to stay, but also what is considered rare finds on AirBnb!
 
-* Ruby version
+## Technologies, Libraries, APIS
+* Javascript
+* React
+* Redux
+* Ruby on Rails
+* Postgresql
+* AWS S3
+* Google Maps API
 
-* System dependencies
+## Functionality & MVPs
 
-* Configuration
+* Host on Render
+* Full user authentication (signup, login, logout)
+* View listings on an index page and a specific listing on a show page
+* Display the general location of a listing using Google Maps API
+* View, create, modify, and delete reservations
+* Read reviews made on listings
 
-* Database creation
+## Booking a reservation on the listing show page
 
-* Database initialization
+<iframe src="https://giphy.com/embed/8tzDWpwaO0vzfTl7Ny" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/8tzDWpwaO0vzfTl7Ny">via GIPHY</a></p>
 
-* How to run the test suite
+Within the show page of a listing, users can see all the details related to the listing such as photos, location, price, amenities, reviews, etc. All available information shown on the page is dynamically updated. There are vadildations in place to prevent the user from creating an impossible reservation.
 
-* Services (job queues, cache servers, search engines, etc.)
+ReservationForm.js
+```js
+<form className="reservation-form" onSubmit={handleSubmit}>
+          <div className="reservation-form-inputs">
+            <div className="reservation-form-dates-container">
+                <label className="reservation-form-start-date">
+                    <div className="reservation-form-date-text">CHECK-IN</div>
+                    <input 
+                      className="reservation-form-date-input"
+                      type="date"
+                      value={startDate}
+                      min={moment().format("YYYY-MM-DD")}
+                      max={calculateEndDate(endDate, -0.5)}
+                      onChange={(e) => setStartDate(e.target.value)}
+                    />
+                </label>
 
-* Deployment instructions
+                <label className="reservation-form-end-date">
+                  <div className="reservation-form-date-text">CHECKOUT</div>
+                  <input 
+                    className="reservation-form-date-input"
+                    type="date"
+                    value={endDate}
+                    min={calculateEndDate(startDate, 2)}
+                    onChange={(e) => setEndDate(e.target.value)}
+                  />
+                </label>
+            </div>
+            <label className="reservation-form-guests">
+              <div className="reservation-form-guests-text">GUESTS</div>
+              <input 
+                className="reservation-form-guests-input"
+                type="number"
+                value={numGuests}
+                min="1"
+                max={listing.guests}
+                onChange={(e) => setNumGuests(e.target.value)}
+              />
+            </label>
+          </div>
+          <br />
+          {sessionUser ? <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button-disabled" type="submit" disabled>Reserve</button>}
+        </form>
+```
 
-* ...
+## Modifying and deleting a reservation on the user's trips page
+
+<iframe src="https://giphy.com/embed/0cv2t79KdEVZu1ca0E" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/0cv2t79KdEVZu1ca0E">via GIPHY</a></p>
+
+Users can view their reservations on their Trips page. Depending on whether a reservation has already occurred (past today's date), it will be shown in the past trips list while future reservations appear in the upcoming trips list. Users cannot access old reservations. However, they can click on upcoming reservations which will display a modal where they can modify or delete their reservation.
+
+```js
+const upcomingReservationsList = (reservations) => {
+        const upcomingReservations = []
+        
+        reservations.forEach((reservation) => {
+            if (Date.parse(reservation.endDate) > Date.now()) {
+                upcomingReservations.push(reservation)
+            }
+        })
+
+        return upcomingReservations
+    }
+
+    const pastReservationsList = (reservations) => {
+        const pastReservationsList = []
+        
+        reservations.forEach((reservation) => {
+            if (Date.parse(reservation.endDate) < Date.now()) {
+                pastReservationsList.push(reservation)
+            }
+        })
+
+        return pastReservationsList
+    }
+
+    const upcomingReservations = upcomingReservationsList(reservations).map((reservation) => {
+        return (
+            <ReservationIndexItem key={reservation.id} reservation={reservation} />
+        )
+    })
+
+    const pastReservations = pastReservationsList(reservations).map((reservation) => {
+        return (
+            <ReservationPastTrips key={reservation.id} reservation={reservation} />
+        )
+    })
+
+
+    return (
+        <div className="reservations-index-container">
+            <h1 className="reservations-index-trip-title">
+                Trips
+            </h1>
+            <div className="reservation-index-upcoming-reservations">
+                Upcoming reservations
+            </div>
+            {upcomingReservations}
+            <div className="reservation-index-upcoming-reservations">
+                Where you've been
+            </div>
+            {pastReservations}
+        </div>
+    )
+```
+
+
+## Future Implementation
+* Search/filter function to display specific listings
+* Create reviews
+* Carousel for listing photos
