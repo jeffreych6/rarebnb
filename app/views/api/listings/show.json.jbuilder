@@ -31,6 +31,10 @@ json.listing do
     :first_name,
     :last_name
 
+    if @listing.host.photo.attached?
+      json.photo_url url_for(@listing.host.photo)
+    end
+
   json.reviews @listing.reviews.map do |review|
     json.extract! review,
       :id,
@@ -47,6 +51,10 @@ json.listing do
 
     json.extract! review.author,
       :first_name
+      if review.author.photo.attached?
+        json.photo_url url_for(review.author.photo)
+      end
+
   end
   
 end

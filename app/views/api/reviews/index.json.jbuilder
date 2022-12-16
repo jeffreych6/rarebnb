@@ -26,8 +26,8 @@
             :first_name,
             :last_name
 
-            # if reservation.listing.photos.attached?
-            #     json.photos_url reservation.listing.photos.map{|photo| url_for(photo)}
+            # if review.author.photo.attached?
+            #     json.photo_url url_for(review.photo)
             # end
     end
 end

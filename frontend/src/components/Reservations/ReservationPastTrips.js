@@ -13,7 +13,7 @@ function ReservationPastTrips({ reservation }) {
 
 
     const [showReservationModal, setShowReservationModal] = useState(false);
-    // debugger
+
 
     const handleClose = () => {
         // const payload = reservations[reservation.id]

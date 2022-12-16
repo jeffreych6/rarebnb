@@ -26,6 +26,8 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
+    has_one_attached :photo
+
     has_many :listings,
       primary_key: :id,
       foreign_key: :host_id,

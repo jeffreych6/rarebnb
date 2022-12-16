@@ -37,6 +37,190 @@ jeffrey = User.create!(
   birth_date: '1994-09-16'
 )
 
+gleb = User.create!(
+  email: 'gleb@user.io', 
+  password: 'password',
+  first_name: 'Gleb',
+  last_name: 'M',
+  birth_date: '1994-09-16'
+)
+
+bonnie = User.create!(
+  email: 'bonnie@user.io', 
+  password: 'password',
+  first_name: 'Bonnie',
+  last_name: 'L',
+  birth_date: '1994-09-16'
+)
+
+justin = User.create!(
+  email: 'justin@user.io', 
+  password: 'password',
+  first_name: 'Justin',
+  last_name: 'H',
+  birth_date: '1994-09-16'
+)
+
+raymond = User.create!(
+  email: 'raymond@user.io', 
+  password: 'password',
+  first_name: 'Raymond',
+  last_name: 'C',
+  birth_date: '1994-09-16'
+)
+
+gigi = User.create!(
+  email: 'gigi@user.io', 
+  password: 'password',
+  first_name: 'Gigi',
+  last_name: 'Y',
+  birth_date: '1994-09-16'
+)
+
+anthony = User.create!(
+  email: 'anthony@user.io', 
+  password: 'password',
+  first_name: 'Anthony',
+  last_name: 'C',
+  birth_date: '1994-09-16'
+)
+
+arnob = User.create!(
+  email: 'arnob@user.io', 
+  password: 'password',
+  first_name: 'Arnob',
+  last_name: 'D',
+  birth_date: '1994-09-16'
+)
+
+brian = User.create!(
+  email: 'brian@user.io', 
+  password: 'password',
+  first_name: 'Brian',
+  last_name: 'Y',
+  birth_date: '1994-09-16'
+)
+
+cath = User.create!(
+  email: 'cath@user.io', 
+  password: 'password',
+  first_name: 'Cath',
+  last_name: 'A',
+  birth_date: '1994-09-16'
+)
+
+chazz = User.create!(
+  email: 'chazz@user.io', 
+  password: 'password',
+  first_name: 'Chazz',
+  last_name: 'L',
+  birth_date: '1994-09-16'
+)
+
+daniel = User.create!(
+  email: 'daniel@user.io', 
+  password: 'password',
+  first_name: 'Daniel',
+  last_name: 'K',
+  birth_date: '1994-09-16'
+)
+
+ethan = User.create!(
+  email: 'ethan@user.io', 
+  password: 'password',
+  first_name: 'Ethan',
+  last_name: 'G',
+  birth_date: '1994-09-16'
+)
+
+evan = User.create!(
+  email: 'evan@user.io', 
+  password: 'password',
+  first_name: 'Evan',
+  last_name: 'R',
+  birth_date: '1994-09-16'
+)
+
+ish = User.create!(
+  email: 'ish@user.io', 
+  password: 'password',
+  first_name: 'Ish',
+  last_name: 'A',
+  birth_date: '1994-09-16'
+)
+
+jeremy = User.create!(
+  email: 'jeremy@user.io', 
+  password: 'password',
+  first_name: 'Jeremy',
+  last_name: 'S',
+  birth_date: '1994-09-16'
+)
+
+jimmy = User.create!(
+  email: 'jimmy@user.io', 
+  password: 'password',
+  first_name: 'Jimmy',
+  last_name: 'V',
+  birth_date: '1994-09-16'
+)
+
+julian = User.create!(
+  email: 'julian@user.io', 
+  password: 'password',
+  first_name: 'Julian',
+  last_name: 'C',
+  birth_date: '1994-09-16'
+)
+
+justink = User.create!(
+  email: 'justink@user.io', 
+  password: 'password',
+  first_name: 'Justin',
+  last_name: 'K',
+  birth_date: '1994-09-16'
+)
+
+kunju = User.create!(
+  email: 'kunju@user.io', 
+  password: 'password',
+  first_name: 'Kunju',
+  last_name: 'K',
+  birth_date: '1994-09-16'
+)
+
+ming = User.create!(
+  email: 'ming@user.io', 
+  password: 'password',
+  first_name: 'Ming',
+  last_name: 'Z',
+  birth_date: '1994-09-16'
+)
+
+qiao = User.create!(
+  email: 'qiao@user.io', 
+  password: 'password',
+  first_name: 'Qiao',
+  last_name: 'H',
+  birth_date: '1994-09-16'
+)
+
+ross = User.create!(
+  email: 'ross@user.io', 
+  password: 'password',
+  first_name: 'Ross',
+  last_name: 'M',
+  birth_date: '1994-09-16'
+)
+
+yong = User.create!(
+  email: 'yong@user.io', 
+  password: 'password',
+  first_name: 'Daniel',
+  last_name: 'K',
+  birth_date: '1994-09-16'
+)
+
 puts "Creating listings..."
 wilderness_tower = Listing.create!(
   host_id: jeffrey.id,
@@ -157,6 +341,30 @@ log_cabin = Listing.create!(
   pets: true
 )
 
+glebs_car = Listing.create!(
+  host_id: gleb.id,
+  title: "Gleb's Sedan",
+  description: "The 2019 Honda Accord comes standard with a 192-horsepower turbocharged 1.5-liter four-cylinder engine. A continuously variable automatic transmission (CVT) and front-wheel drive are standard. This powertrain is perfectly fine for everyday driving, and it scoots the Accord off the line and up to speed briskly.",
+  property_type: "car",
+  price: 300,
+  city: 'New York',
+  state: 'New York',
+  country: 'United States',
+  lat: 40.7359,
+  lng: -73.9911,
+  zip_code: 10003,
+  guests: 6,
+  bedrooms: 1,
+  beds: 3,
+  baths: 1,
+  kitchen: false,
+  parking: true,
+  wifi: false,
+  washer: false,
+  air_con: true,
+  pets: true
+)
+
 glamping = Listing.create!(
   host_id: jeffrey.id,
   title: "Glamping",
@@ -229,26 +437,26 @@ highlands_castle = Listing.create!(
   pets: true
 )
 
-cabane_jacuzzi = Listing.create!(
+moose_meadow_lodge = Listing.create!(
   host_id: jeffrey.id,
-  title: "Cabane Jacuzzi",
-  description: "You will be alone in the world in your treehouse. You observe the forest through the windows of your cozy nest. The jacuzzi is heated to 38°C on your terrace. In the early morning, enjoy a gourmet breakfast with bird songs. For your comfort, you have on the floor a small cabin with private bathroom and dining area. Ideal for a break of nature 1h from Paris and 30mn from Disney.",
+  title: "Moose Meadow Lodge",
+  description: "Waking up to the splashing of rainbow trout and the music of the hermit thrush as you gaze out on the pristine pond at Moose Meadow. The Treehouse is where nature and luxury come together in tranquil harmony, and where your imagination can soar. It's a perfect location to isolate yourself with your loved one, away from others.",
   property_type: "treehouse",
-  price: 291,
-  city: 'Rosoy-en-Multien',
-  state: 'Hauts-de-France',
-  country: 'France',
-  lat: 49.0953,
-  lng: 2.9875,
-  zip_code: 60620,
-  guests: 2,
+  price: 650,
+  city: 'Waterbury',
+  state: 'Vermont',
+  country: 'United States',
+  lat: 44.3378,
+  lng: -72.7562,
+  zip_code: 05671,
+  guests: 4,
   bedrooms: 1,
-  beds: 2,
+  beds: 1,
   baths: 1,
   kitchen: true,
   parking: true,
   wifi: true,
-  washer: false,
+  washer: true,
   air_con: false,
   pets: true
 )
@@ -273,6 +481,102 @@ earthouse = Listing.create!(
   parking: true,
   wifi: true,
   washer: true,
+  air_con: true,
+  pets: true
+)
+
+forest_gully_farms = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Forest Gully Farms",
+  description: "Not your ordinary BnB! These underground huts provide a unique camping vacation near Nashville, TN. Unlike other places, we provide a private gated driveway separate from our home's driveway. Come stay in the cedar Gully huts where we provide you with your own chickens, veggies and property. You won't run into other customers here, this is a secluded getaway.  Be a farmer for a weekend or hang out by the fire pit, hike to the creek and waterfalls or pick from our food forest or veggie garden.",
+  property_type: "earthen home",
+  price: 375,
+  city: 'Santa Fe',
+  state: 'Tennessee',
+  country: 'United States',
+  lat: 35.7351,
+  lng: -87.1281,
+  zip_code: 38482,
+  guests: 8,
+  bedrooms: 2,
+  beds: 6,
+  baths: 2,
+  kitchen: true,
+  parking: true,
+  wifi: false,
+  washer: true,
+  air_con: true,
+  pets: true
+)
+
+paradise_island = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Paradise Island",
+  description: "Take a trip to Paradise Island and feel the fantasy of  renting a island right here in Michigan its only Island rental. This will bring memories of a lifetime for your group that will top none of the past rentals. Upon arrival you will can see the special character of this exquisite estate and all it has to offer with fire and water! Rest and relax a getaway for the mind body and soul with options for experiences and getaways with our experience concierge app that gives you options for all!",
+  property_type: "entire home",
+  price: 4600,
+  city: 'Battle Creek',
+  state: 'Michigan',
+  country: 'United States',
+  lat: 42.3211,
+  lng: -85.1797,
+  zip_code: 49014,
+  guests: 12,
+  bedrooms: 4,
+  beds: 6,
+  baths: 4,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: true,
+  air_con: true,
+  pets: true
+)
+
+navajo_hogan = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Navajo Hogan",
+  description: "Our unique home will provide a once in a life time off-the-grid experience.   Located in a secluded and remote location of the Western Navajo Nation, our home is easily accessible to local restaurants, stores, and not far from two natural wonders, the Grand Canyon and Monument Valley.",
+  property_type: "earthen home",
+  price: 215,
+  city: 'Cameron',
+  state: 'Arizona',
+  country: 'United States',
+  lat: 35.8758,
+  lng: -111.4129,
+  zip_code: 86020,
+  guests: 2,
+  bedrooms: 1,
+  beds: 2,
+  baths: 1,
+  kitchen: false,
+  parking: true,
+  wifi: false,
+  washer: false,
+  air_con: false,
+  pets: true
+)
+
+orchard_views = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Orchard Views",
+  description: "Wake up in a lofted bedroom wrapped in windows and descend a knotty wood staircase into the open layout of this radiant tiny home. Make coffee in a cozy kitchen, then gather around a slate fire pit in the evening and wait for the stars to emerge. Seen in Travel+Leisure, Time Out Airbnb press,  #Tinyescapeny for more pics! Tv, Lux amenities, more!",
+  property_type: "tiny home",
+  price: 192,
+  city: 'Marlboro',
+  state: 'New York',
+  country: 'United States',
+  lat: 41.6056,
+  lng: -73.9715,
+  zip_code: 12542,
+  guests: 4,
+  bedrooms: 2,
+  beds: 3,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: false,
   air_con: true,
   pets: true
 )
@@ -307,10 +611,26 @@ puts "Creating reservations..."
 
 Reservation.create!(
   guest_id: demo.id,
+  listing_id: the_grand_tiki.id,
+  start_date: '2022-11-30',
+  end_date: '2022-12-05',
+  num_guests: 1
+)
+
+Reservation.create!(
+  guest_id: demo.id,
   listing_id: guard_tower.id,
   start_date: '2022-12-05',
   end_date: '2022-12-12',
-  num_guests: 3
+  num_guests: 2
+)
+
+Reservation.create!(
+  guest_id: demo.id,
+  listing_id: glebs_car.id,
+  start_date: '2022-06-01',
+  end_date: '2022-12-15',
+  num_guests: 6
 )
 
 Reservation.create!(
@@ -323,8 +643,9 @@ Reservation.create!(
 
 puts "Creating reviews..."
 # Need to make author_id and listing_id unique for each review
+
 Review.create!(
-  author_id: 1,
+  author_id: 3,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
@@ -333,12 +654,210 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Great host!",
-  review_date: '2022-11-24'
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
 )
 
 Review.create!(
-  author_id: 1,
+  author_id: 3,
+  listing_id: 2,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 3,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 6,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 7,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 8,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 9,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 10,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 11,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 12,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 13,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 14,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 3,
+  listing_id: 15,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Absolutely loved staying in the middle of nowhere!",
+  review_date: '2022-11-15'
+)
+
+#
+
+Review.create!(
+  author_id: 4,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
@@ -347,13 +866,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Great host!",
-  review_date: '2022-11-24'
+  review: "Best host ever",
+  review_date: '2022-10-15'
 )
 
 Review.create!(
-  author_id: 1,
-  listing_id: 1,
+  author_id: 4,
+  listing_id: 2,
   rating: 4,
   cleanliness: 4,
   accuracy: 4,
@@ -361,68 +880,222 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Great host!",
-  review_date: '2022-11-24'
+  review: "Best host ever",
+  review_date: '2022-10-15'
 )
 
 Review.create!(
-  author_id: 1,
+  author_id: 4,
+  listing_id: 3,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 5,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 6,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 7,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 8,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 9,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 10,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 12,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 12,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 13,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 14,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 4,
+  listing_id: 15,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 5,
+  listing_id: 1,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 5,
   listing_id: 2,
-  rating: 3,
-  cleanliness: 3,
-  accuracy: 3,
-  communication: 3,
-  location: 3,
-  check_in: 3,
-  value: 3,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
   review: "Great host!",
-  review_date: '2022-11-24'
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 1,
-  listing_id: 2,
-  rating: 3,
-  cleanliness: 3,
-  accuracy: 3,
-  communication: 3,
-  location: 3,
-  check_in: 3,
-  value: 3,
-  review: "Great host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 1,
-  listing_id: 2,
-  rating: 3,
-  cleanliness: 3,
-  accuracy: 3,
-  communication: 3,
-  location: 3,
-  check_in: 3,
-  value: 3,
-  review: "Great host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 1,
-  listing_id: 2,
-  rating: 3,
-  cleanliness: 3,
-  accuracy: 3,
-  communication: 3,
-  location: 3,
-  check_in: 3,
-  value: 3,
-  review: "Great host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 1,
+  author_id: 5,
   listing_id: 3,
   rating: 5,
   cleanliness: 5,
@@ -432,11 +1105,11 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Great host!",
-  review_date: '2022-11-24'
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 1,
+  author_id: 5,
   listing_id: 4,
   rating: 5,
   cleanliness: 5,
@@ -446,11 +1119,11 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Great host!",
-  review_date: '2022-11-24'
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 1,
+  author_id: 5,
   listing_id: 5,
   rating: 5,
   cleanliness: 5,
@@ -460,81 +1133,11 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Great host!",
-  review_date: '2022-11-24'
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 2,
-  listing_id: 1,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
-  review: "Superb host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 2,
-  listing_id: 2,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
-  review: "Superb host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 2,
-  listing_id: 3,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
-  review: "Superb host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 2,
-  listing_id: 4,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
-  review: "Superb host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 2,
-  listing_id: 5,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
-  review: "Superb host!",
-  review_date: '2022-11-24'
-)
-
-Review.create!(
-  author_id: 2,
+  author_id: 5,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -543,11 +1146,12 @@ Review.create!(
   location: 5,
   check_in: 5,
   value: 5,
-  review: "Superb host!",
+  review: "Great host!",
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: 5,
   listing_id: 7,
   rating: 5,
   cleanliness: 5,
@@ -556,11 +1160,12 @@ Review.create!(
   location: 5,
   check_in: 5,
   value: 5,
-  review: "Superb host!",
+  review: "Great host!",
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: 5,
   listing_id: 8,
   rating: 5,
   cleanliness: 5,
@@ -569,12 +1174,12 @@ Review.create!(
   location: 5,
   check_in: 5,
   value: 5,
-  review: "Superb host!",
-  review_date: '2021-11-24'
+  review: "Great host!",
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: 5,
   listing_id: 9,
   rating: 5,
   cleanliness: 5,
@@ -583,12 +1188,12 @@ Review.create!(
   location: 5,
   check_in: 5,
   value: 5,
-  review: "Superb host!",
-  review_date: '1994-11-24'
+  review: "Great host!",
+  review_date: '2022-12-15'
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: 5,
   listing_id: 10,
   rating: 5,
   cleanliness: 5,
@@ -597,8 +1202,288 @@ Review.create!(
   location: 5,
   check_in: 5,
   value: 5,
-  review: "Superb host!",
-  review_date: '2020-11-24'
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 5,
+  listing_id: 11,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 5,
+  listing_id: 12,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 5,
+  listing_id: 13,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 5,
+  listing_id: 14,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 5,
+  listing_id: 15,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Great host!",
+  review_date: '2022-12-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 1,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 2,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 3,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 5,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 6,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 7,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 8,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 9,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 10,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 12,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 12,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 13,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 14,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 6,
+  listing_id: 15,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Best host ever",
+  review_date: '2022-10-15'
 )
 
 puts "Attaching listing photos..."
@@ -651,18 +1536,77 @@ highlands_castle.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.
 highlands_castle.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/highlands_castle/highlands_castle_4.webp'), filename: 'highlands_castle_4.webp')
 highlands_castle.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/highlands_castle/highlands_castle_5.webp'), filename: 'highlands_castle_5.webp')
 
-
-cabane_jacuzzi.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/cabane_jacuzzi/cabane_jacuzzi_1.webp'), filename: 'cabane_jacuzzi_1.webp')
-cabane_jacuzzi.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/cabane_jacuzzi/cabane_jacuzzi_2.webp'), filename: 'cabane_jacuzzi_2.webp')
-cabane_jacuzzi.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/cabane_jacuzzi/cabane_jacuzzi_3.webp'), filename: 'cabane_jacuzzi_3.webp')
-cabane_jacuzzi.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/cabane_jacuzzi/cabane_jacuzzi_4.webp'), filename: 'cabane_jacuzzi_4.webp')
-cabane_jacuzzi.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/cabane_jacuzzi/cabane_jacuzzi_5.webp'), filename: 'cabane_jacuzzi_5.webp')
-
 earthouse.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/earthouse/earthouse_1.jpeg'), filename: 'earthouse_1.jpeg')
 earthouse.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/earthouse/earthouse_2.webp'), filename: 'earthouse_2.wepb')
 earthouse.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/earthouse/earthouse_3.webp'), filename: 'earthouse_3.wepb')
 earthouse.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/earthouse/earthouse_4.webp'), filename: 'earthouse_4.wepb')
 earthouse.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/earthouse/earthouse_5.webp'), filename: 'earthouse_5.wepb')
+
+glebs_car.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glebs_car/glebs_car_1.jpeg'), filename: 'glebs_car_1.jpeg')
+glebs_car.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glebs_car/glebs_car_2.jpg'), filename: 'glebs_car_2.jpg')
+glebs_car.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glebs_car/glebs_car_3.jpeg'), filename: 'glebs_car_3.jpeg')
+glebs_car.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glebs_car/glebs_car_4.jpeg'), filename: 'glebs_car_4.jpeg')
+glebs_car.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glebs_car/glebs_car_5.jpeg'), filename: 'glebs_car_5.jpeg')
+
+forest_gully_farms.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/forest_gully_farms/forest_gully_farms_1.webp'), filename: 'forest_gullty_farms_1.webp')
+forest_gully_farms.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/forest_gully_farms/forest_gully_farms_2.webp'), filename: 'forest_gully_farms_2.webp')
+forest_gully_farms.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/forest_gully_farms/forest_gully_farms_3.webp'), filename: 'forest_gully_farms_3.webp')
+forest_gully_farms.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/forest_gully_farms/forest_gully_farms_4.webp'), filename: 'forest_gully_farms_4.webp')
+forest_gully_farms.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/forest_gully_farms/forest_gully_farms_5.webp'), filename: 'forest_gully_farms_5.webp')
+
+moose_meadow_lodge.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/moose_meadow_lodge/moose_meadow_lodge_1.webp'), filename: 'moose_meadow_lodge_1.webp')
+moose_meadow_lodge.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/moose_meadow_lodge/moose_meadow_lodge_2.webp'), filename: 'moose_meadow_lodge_2.webp')
+moose_meadow_lodge.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/moose_meadow_lodge/moose_meadow_lodge_3.webp'), filename: 'moose_meadow_lodge_3.webp')
+moose_meadow_lodge.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/moose_meadow_lodge/moose_meadow_lodge_4.webp'), filename: 'moose_meadow_lodge_4.webp')
+moose_meadow_lodge.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/moose_meadow_lodge/moose_meadow_lodge_5.webp'), filename: 'moose_meadow_lodge_5.webp')
+
+navajo_hogan.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/navajo_hogan/navajo_hogan_1.webp'), filename: 'navajo_hogan_1.webp')
+navajo_hogan.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/navajo_hogan/navajo_hogan_2.webp'), filename: 'navajo_hogan_2.webp')
+navajo_hogan.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/navajo_hogan/navajo_hogan_3.webp'), filename: 'navajo_hogan_3.webp')
+navajo_hogan.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/navajo_hogan/navajo_hogan_4.webp'), filename: 'navajo_hogan_4.webp')
+navajo_hogan.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/navajo_hogan/navajo_hogan_5.webp'), filename: 'navajo_hogan_5.webp')
+
+orchard_views.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/orchard_views/orchard_views_1.webp'), filename: 'orchard_views_1.webp')
+orchard_views.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/orchard_views/orchard_views_2.webp'), filename: 'orchard_views_2.webp')
+orchard_views.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/orchard_views/orchard_views_3.webp'), filename: 'orchard_views_3.webp')
+orchard_views.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/orchard_views/orchard_views_4.webp'), filename: 'orchard_views_4.webp')
+orchard_views.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/orchard_views/orchard_views_5.webp'), filename: 'orchard_views_5.webp')
+
+paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_1.webp'), filename: 'paradise_island_1.webp')
+paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_2.webp'), filename: 'paradise_island_2.webp')
+paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_3.webp'), filename: 'paradise_island_3.webp')
+paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_4.webp'), filename: 'paradise_island_4.webp')
+paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_5.webp'), filename: 'paradise_island_5.webp')
+
+demo.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+jeffrey.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/jeffrey.webp'), filename: 'jeffrey.webp')
+gleb.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/gleb.png'), filename: 'gleb.png')
+gigi.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/gigi.png'), filename: 'gigi.png')
+raymond.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/raymond.png'), filename: 'raymond.png')
+bonnie.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+justin.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+anthony.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+arnob.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+brian.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+cath.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+chazz.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+daniel.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+ethan.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+evan.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+ish.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+jeremy.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+jimmy.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+julian.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+justink.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+kunju.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+ming.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+qiao.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+ross.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+yong.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
+
+
+
+
 
 
 

@@ -86,7 +86,7 @@ function ReservationForm({ listing, rating }) {
             <span>${listing.price}</span> night
           </div>
           <div className="reservation-form-header-rating">
-            <i className="fa-sharp fa-solid fa-star"></i><span>{rating}</span>
+            <i className="fa-sharp fa-solid fa-star"></i><span>{rating.toFixed(2)}</span>
           </div>
         </div>
 

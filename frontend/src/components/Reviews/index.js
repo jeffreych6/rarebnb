@@ -81,7 +81,7 @@ function Reviews({ listing }) {
         for (let i = 0; i < 6 && i < reviews.length; i++) {
             reviewsArray.push(reviews[i])
         }
-        console.log(reviewsArray)
+
         return reviewsArray
     }
 
@@ -90,7 +90,7 @@ function Reviews({ listing }) {
         return (
             <div key={review.id} className="review-content">
                 <div className="review-author">
-                    <img src={profile}></img>
+                    <img src={review.photoUrl}></img>
                     <div className="review-author-info">
                         <span>{review.firstName}</span>
                         <h2>December 2022</h2>
@@ -105,7 +105,7 @@ function Reviews({ listing }) {
 
     return (
         <div className="reviews-container">
-            <h1><i className="fa-sharp fa-solid fa-star"></i>  {averageRating(listing.reviews)} · {listing.reviews.length} {listing.reviews.length > 1 ? "reviews" : "review"}</h1>
+            <h1><i className="fa-sharp fa-solid fa-star"></i>  {averageRating(listing.reviews).toFixed(2)} · {listing.reviews.length} {listing.reviews.length > 1 ? "reviews" : "review"}</h1>
             <div className="reviews-grid-ratings">
                 <div className="reviews-grid-ratings-container">
                     <div className="reviews-grid-ratings-content">
@@ -117,7 +117,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageCleanliness(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCleanliness(listing.reviews)}</h1>
+                                <h1>{averageCleanliness(listing.reviews).toFixed(2)}</h1>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageAccuracy(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageAccuracy(listing.reviews)}</h1>
+                                <h1>{averageAccuracy(listing.reviews).toFixed(2)}</h1>
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageCommunication(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCommunication(listing.reviews)}</h1>
+                                <h1>{averageCommunication(listing.reviews).toFixed(2)}</h1>
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageLocation(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageLocation(listing.reviews)}</h1>
+                                <h1>{averageLocation(listing.reviews).toFixed(2)}</h1>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageCheckIn(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCheckIn(listing.reviews)}</h1>
+                                <h1>{averageCheckIn(listing.reviews).toFixed(2)}</h1>
                             </div>
                         </div>
                     </div>
@@ -197,7 +197,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageValue(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageValue(listing.reviews)}</h1>
+                                <h1>{averageValue(listing.reviews).toFixed(2)}</h1>
                             </div>
                         </div>
                     </div>
@@ -207,10 +207,6 @@ function Reviews({ listing }) {
             <div className="reviews-grid-comments">
                 {reviewContent}
             </div>
-
-
-
-
     </div>
     )
 }

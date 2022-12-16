@@ -47,7 +47,7 @@ function ListingShowPage() {
                             <h1>{listing.title}</h1>
                         </div>
                         <div className="listing-show-header-description">
-                            <i className="fa-sharp fa-solid fa-star"></i> {averageRating(listing.reviews)} · 
+                            <i className="fa-sharp fa-solid fa-star"></i> {averageRating(listing.reviews).toFixed(2)} · 
                             <span>{listing.city}, {listing.state}, {listing.country}</span>
                         </div>
                     </div>
@@ -68,11 +68,11 @@ function ListingShowPage() {
                         <div className="listing-show-details">
                             <div className="listing-show-details-title-container">
                                 <div className="listing-show-details-title">
-                                    <h1>{titleize(listing.propertyType)} hosted by {listing.firstName} HomeServices</h1>
+                                    <h1>{titleize(listing.propertyType)} hosted by {listing.firstName} {listing.lastName}</h1>
                                     <h2>{listing.guests} {listing.guests > 1 ? "guests" : "guest"} · {listing.bedrooms} {listing.bedrooms > 1 ? "bedrooms" : "bedroom"} · {listing.beds} {listing.beds > 1 ? "beds" : "bed"} · {listing.baths} {listing.baths > 1 ? "baths" : "bath"}</h2>
                                 </div>
                                 <div className="listing-show-details-title-image">
-                                    <img src={profile}></img>
+                                    <img src={listing.photoUrl}></img>
                                 </div>
                             </div>
 
