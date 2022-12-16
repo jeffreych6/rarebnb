@@ -39,11 +39,11 @@ function LoggedInDropDown() {
         
         {showMenu && (
           <ul className="profile-dropdown">
-            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Messages</div></li>
+            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Messages</div></li>
             <NavLink className="drop-down-reservations-link" to="/reservations">
-              <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Trips</div></li>
+              <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Trips</div></li>
             </NavLink>
-            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Wishlist</div></li>
+            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Wishlist</div></li>
             <div className="drop-down-menu-divider"></div>
             <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>
             <li className="drop-down-menu-options-container" onClick={handleLogOut}><div className="drop-down-menu-options">Log Out</div></li>

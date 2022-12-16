@@ -52,7 +52,7 @@ function Reservations() {
                 Trips
             </h1>
             <div className="reservation-index-upcoming-reservations">
-                Upcoming reservations
+                Upcoming reservations ({reservations.length})
             </div>
             {reservation}
         </div>

@@ -115,7 +115,7 @@ function ListingShowPage() {
                                     )}
                                     {listing.pets && (
                                         <div className="listing-show-details-amenities-list-item">
-                                            <img src={pets}/> Pets allowed
+                                            <img src={pets}/>Pets allowed
                                         </div>
                                     )}
                                 </div>
@@ -125,7 +125,7 @@ function ListingShowPage() {
 
                         <div className="listing-show-reservations-container">
                             <div className="listing-show-reservations-form">
-                                <ReservationForm listing={listing} />
+                                <ReservationForm listing={listing} rating={averageRating(listing.reviews)} />
                             </div>
                         </div>
                     </div>

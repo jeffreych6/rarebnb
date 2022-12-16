@@ -16,6 +16,7 @@
 .reviews-grid-ratings {
     display: grid;
     grid-template-columns: auto auto;
+    margin-bottom: 24px
 }
 
 .reviews-grid-ratings-container {
@@ -37,7 +38,9 @@
 
 .reviews-grid-value {
     display: flex;
-    margin-right: 8px
+    margin-right: 8px;
+    width: 100px;
+    padding-bottom: 24px;
 }
 
 .reviews-grid-type h1{
@@ -45,6 +48,21 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+}
+
+.reviews-grid-rating-bar {
+    background: rgb(221, 221, 221);
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+    margin-right: 4px;
+}
+
+.reviews-grid-rating-bar span {
+    display: flex;
+    align-items: center;
+    background: #222222;
+    border-radius: 2px;
 }
 
 .reviews-grid-ratings-average h1{
@@ -56,13 +74,37 @@
 }
 
 .review-author {
-    display: flex
+    display: flex;
+    margin-bottom: 16px;
+}
 
+.review-author span {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.review-author h2 {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 400
 }
 
 .review-author img {
-    height: 56px;
-    width: 56px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 12px;
+}
+
+.review-comment {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.review-content {
+    margin-right: 10%;
+    margin-bottom: 40px;
 }

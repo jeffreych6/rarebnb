@@ -75,16 +75,25 @@ function Reviews({ listing }) {
         return totalRating / listingReviews.length
     }
 
-    const reviewContent = listing.reviews.map((review) => {
+    const displayedReviews = (reviews) => {
+        const reviewsArray = []
+
+        for (let i = 0; i < 6 && i < reviews.length; i++) {
+            reviewsArray.push(reviews[i])
+        }
+        console.log(reviewsArray)
+        return reviewsArray
+    }
+
+    const reviewContent = displayedReviews(listing.reviews).map((review) => {
 
         return (
-            <div className="review-content">
+            <div key={review.id} className="review-content">
                 <div className="review-author">
                     <img src={profile}></img>
-                    <div>
-                        {review.firstName}
-                        <br/>
-                        December, 2022
+                    <div className="review-author-info">
+                        <span>{review.firstName}</span>
+                        <h2>December 2022</h2>
                     </div>
                 </div>
                 <div className="review-comment">
@@ -104,8 +113,8 @@ function Reviews({ listing }) {
                             <h1>Cleanliness</h1>
                         </div>
                         <div className="reviews-grid-value">
-                            <div>
-                            ------
+                            <div className="reviews-grid-rating-bar">
+                                <span className="review-grid-rating-fill" style={{width: "10%"}}></span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageCleanliness(listing.reviews)}</h1>
@@ -120,7 +129,7 @@ function Reviews({ listing }) {
                             <h1>Accuracy</h1>
                         </div>
                         <div className="reviews-grid-value">
-                            <div>
+                            <div className="reviews-grid-rating-bar">
                             ------
                             </div>
                             <div className="reviews-grid-ratings-average">
@@ -136,7 +145,7 @@ function Reviews({ listing }) {
                             <h1>Communication</h1>
                         </div>
                         <div className="reviews-grid-value">
-                            <div>
+                            <div className="reviews-grid-rating-bar">
                                 ------
                             </div>
                             <div className="reviews-grid-ratings-average">
@@ -152,7 +161,7 @@ function Reviews({ listing }) {
                             <h1>Location</h1>
                         </div>
                         <div className="reviews-grid-value">
-                            <div>
+                            <div className="reviews-grid-rating-bar">
                                 ------
                             </div>
                             <div className="reviews-grid-ratings-average">
@@ -168,7 +177,7 @@ function Reviews({ listing }) {
                             <h1>Check</h1>
                         </div>
                         <div className="reviews-grid-value">
-                            <div>
+                            <div className="reviews-grid-rating-bar">
                                 ------
                             </div>
                             <div className="reviews-grid-ratings-average">
@@ -184,7 +193,7 @@ function Reviews({ listing }) {
                             <h1>Value</h1>
                         </div>
                         <div className="reviews-grid-value">
-                            <div>
+                            <div className="reviews-grid-rating-bar">
                                 ------
                             </div>
                             <div className="reviews-grid-ratings-average">

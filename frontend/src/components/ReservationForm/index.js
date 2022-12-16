@@ -6,7 +6,7 @@ import "./ReservationForm.css";
 import logo from "../../assets/logo.png"
 import moment from 'moment';
 
-function ReservationForm({ listing }) {
+function ReservationForm({ listing, rating }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
@@ -86,7 +86,7 @@ function ReservationForm({ listing }) {
             <span>${listing.price}</span> night
           </div>
           <div className="reservation-form-header-rating">
-            <i className="fa-sharp fa-solid fa-star"></i><span>5.0</span>
+            <i className="fa-sharp fa-solid fa-star"></i><span>{rating}</span>
           </div>
         </div>
 
