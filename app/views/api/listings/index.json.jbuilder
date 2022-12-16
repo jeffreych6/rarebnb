@@ -36,7 +36,8 @@
                 :location,
                 :check_in,
                 :value,
-                :review
+                :review,
+                :review_date
         end
 
         if listing.photos.attached?

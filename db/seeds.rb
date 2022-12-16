@@ -645,6 +645,218 @@ puts "Creating reviews..."
 # Need to make author_id and listing_id unique for each review
 
 Review.create!(
+  author_id: 2,
+  listing_id: 1,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 2,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 3,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 6,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Wish I could drive this baby time",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 7,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 8,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 9,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 10,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 11,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 12,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
+  location: 2,
+  check_in: 2,
+  value: 2,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 13,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 14,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+Review.create!(
+  author_id: 2,
+  listing_id: 15,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "This was the best RareBnB I've ever stayed at!",
+  review_date: '2022-11-15'
+)
+
+##
+
+Review.create!(
   author_id: 3,
   listing_id: 1,
   rating: 4,
@@ -724,7 +936,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Absolutely loved staying in the middle of nowhere!",
+  review: "My car is awesome",
   review_date: '2022-11-15'
 )
 
@@ -801,13 +1013,13 @@ Review.create!(
 Review.create!(
   author_id: 3,
   listing_id: 12,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
+  location: 2,
+  check_in: 2,
+  value: 2,
   review: "Absolutely loved staying in the middle of nowhere!",
   review_date: '2022-11-15'
 )
@@ -936,7 +1148,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "Took it for a ride around the block",
   review_date: '2022-10-15'
 )
 
@@ -999,13 +1211,13 @@ Review.create!(
 Review.create!(
   author_id: 4,
   listing_id: 12,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  rating: 3,
+  cleanliness: 5,
+  accuracy: 3,
+  communication: 3,
+  location: 1,
+  check_in: 3,
+  value: 3,
   review: "Best host ever",
   review_date: '2022-10-15'
 )
@@ -1013,13 +1225,13 @@ Review.create!(
 Review.create!(
   author_id: 4,
   listing_id: 12,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
+  location: 2,
+  check_in: 2,
+  value: 2,
   review: "Best host ever",
   review_date: '2022-10-15'
 )
@@ -1146,7 +1358,7 @@ Review.create!(
   location: 5,
   check_in: 5,
   value: 5,
-  review: "Great host!",
+  review: "Drives better than my porsche!",
   review_date: '2022-12-15'
 )
 
@@ -1225,11 +1437,11 @@ Review.create!(
   listing_id: 12,
   rating: 5,
   cleanliness: 5,
-  accuracy: 5,
+  accuracy: 2,
   communication: 5,
-  location: 5,
+  location: 1,
   check_in: 5,
-  value: 5,
+  value: 1,
   review: "Great host!",
   review_date: '2022-12-15'
 )
@@ -1286,7 +1498,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1300,7 +1512,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1314,7 +1526,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1328,7 +1540,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1342,7 +1554,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1356,7 +1568,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "Reminded me of Tokyo Drift!",
   review_date: '2022-10-15'
 )
 
@@ -1370,7 +1582,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1384,7 +1596,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1398,7 +1610,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1412,13 +1624,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
 Review.create!(
   author_id: 6,
-  listing_id: 12,
+  listing_id: 11,
   rating: 4,
   cleanliness: 4,
   accuracy: 4,
@@ -1426,21 +1638,21 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
 Review.create!(
   author_id: 6,
   listing_id: 12,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 3,
+  communication: 2,
+  location: 2,
   check_in: 4,
-  value: 4,
-  review: "Best host ever",
+  value: 2,
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1454,7 +1666,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1468,7 +1680,7 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
 
@@ -1482,9 +1694,458 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Best host ever",
+  review: "10/10. Would book again",
   review_date: '2022-10-15'
 )
+
+Review.create!(
+  author_id: 7,
+  listing_id: 1,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 2,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 3,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 4,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 5,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 6,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Could be better. Really should have leather seats.",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 7,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 8,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 9,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 10,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 11,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 12,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 2,
+  communication: 1,
+  location: 4,
+  check_in: 1,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 13,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 14,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 7,
+  listing_id: 15,
+  rating: 4,
+  cleanliness: 4,
+  accuracy: 4,
+  communication: 4,
+  location: 4,
+  check_in: 4,
+  value: 4,
+  review: "Omg, I would buy this place if this were Zillow",
+  review_date: '2022-10-15'
+)
+
+Review.create!(
+  author_id: 8,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 9,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 10,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 11,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 12,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 2,
+  accuracy: 5,
+  communication: 5,
+  location: 2,
+  check_in: 2,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 13,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 14,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 15,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 16,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 17,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 18,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 19,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 20,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 21,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 22,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 23,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
+Review.create!(
+  author_id: 24,
+  listing_id: 6,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
+  review: "Best host ever",
+  review_date: '2010-10-15'
+)
+
 
 puts "Attaching listing photos..."
 

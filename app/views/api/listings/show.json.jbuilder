@@ -47,7 +47,8 @@ json.listing do
       :location,
       :check_in,
       :value,
-      :review
+      :review,
+      :review_date
 
     json.extract! review.author,
       :first_name

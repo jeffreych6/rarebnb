@@ -85,6 +85,21 @@ function Reviews({ listing }) {
         return reviewsArray
     }
 
+    const month = {
+        '01': 'January',
+        '02': 'February',
+        '03': 'March',
+        '04': 'April',
+        '05': 'May',
+        '06': 'June',
+        '07': 'July',
+        '08': 'August',
+        '09': 'September',
+        '10': 'October',
+        '11': 'November',
+        '12': 'December'
+    };
+
     const reviewContent = displayedReviews(listing.reviews).map((review) => {
 
         return (
@@ -93,7 +108,7 @@ function Reviews({ listing }) {
                     <img src={review.photoUrl}></img>
                     <div className="review-author-info">
                         <span>{review.firstName}</span>
-                        <h2>December 2022</h2>
+                        <h2>{month[review.reviewDate.slice(5, 7)]} {review.reviewDate.slice(0,4)}</h2>
                     </div>
                 </div>
                 <div className="review-comment">
@@ -117,7 +132,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageCleanliness(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCleanliness(listing.reviews).toFixed(2)}</h1>
+                                <h1>{averageCleanliness(listing.reviews).toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -133,7 +148,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageAccuracy(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageAccuracy(listing.reviews).toFixed(2)}</h1>
+                                <h1>{averageAccuracy(listing.reviews).toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -149,7 +164,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageCommunication(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCommunication(listing.reviews).toFixed(2)}</h1>
+                                <h1>{averageCommunication(listing.reviews).toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -165,7 +180,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageLocation(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageLocation(listing.reviews).toFixed(2)}</h1>
+                                <h1>{averageLocation(listing.reviews).toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -181,7 +196,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageCheckIn(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCheckIn(listing.reviews).toFixed(2)}</h1>
+                                <h1>{averageCheckIn(listing.reviews).toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -197,7 +212,7 @@ function Reviews({ listing }) {
                                 <span style={{width: `${(averageValue(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageValue(listing.reviews).toFixed(2)}</h1>
+                                <h1>{averageValue(listing.reviews).toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
