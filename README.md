@@ -24,7 +24,7 @@
 
 ## Booking a reservation on the listing show page
 
-<iframe src="https://giphy.com/embed/8tzDWpwaO0vzfTl7Ny" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/8tzDWpwaO0vzfTl7Ny">via GIPHY</a></p>
+![](.frontend/src/assets/showpage_reservation.gif)
 
 Within the show page of a listing, users can see all the details related to the listing such as photos, location, price, amenities, reviews, etc. All available information shown on the page is dynamically updated. There are vadildations in place to prevent the user from creating an impossible reservation.
 
@@ -75,7 +75,7 @@ ReservationForm.js
 
 ## Modifying and deleting a reservation on the user's trips page
 
-<iframe src="https://giphy.com/embed/0cv2t79KdEVZu1ca0E" width="480" height="246" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/0cv2t79KdEVZu1ca0E">via GIPHY</a></p>
+![](.frontend/src/assets/edit_delete_reservation.gif)
 
 Users can view their reservations on their Trips page. Depending on whether a reservation has already occurred (past today's date), it will be shown in the past trips list while future reservations appear in the upcoming trips list. Users cannot access old reservations. However, they can click on upcoming reservations which will display a modal where they can modify or delete their reservation.
 
