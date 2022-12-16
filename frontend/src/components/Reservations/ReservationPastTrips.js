@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Redirect, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { LargeModal } from '../../context/Modal';
+import { Modal } from '../../context/Modal';
 import ReservationModal from './ReservationModal'
 import * as reservationsActions from "../../store/reservations";
 import "./Reservations.css";
 
-function ReservationIndexItem({ reservation }) {
+function ReservationPastTrips({ reservation }) {
     const history = useHistory()
     const dispatch = useDispatch()
     const reservations = useSelector(state => Object.values(state.reservations))
@@ -44,7 +44,8 @@ function ReservationIndexItem({ reservation }) {
 
     return (
         <>
-            <div className="reservation-container" onClick={() => setShowReservationModal(true)}>
+            {/* <div className="reservation-container" onClick={() => setShowReservationModal(true)}> */}
+            <div className="reservation-container-past-trips">
                 <div className="reservation-detail-container">
                     <div className="reservation-detail-title">
                         <h1>{reservation.title}</h1>
@@ -65,14 +66,13 @@ function ReservationIndexItem({ reservation }) {
                 <img className="reservation-image" src={reservation.photosUrl[0]}></img>
             </div>
             
-            {showReservationModal && (
-                // <Modal onClose={(() => setShowReservationModal(false))}>
-                <LargeModal onClose={() => handleClose()}>
+            {/* {showReservationModal && (
+                <Modal onClose={() => handleClose()}>
                     <ReservationModal reservation={reservation} />
-                </LargeModal>
-            )}
+                </Modal>
+            )} */}
         </>
     )
 }
 
-export default ReservationIndexItem;
+export default ReservationPastTrips;

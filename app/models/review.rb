@@ -15,6 +15,7 @@
 #  review        :text
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  review_date   :date
 #
 class Review < ApplicationRecord
     validates :author_id, :listing_id, presence: true

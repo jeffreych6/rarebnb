@@ -114,7 +114,7 @@ function Reviews({ listing }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span className="review-grid-rating-fill" style={{width: "10%"}}></span>
+                                <span style={{width: `${(averageCleanliness(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageCleanliness(listing.reviews)}</h1>
@@ -130,7 +130,7 @@ function Reviews({ listing }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                            ------
+                                <span style={{width: `${(averageAccuracy(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageAccuracy(listing.reviews)}</h1>
@@ -146,7 +146,7 @@ function Reviews({ listing }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                ------
+                                <span style={{width: `${(averageCommunication(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageCommunication(listing.reviews)}</h1>
@@ -162,7 +162,7 @@ function Reviews({ listing }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                ------
+                                <span style={{width: `${(averageLocation(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageLocation(listing.reviews)}</h1>
@@ -174,11 +174,11 @@ function Reviews({ listing }) {
                 <div className="reviews-grid-ratings-container">
                     <div className="reviews-grid-ratings-content">
                         <div className="reviews-grid-type">
-                            <h1>Check</h1>
+                            <h1>Check-in</h1>
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                ------
+                                <span style={{width: `${(averageCheckIn(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageCheckIn(listing.reviews)}</h1>
@@ -194,7 +194,7 @@ function Reviews({ listing }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                ------
+                                <span style={{width: `${(averageValue(listing.reviews)/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
                                 <h1>{averageValue(listing.reviews)}</h1>

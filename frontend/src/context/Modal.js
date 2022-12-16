@@ -36,3 +36,18 @@ export function Modal({ onClose, children }) {
     modalNode
   );
 }
+
+export function LargeModal({ onClose, children }) {
+  const modalNode = useContext(ModalContext);
+  if (!modalNode) return null;
+
+  return ReactDOM.createPortal(
+    <div className="modal-container">
+      <div className="modal-background" onClick={onClose} />
+      <div className="large-modal">
+        {children}
+      </div>
+    </div>,
+    modalNode
+  );
+}

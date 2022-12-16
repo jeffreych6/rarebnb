@@ -14,6 +14,8 @@
             :city,
             :state,
             :country,
+            :lat,
+            :lng,
             :guests,
             :price
 

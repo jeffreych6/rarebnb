@@ -20,15 +20,12 @@
 }
 
 .reviews-grid-ratings-container {
-    /* width: 41.6%; */
-    margin-right: 8.33%;
+    margin-right: 20%;
 }
 
 .reviews-grid-ratings-content{
     display: flex;
     justify-content: space-between;
-    /* margin-right: 80px; */
-    /* max-width: 1120px; */
 }
 
 .reviews-grid-comments {
@@ -39,8 +36,7 @@
 .reviews-grid-value {
     display: flex;
     margin-right: 8px;
-    width: 100px;
-    padding-bottom: 24px;
+    width: 140px;
 }
 
 .reviews-grid-type h1{
@@ -56,6 +52,7 @@
     height: 4px;
     width: 100%;
     margin-right: 4px;
+    margin-top: 6px;
 }
 
 .reviews-grid-rating-bar span {
@@ -63,6 +60,7 @@
     align-items: center;
     background: #222222;
     border-radius: 2px;
+    font-size: 2px;
 }
 
 .reviews-grid-ratings-average h1{

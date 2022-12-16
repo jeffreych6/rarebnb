@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { Modal } from '../../context/Modal';
 import ReservationModal from './ReservationModal'
 import ReservationIndexItem from './ReservationIndexItem'
+import ReservationPastTrips from "./ReservationPastTrips";
 import * as reservationsActions from "../../store/reservations";
 import "./Reservations.css";
+import moment from 'moment'
 
 function Reservations() {
     const dispatch = useDispatch();
@@ -39,9 +41,39 @@ function Reservations() {
         '12': 'Dec',
     };
 
-    const reservation = reservations.map((reservation) => {
+    const upcomingReservationsList = (reservations) => {
+        const upcomingReservations = []
+        
+        reservations.forEach((reservation) => {
+            if (Date.parse(reservation.endDate) > Date.now()) {
+                upcomingReservations.push(reservation)
+            }
+        })
+
+        return upcomingReservations
+    }
+
+    const pastReservationsList = (reservations) => {
+        const pastReservationsList = []
+        
+        reservations.forEach((reservation) => {
+            if (Date.parse(reservation.endDate) < Date.now()) {
+                pastReservationsList.push(reservation)
+            }
+        })
+
+        return pastReservationsList
+    }
+
+    const upcomingReservations = upcomingReservationsList(reservations).map((reservation) => {
         return (
             <ReservationIndexItem key={reservation.id} reservation={reservation} />
+        )
+    })
+
+    const pastReservations = pastReservationsList(reservations).map((reservation) => {
+        return (
+            <ReservationPastTrips key={reservation.id} reservation={reservation} />
         )
     })
 
@@ -52,9 +84,13 @@ function Reservations() {
                 Trips
             </h1>
             <div className="reservation-index-upcoming-reservations">
-                Upcoming reservations ({reservations.length})
+                Upcoming reservations ({upcomingReservationsList.length})
             </div>
-            {reservation}
+            {upcomingReservations}
+            <div className="reservation-index-upcoming-reservations">
+                Where you've been ({pastReservationsList.length})
+            </div>
+            {pastReservations}
         </div>
     )
 }
