@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../store/listings";
+import FilterBar from "./FilterBar"
 import "./ListingIndexPage.css";
 
 function ListingIndexPage() {
@@ -55,11 +56,11 @@ function ListingIndexPage() {
                         <div className="listing-index-description">
                             {listing.title} 
                         </div>
-                        <div className="listing-index-description">
+                        {/* <div className="listing-index-description">
                             {listing.beds} {listing.beds > 1 ? "beds" : "bed"} · {listing.baths} {listing.baths > 1 ? "baths" : "bath"}
-                        </div>
+                        </div> */}
                         <div className="listing-index-price">
-                            <span className="listing-index-description-styles">${listing.price}</span> night
+                            <span className="listing-index-description-styles">${listing.price.toLocaleString("en-US")}</span> night
                         </div>
                     </div>
                 </div>
@@ -69,7 +70,9 @@ function ListingIndexPage() {
 
     return (
         <>
-            <div className="filter-bar"></div>
+            <div className="filter-bar">
+                <FilterBar />
+            </div>
             <div className="listing-index">
                 {listing}
             </div>

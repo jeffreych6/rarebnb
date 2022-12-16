@@ -1,6 +1,6 @@
 import React from "react";
 import "./Reviews.css"
-import profile from "../../assets/profile.webp"
+import profile from "../../assets/profiles/profile.webp"
 
 
 function Reviews({ listing }) {

@@ -84,11 +84,13 @@ function Reservations() {
                 Trips
             </h1>
             <div className="reservation-index-upcoming-reservations">
-                Upcoming reservations ({upcomingReservationsList.length})
+                Upcoming reservations
+                {/* Upcoming reservations ({upcomingReservationsList.length}) */}
             </div>
             {upcomingReservations}
             <div className="reservation-index-upcoming-reservations">
-                Where you've been ({pastReservationsList.length})
+                Where you've been
+                {/* Where you've been ({pastReservationsList.length}) */}
             </div>
             {pastReservations}
         </div>

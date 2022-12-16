@@ -6,14 +6,14 @@ import ReservationForm from "../ReservationForm"
 import MapContainer from "../MapContainer"
 import Reviews from "../Reviews"
 import "./ListingShowPage.css";
-import airCon from "../../assets/airCon.png"
-import kitchen from "../../assets/kitchen.png"
-import parking from "../../assets/parking.png"
-import pets from "../../assets/pets.png"
-import washer from "../../assets/washer.png"
-import wifi from "../../assets/wifi.png"
-import profile from "../../assets/profile.webp"
-import aircover from "../../assets/aircover.png"
+import airCon from "../../assets/amenities/airCon.png"
+import kitchen from "../../assets/amenities/kitchen.png"
+import parking from "../../assets/amenities/parking.png"
+import pets from "../../assets/amenities/pets.png"
+import washer from "../../assets/amenities/washer.png"
+import wifi from "../../assets/amenities/wifi.png"
+import profile from "../../assets/profiles/profile.webp"
+import aircover from "../../assets/amenities/aircover.png"
 
 function ListingShowPage() {
     const dispatch = useDispatch();
