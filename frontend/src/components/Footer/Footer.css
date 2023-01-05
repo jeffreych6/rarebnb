@@ -1,0 +1,16 @@
+footer {
+    height: 48px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 70px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+

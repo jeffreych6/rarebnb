@@ -4,6 +4,7 @@ import ListingIndexPage from "./components/ListingIndexPage";
 import ListingShowPage from "./components/ListingShowPage";
 import Navigation from "./components/Navigation";
 import Reservations from "./components/Reservations";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <ListingIndexPage />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }
