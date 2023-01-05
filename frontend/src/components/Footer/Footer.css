@@ -1,16 +1,28 @@
 footer {
-    height: 48px;
+    background-color: #FFFFFF;
     border-top: 1px solid #DDDDDD;
+    position: sticky;
+    bottom: 0;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 48px;
     margin: 0 70px;
 }
 
 .footer-left {
-    display: flex;
-    align-items: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222222;
+}
+
+.footer-right {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #222222;
 }
 

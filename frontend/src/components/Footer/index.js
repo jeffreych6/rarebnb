@@ -6,7 +6,7 @@ function Footer() {
     <footer>
         <div className="footer-container">
             <div className="footer-left">
-                2023 RareBnB, Inc. · Terms · Sitemap · Privacy · Your Privacy Choices
+              © 2023 RareBnB, Inc. · Terms · Sitemap · Privacy · Your Privacy Choices
             </div>
             <div className="footer-right">
                 English
