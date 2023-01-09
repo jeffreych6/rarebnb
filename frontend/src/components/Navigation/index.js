@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./Navigation.css";
+import "./index.css";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
 import logo from "../../assets/logo.png"
@@ -36,7 +36,9 @@ function Navigation() {
           </div>
         </div>
 
-        {sessionLinks}
+        <div className="right-nav">
+          {sessionLinks}
+        </div>
       </div>
     </nav>
   );

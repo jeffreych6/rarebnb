@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import LoginFormModal from './LoginFormModal';
-import SignupFormModal from './SignupFormModal';
+import LoginFormModal from '../SessionForms/LoginFormModal';
+import SignupFormModal from '../SessionForms/SignupFormModal';
 import { Modal } from '../../context/Modal';
+import './DropDown.css'
+
 
 function LoggedOutDropDown() {
   const [showMenu, setShowMenu] = useState(false);
@@ -27,7 +29,7 @@ function LoggedOutDropDown() {
 
   return (
     <>
-      <div className="right-nav">
+      {/* <div className="right-nav"> */}
         <button className="menu-button" onClick={openMenu}>
           <i id="hamburger-icon" className="fa-sharp fa-solid fa-bars" />
           <i id="user-icon" className="fa-solid fa-user-circle" />
@@ -47,7 +49,7 @@ function LoggedOutDropDown() {
             <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>
         </ul>
         )}
-      </div>
+      {/* </div> */}
 
       {showSignupModal && (
           <Modal onClose={() => setShowSignupModal(false)}>

@@ -94,14 +94,13 @@
 }
 
 
-/* Navigation Drop Down */
-
-
 .right-nav {
     width: 242px;
 }
 
-.menu-button {
+/* Navigation Drop Down */
+
+/* .menu-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,11 +169,11 @@
     width: 100%;
     margin: 8px 0;
     border: 1px solid #DDDDDD;
-}
+} */
 
 /* Form Modals */
 
-.form-header {
+/* .form-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -310,4 +309,4 @@
 li > i {
     height: 16px;
     width: 16px;
-}
+} */

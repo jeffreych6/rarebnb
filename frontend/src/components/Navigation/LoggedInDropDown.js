@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
+import './DropDown.css'
 
 function LoggedInDropDown() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function LoggedInDropDown() {
 
   return (
     <>
-      <div className="right-nav">
+      {/* <div className="right-nav"> */}
         <button className="menu-button" onClick={openMenu}>
           <i id="hamburger-icon" className="fa-sharp fa-solid fa-bars" />
           <i id="user-icon" className="fa-solid fa-user-circle" />
@@ -49,7 +50,7 @@ function LoggedInDropDown() {
             <li className="drop-down-menu-options-container" onClick={handleLogOut}><div className="drop-down-menu-options">Log Out</div></li>
           </ul>
         )}
-      </div>
+      {/* </div> */}
     </>
   );
 }
