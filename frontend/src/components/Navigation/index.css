@@ -1,28 +1,18 @@
 .nav-bar-container {
     height: 80px;
     border-bottom: 1px solid #DDDDDD;
-    position: relative;
 }
 
 .nav-bar {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    position: relative;
     margin: 0 70px;
 }
 
 .left-nav {
     width: 242px;
 }
-/* 
-.nav-bar-show {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    position: relative;
-    margin: 0 30%;
-} */
 
 .logo-button {
     color: #ff385c;
@@ -35,7 +25,7 @@
     letter-spacing: -1px;
 }
 
-.logo-button  img {
+.logo-button img {
     height: 35px;
     width: 35px;
     padding-right: 5px;
@@ -57,17 +47,16 @@
 .search-text-container {
     display: flex;
     justify-content: space-between;
-    padding: 0 16px;
+    padding-left: 16px;
 }
 
 .search-text-box {
-    width: 95%;
+    width: 100%;
 }
 
 .search-text {
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px;
     margin: 4px 0;
     height: 40px;
     width: 95%;
@@ -85,7 +74,6 @@
     border: none;
     border-radius: 50%;
     cursor: pointer
-
 }
 
 .search-button i {
@@ -97,216 +85,3 @@
 .right-nav {
     width: 242px;
 }
-
-/* Navigation Drop Down */
-
-/* .menu-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 21px;
-    padding: 5px 5px 5px 12px;
-    height: 42px;
-    width: 77px;
-    color: #717171;
-    margin-left: 165px;
-
-}
-
-#hamburger-icon {
-    font-size: 16px;
-    width: 16px;
-}
-
-#user-icon {
-    width: 30px;
-    margin-left: 12px;
-    font-size: 30px;
-}
-
-.profile-dropdown {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 12px;
-    height: 228px;
-    margin-top: 13px;
-    padding: 8px 0;
-    position: absolute;
-    width: 240px;
-}
-
-.drop-down-menu-options-container {
-    width: 100%;
-    line-height: 18px;
-    font-size: 14px;
-}
-
-.drop-down-reservations-link {
-    text-decoration: none;
-    color: #222222;
-}
-
-.drop-down-menu-options-container:hover {
-    cursor: pointer;
-    background-color: #F7F7F7;
-}
-
-.drop-down-menu-options {
-    padding: 12px 16px;
-}
-
-.drop-down-menu-options-bold {
-    font-weight: 600;
-    padding: 12px 16px;
-}
-
-.drop-down-menu-divider {
-    width: 100%;
-    margin: 8px 0;
-    border: 1px solid #DDDDDD;
-} */
-
-/* Form Modals */
-
-/* .form-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 24px;
-    height: 64px;
-    border-bottom: 1px solid rgb(235, 235, 235);
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 800;
-}
-
-.form-content {
-    padding: 24px;
-}
-
-.login-welcome {
-    font-size: 22px;
-    line-height: 26px;
-    font-weight: 600;
-    margin-top: 8px;
-    margin-bottom: 24px;
-}
-
-.form-field-error {
-    display: flex;
-    flex-direction: column;
-    color: rgb(193, 53, 21);
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 400;
-}
-
-.form-field-box {
-    position: relative;
-    flex: 1 1 0%;
-}
-
-.form-field-box-birth-date {
-    position: relative;
-    flex: 1 1 0%;
-    margin-right: 25px;
-}
-
-.form-text-box {
-    position: relative;
-    cursor: text;
-    display: flex;
-    height: 56px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-}
-
-.form-text-box input {
-    width: 100%;
-    border: none;
-    outline: none;
-    margin: 26px 12px 6px;
-    min-height: 1px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-}
-
-.form-text-box-placeholder {
-    position: absolute;
-    top: 18px;
-    left: 12px;
-    right: 12px;
-    color: rgb(113, 113, 113);
-    pointer-events: none;
-    transform-origin: 0% 0%;
-    font-size: 16px;
-    line-height: 20px;
-    transform: translateY(-8px) scale(0.75);
-}
-
-.login-form-buttons {
-    margin-top: 16px;
-    margin-bottom: 24px;
-}
-
-.login-form-buttons  button {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    touch-action: manipulation;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 14px 24px;
-    border: none;
-    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
-    color: rgb(255, 255, 255);
-    width: 100%;
-}
-
-.form-field-help {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-.form-field-help-text {
-    color: rgb(113, 113, 113);
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.form-terms-of-service {
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.form-tos-agree {
-    font-weight: 800;
-}
-
-.form-tos-links {
-    color: rgb(0, 76, 196);
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-li > i {
-    height: 16px;
-    width: 16px;
-} */

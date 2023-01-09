@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./index.css";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
+import "./index.css";
 import logo from "../../assets/logo.png"
 
 function Navigation() {
