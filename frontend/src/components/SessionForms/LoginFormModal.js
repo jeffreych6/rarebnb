@@ -45,58 +45,47 @@ function LoginForm() {
   }
 
   return (
-    <div className="modal-content">
+    <>
       <header className="form-header">
-        <div></div>
         <h1>Login</h1>
-        <div></div>
       </header>
+
       <div className="form-content">
-        <div className="form-content-container">
-          <h3 className="login-welcome">Welcome to RareBnB</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-text-box">
-              <label className="form-field-box">
-                <div className="form-text-box-placeholder">
-                  <div className="form-text-box-text">Email</div>
-                </div>
-                <input
-                  type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  required
-                />
-              </label>
-            </div>
+        <h3 className="login-welcome">Welcome to RareBnB</h3>
+        <form onSubmit={handleSubmit}>
+          <div className="form-text-box">
+            <div className="form-text-box-caption">Email</div>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+            />
+          </div>
+          <br />
+
+          <div className="form-text-box">
+            <div className="form-text-box-caption">Password</div>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+          </div>
+          {handleErrors()}
+
+          <div className="login-form-buttons">
+            <button type="submit">Log In</button>
             <br />
-            <div className="form-text-box">
-              <label className="form-field-box">
-              <div className="form-text-box-placeholder">
-                  <div className="form-text-box-text">Password</div>
-                </div>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  required
-                />
-              </label>
-            </div>
-            <div className="form-field-help">
-            </div>
-            {handleErrors()}
-            <div className="login-form-buttons">
-              <button type="submit">Log In</button>
-              <br />
-              <br />
-              <button onClick={loginDemo}>Demo User</button>
-            </div>
-          </form>
-        </div>
+            <br />
+            <button onClick={loginDemo}>Demo User</button>
+          </div>
+        </form>
       </div>
-    </div>
+    </>
   );
 }
 

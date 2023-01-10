@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
-import "./ListingIndexPage.css";
-import barn from "../../assets/filters/barn.png"
-import beach from "../../assets/filters/beach.png"
-import boat from "../../assets/filters/boat.png"
-import cabin from "../../assets/filters/cabin.png"
-import camper from "../../assets/filters/camper.png"
-import castle from "../../assets/filters/castle.png"
-import cave from "../../assets/filters/cave.png"
-import dome from "../../assets/filters/dome.png"
-import earthHome from "../../assets/filters/earth_home.png"
-import farm from "../../assets/filters/farm.png"
-import houseboat from "../../assets/filters/houseboat.png"
-import mansion from "../../assets/filters/mansion.png"
-import pool from "../../assets/filters/pool.png"
-import ski from "../../assets/filters/ski.png"
-import treehouse from "../../assets/filters/treehouse.png"
+import "./FilterBar.css";
+import barn from "../../../assets/filters/barn.png"
+import beach from "../../../assets/filters/beach.png"
+import boat from "../../../assets/filters/boat.png"
+import cabin from "../../../assets/filters/cabin.png"
+import camper from "../../../assets/filters/camper.png"
+import castle from "../../../assets/filters/castle.png"
+import cave from "../../../assets/filters/cave.png"
+import dome from "../../../assets/filters/dome.png"
+import earthHome from "../../../assets/filters/earth_home.png"
+import farm from "../../../assets/filters/farm.png"
+import houseboat from "../../../assets/filters/houseboat.png"
+import mansion from "../../../assets/filters/mansion.png"
+import pool from "../../../assets/filters/pool.png"
+import ski from "../../../assets/filters/ski.png"
+import treehouse from "../../../assets/filters/treehouse.png"
 
 function FilterBar() {
     return (

@@ -26,8 +26,8 @@ function LoggedInDropDown() {
   }, [showMenu]);
 
   const handleLogOut = (e) => {
-      e.preventDefault();
-      dispatch(sessionActions.logout());
+    e.preventDefault();
+    dispatch(sessionActions.logout());
   };
 
   return (

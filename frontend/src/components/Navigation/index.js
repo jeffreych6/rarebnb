@@ -9,7 +9,6 @@ import logo from "../../assets/logo.png"
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
   const location = useLocation();
-  console.log(location)
 
   let sessionLinks;
   if (sessionUser) {

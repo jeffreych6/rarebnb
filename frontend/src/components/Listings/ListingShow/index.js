@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import * as listingsActions from "../../store/listings";
-import ReservationForm from "../ReservationForm"
-import MapContainer from "../MapContainer"
-import Reviews from "../Reviews"
-import "./ListingShowPage.css";
-import airCon from "../../assets/amenities/airCon.png"
-import kitchen from "../../assets/amenities/kitchen.png"
-import parking from "../../assets/amenities/parking.png"
-import pets from "../../assets/amenities/pets.png"
-import washer from "../../assets/amenities/washer.png"
-import wifi from "../../assets/amenities/wifi.png"
-import profile from "../../assets/profiles/profile.webp"
-import aircover from "../../assets/amenities/aircover.png"
+import * as listingsActions from "../../../store/listings";
+import ReservationForm from "../../ReservationForm"
+import MapContainer from "../../MapContainer"
+import Reviews from "../../Reviews"
+import "./index.css";
+import airCon from "../../../assets/amenities/airCon.png"
+import kitchen from "../../../assets/amenities/kitchen.png"
+import parking from "../../../assets/amenities/parking.png"
+import pets from "../../../assets/amenities/pets.png"
+import washer from "../../../assets/amenities/washer.png"
+import wifi from "../../../assets/amenities/wifi.png"
+import profile from "../../../assets/profiles/profile.webp"
+import aircover from "../../../assets/amenities/aircover.png"
 
 function ListingShowPage() {
     const dispatch = useDispatch();

@@ -1,0 +1,55 @@
+.listings-index {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 70px;
+}
+
+.listings-index-container {
+    text-decoration: none;
+    color: #222222;
+    margin: 20px 11px;
+
+}
+
+.listings-index-image {
+    height: 277px;
+    width: 291px;
+    border-radius: 10px;
+}
+
+.listings-index-description-container {
+    font-size: 15px;
+    line-height: 19px;
+}
+
+.listings-index-description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listings-index-location {
+    font-weight: 600;
+}
+
+.listings-index-rating {
+    display: flex;
+    align-items: center;
+}
+
+.listings-index-rating i {
+    font-size: 12px;
+    margin-right: 4px
+}
+
+.listings-index-title {
+    color: rgb(113, 113, 113);
+}
+
+.listings-index-price {
+    margin-top: 8px;
+}
+
+.listings-index-price span {
+    font-weight: 600;
+}
