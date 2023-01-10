@@ -7,6 +7,13 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
+    margin: 0 17%;
+}
+
+.nav-bar-index {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
     margin: 0 70px;
 }
 
@@ -57,7 +64,7 @@
 .search-text {
     font-size: 14px;
     font-weight: 500;
-    margin: 4px 0;
+    margin: 3px 0;
     height: 40px;
     width: 95%;
     border: none;
@@ -68,7 +75,7 @@
 
 .search-button {
     height: 32px;
-    width: 32px;
+    width: 35px;
     margin: 8px 7px 8px 0;
     background: #FF385C;
     border: none;

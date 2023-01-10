@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
@@ -8,6 +8,7 @@ import logo from "../../assets/logo.png"
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
+  const location = useLocation();
 
   let sessionLinks;
   if (sessionUser) {
@@ -18,7 +19,7 @@ function Navigation() {
 
   return (
     <nav className="nav-bar-container">
-      <div className="nav-bar">
+      <div className={location.pathname === "/" ? "nav-bar-index" : "nav-bar"}>
         <div className="left-nav">
           <NavLink exact to="/">
             <button className="logo-button">
