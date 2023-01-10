@@ -29,18 +29,17 @@ function LoggedOutDropDown() {
 
   return (
     <>
-      {/* <div className="right-nav"> */}
         <button className="menu-button" onClick={openMenu}>
           <i id="hamburger-icon" className="fa-sharp fa-solid fa-bars" />
-          <i id="user-icon" className="fa-solid fa-user-circle" />
+          <i id="profile-icon" className="fa-solid fa-user-circle" />
         </button>
 
         {showMenu && (
           <ul className="profile-dropdown">
-            <li className="drop-down-menu-options-container" onClick={() => setShowSignupModal(true)}>
+            <li className="drop-down-menu-options-container-link" onClick={() => setShowSignupModal(true)}>
               <div className="drop-down-menu-options">Sign Up</div>
             </li>
-            <li className="drop-down-menu-options-container" onClick={() => setShowLoginModal(true)}>
+            <li className="drop-down-menu-options-container-link" onClick={() => setShowLoginModal(true)}>
               <div className="drop-down-menu-options">Log In</div>
             </li>
             <div className="drop-down-menu-divider"></div>
@@ -49,7 +48,6 @@ function LoggedOutDropDown() {
             <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>
         </ul>
         )}
-      {/* </div> */}
 
       {showSignupModal && (
           <Modal onClose={() => setShowSignupModal(false)}>

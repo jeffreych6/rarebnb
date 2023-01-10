@@ -9,6 +9,7 @@ import logo from "../../assets/logo.png"
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
   const location = useLocation();
+  console.log(location)
 
   let sessionLinks;
   if (sessionUser) {
@@ -23,7 +24,7 @@ function Navigation() {
         <div className="left-nav">
           <NavLink exact to="/">
             <button className="logo-button">
-              <h1><img src={logo} /> rarebnb</h1>
+              <h1><img src={logo} alt="rarbnb-logo"/> rarebnb</h1>
             </button>
           </NavLink>
         </div>

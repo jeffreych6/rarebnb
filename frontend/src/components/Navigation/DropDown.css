@@ -7,11 +7,8 @@
     border: 1px solid #DDDDDD;
     border-radius: 21px;
     padding: 5px 5px 5px 12px;
-    height: 42px;
-    width: 77px;
     color: #717171;
     margin-left: 165px;
-
 }
 
 #hamburger-icon {
@@ -19,7 +16,7 @@
     width: 16px;
 }
 
-#user-icon {
+#profile-icon {
     width: 30px;
     margin-left: 12px;
     font-size: 30px;
@@ -44,22 +41,26 @@
     font-size: 14px;
 }
 
+.drop-down-menu-options-container:hover {
+    cursor: default;
+}
+
+.drop-down-menu-options-container-link:hover {
+    cursor: pointer;
+    background-color: #F7F7F7;
+}
+
 .drop-down-reservations-link {
     text-decoration: none;
     color: #222222;
 }
 
-.drop-down-menu-options-container:hover {
-    cursor: pointer;
-    background-color: #F7F7F7;
-}
-
-.drop-down-menu-options {
+.drop-down-menu-options-bold {
+    font-weight: 600;
     padding: 12px 16px;
 }
 
-.drop-down-menu-options-bold {
-    font-weight: 600;
+.drop-down-menu-options {
     padding: 12px 16px;
 }
 

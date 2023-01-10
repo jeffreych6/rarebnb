@@ -32,25 +32,23 @@ function LoggedInDropDown() {
 
   return (
     <>
-      {/* <div className="right-nav"> */}
-        <button className="menu-button" onClick={openMenu}>
-          <i id="hamburger-icon" className="fa-sharp fa-solid fa-bars" />
-          <i id="user-icon" className="fa-solid fa-user-circle" />
-        </button>
-        
-        {showMenu && (
-          <ul className="profile-dropdown">
-            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Messages</div></li>
-            <NavLink className="drop-down-reservations-link" to="/reservations">
-              <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Trips</div></li>
-            </NavLink>
-            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Wishlist</div></li>
-            <div className="drop-down-menu-divider"></div>
-            <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>
-            <li className="drop-down-menu-options-container" onClick={handleLogOut}><div className="drop-down-menu-options">Log Out</div></li>
-          </ul>
-        )}
-      {/* </div> */}
+      <button className="menu-button" onClick={openMenu}>
+        <i id="hamburger-icon" className="fa-sharp fa-solid fa-bars" />
+        <i id="profile-icon" className="fa-solid fa-user-circle" />
+      </button>
+      
+      {showMenu && (
+        <ul className="profile-dropdown">
+          <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Messages</div></li>
+          <NavLink className="drop-down-reservations-link" to="/reservations">
+            <li className="drop-down-menu-options-container-link"><div className="drop-down-menu-options-bold">Trips</div></li>
+          </NavLink>
+          <li className="drop-down-menu-options-container"><div className="drop-down-menu-options-bold">Wishlist</div></li>
+          <div className="drop-down-menu-divider"></div>
+          <li className="drop-down-menu-options-container"><div className="drop-down-menu-options">Help</div></li>
+          <li className="drop-down-menu-options-container-link" onClick={handleLogOut}><div className="drop-down-menu-options">Log Out</div></li>
+        </ul>
+      )}
     </>
   );
 }
