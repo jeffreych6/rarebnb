@@ -4,7 +4,7 @@
 
 .listing-show-header-title-container {
     height: 90px;
-    padding: 24px 0 0;
+    margin-top: 24px;
 }
 
 .listing-show-header-title {
@@ -14,55 +14,33 @@
 }
 
 .listing-show-header-description {
+    display:flex;
+    align-items: center;
     margin: 8px 0;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .listing-show-header-description i {
     font-size: 12px;
+    margin-right: 3px;
 }
 
-.listing-show-header-description span {
-    margin-left: 3px;
-    font-weight: 600;
+.listing-rating {
+    margin-right: 3px;
+}
+
+.listing-reviews {
+    margin-right: 5px;
     text-decoration: underline;
 }
 
-.listing-show-images-container {
-    display: flex;
+.listing-location {
+    text-decoration: underline;
+    margin-left: 5px;
 }
 
-.listing-show-image-large-container {
-    padding-right: 8px;
-}
-
-.listing-show-image-large {
-    max-height: 560px;
-    padding-right: 8px;
-    width: 49.5%;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-
-}
-
-.listing-show-image-small-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 8px;
-    width: 50%
-}
-
-.listing-show-image-small {
-    height: 276px;
-    width: 276px;
-}
-
-#image-2 {
-    border-top-right-radius: 12px;
-}
-
-#image-4 {
-    border-bottom-right-radius: 12px;
+.listing-show-header-description {
+    font-weight: 600;
 }
 
 .listing-show-details-container {
@@ -124,35 +102,7 @@
 
 }
 
-.listing-show-details-amenities {
-    padding: 48px 0;
-    /* border-bottom: 1px solid #DDDDDD; */
-}
 
-.listing-show-details-amenities h1 {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 26px;
-    padding: 0 0 24px
-}
-
-.listing-show-details-amenities-list {
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.listing-show-details-amenities-list-item {
-    display: flex;
-    align-items: center;
-    padding: 0 0 16px;
-    font-size: 16px;
-}
-
-.listing-show-details-amenities-list-item img {
-    height: 26px;
-    width: 26px;
-    padding-right: 8px
-}
 
 .listing-show-reservations-container {
     /* border: 1px solid black; */

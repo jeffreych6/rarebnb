@@ -1,0 +1,36 @@
+.listing-show-images-container {
+    display: flex;
+}
+
+.listing-show-image-large-container {
+    padding-right: 8px;
+}
+
+.listing-show-image-large {
+    max-height: 560px;
+    padding-right: 8px;
+    width: 49.5%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+}
+
+.listing-show-image-small-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px;
+    width: 50%
+}
+
+.listing-show-image-small {
+    height: 276px;
+    width: 276px;
+}
+
+#image-2 {
+    border-top-right-radius: 12px;
+}
+
+#image-4 {
+    border-bottom-right-radius: 12px;
+}

@@ -45,9 +45,7 @@ function ListingsIndex() {
 
     return (
         <>
-            <div className="filter-bar">
-                <FilterBar />
-            </div>
+            <FilterBar />
             <div className="listings-index">
                 {listing}
             </div>

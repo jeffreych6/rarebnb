@@ -8,6 +8,10 @@ export const averageRating = (listingReviews) => {
     return totalRating / listingReviews.length
 }
 
+export const titleize = (word) => {
+    return word[0].toUpperCase() + word.slice(1)
+}
+
     // const dropLastDigit = (rating) => {
 
     //     if (parseInt(rating[rating.length-1]) === 0) {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./FilterBar.css";
 import barn from "../../../assets/filters/barn.png"
 import beach from "../../../assets/filters/beach.png"
@@ -18,7 +18,7 @@ import treehouse from "../../../assets/filters/treehouse.png"
 
 function FilterBar() {
     return (
-        <>
+        <div className="filter-bar">
             <div className="filter-container">
                 <img className="filter-icon" src={barn} />
                 <div className="filter-name">Barn</div>
@@ -93,8 +93,7 @@ function FilterBar() {
                 <img className="filter-icon" src={treehouse} />
                 <div className="filter-name">Treehouse</div>
             </div>
- 
-        </>
+        </div>
     )
 }
 
