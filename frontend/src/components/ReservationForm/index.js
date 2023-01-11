@@ -59,7 +59,7 @@ function ReservationForm({ listing, rating }) {
   };
 
   return (
-    <>
+    <div className="listing-show-reservations-form">
       <div className="reservation-form-container">
         <div className="reservation-form-header">
           <div className="reservation-form-header-price">
@@ -141,7 +141,7 @@ function ReservationForm({ listing, rating }) {
             </div>
           </div>
       </div>
-    </>
+    </div>
   );
 }
 

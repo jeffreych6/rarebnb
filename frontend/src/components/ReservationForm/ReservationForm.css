@@ -204,3 +204,7 @@
     height: 32px;
     width: 32px;
 }
+
+input[type="date"] {
+    -webkit-text-fill-color: black;
+  }

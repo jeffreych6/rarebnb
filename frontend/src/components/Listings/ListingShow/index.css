@@ -1,8 +1,8 @@
-.listing-show-container {
+.listing-show-page-container {
     margin: 0 17%;
 }
 
-.listing-show-header-title-container {
+.listing-show-header-container {
     height: 90px;
     margin-top: 24px;
 }
@@ -25,25 +25,25 @@
     margin-right: 3px;
 }
 
-.listing-rating {
+.listing-show-rating {
     margin-right: 3px;
 }
 
-.listing-reviews {
+.listing-show-reviews {
     margin-right: 5px;
     text-decoration: underline;
 }
 
-.listing-location {
+.listing-show-location {
     text-decoration: underline;
     margin-left: 5px;
 }
 
-.listing-show-header-description {
-    font-weight: 600;
-}
 
-.listing-show-details-container {
+
+
+
+.listing-show-container {
     display: flex;
     border-bottom: 1px solid #DDDDDD;
 }
@@ -63,25 +63,23 @@
     font-size: 22px;
     font-weight: 600;
     line-height: 26px;
-    margin-bottom: 8px;
 }
 
 .listing-show-details-title h2 {
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
+    margin-top: 8px;
 }
 
-.listing-show-details-title-image img {
+.listing-show-details-title-profile {
     height: 56px;
     width: 56px;
     border-radius: 50%;
     margin-right: 5px;
 }
 
-.listing-show-aircover {
-    display: flex;
-    flex-direction: column;
+.listing-show-aircover, .listing-show-details-description {
     padding: 32px 0 48px;
     line-height: 24px;
     font-size: 16px;
@@ -89,18 +87,12 @@
 }
 
 .listing-show-aircover img {
-    height: 20%;
-    width: 20%;
+    height: 30px;
+    width: 130px;
     margin-bottom: 16px;
 }
 
-.listing-show-details-description {
-    padding: 32px 0 48px;
-    line-height: 24px;
-    font-size: 16px;
-    border-bottom: 1px solid #DDDDDD;
 
-}
 
 
 
