@@ -1,6 +1,6 @@
 class Api::ListingsController < ApplicationController
     before_action :require_logged_in, only: [:create]
-    wrap_parameters include: Listing.attribute_names + ['zipCode']
+    wrap_parameters include: Listing.attribute_names + ['hostId', 'propertyType', 'zipCode', 'airCon', 'selfCheckIn']
 
     def index
         @listings = Listing.all
@@ -28,8 +28,10 @@ class Api::ListingsController < ApplicationController
 
     def listing_params
         params.require(:listing).permit(
+            :host_id,
             :title,
             :description,
+            :property_type,
             :price,
             :city,
             :state,
@@ -43,7 +45,14 @@ class Api::ListingsController < ApplicationController
             :baths,
             :kitchen,
             :parking,
-            :wifi
+            :wifi,
+            :washer,
+            :air_con,
+            :pets,
+            :dryer,
+            :tv,
+            :workspace,
+            :self_check_in
         )
     end
 end

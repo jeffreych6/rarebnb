@@ -105,9 +105,10 @@ function Reviews({ listing }) {
         return (
             <div key={review.id} className="review-content">
                 <div className="review-author">
-                    <img src={review.photoUrl}></img>
+                    {/* <img src={review.photoUrl}></img> */}
+                    <i id="profile-icon" className="fa-solid fa-user-circle" />
                     <div className="review-author-info">
-                        <span>{review.firstName}</span>
+                        <span>{review.authorName}</span>
                         <h2>{month[review.reviewDate.slice(5, 7)]} {review.reviewDate.slice(0,4)}</h2>
                     </div>
                 </div>

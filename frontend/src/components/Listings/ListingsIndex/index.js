@@ -29,7 +29,7 @@ function ListingsIndex() {
                         </div>
                         <div className="listings-index-rating">
                             <i className="fa-sharp fa-solid fa-star"></i> 
-                            <span>{listingsUtils.averageRating(listing.reviews).toFixed(2)}</span>
+                            <span>{parseFloat(listing.rating).toFixed(2)}</span>
                         </div>
                     </div>
                     <div className="listings-index-title">

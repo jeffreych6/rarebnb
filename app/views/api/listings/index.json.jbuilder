@@ -21,24 +21,14 @@
             :parking,
             :wifi,
             :washer,
+            :dryer,
             :air_con,
-            :pets
-
-        json.reviews listing.reviews.map do |review|
-            json.extract! review,
-                :id,
-                :author_id,
-                :listing_id,
-                :rating,
-                :cleanliness,
-                :accuracy,
-                :communication,
-                :location,
-                :check_in,
-                :value,
-                :review,
-                :review_date
-        end
+            :pets,
+            :tv,
+            :workspace,
+            :self_check_in,
+            :rating,
+            :num_ratings
 
         if listing.photos.attached?
             json.photos_url listing.photos.map{|photo| url_for(photo)}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_16_031416) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_203009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_16_031416) do
     t.boolean "air_con", default: true
     t.boolean "pets", default: true
     t.string "property_type"
+    t.decimal "rating", precision: 3, scale: 2, default: "0.0"
+    t.integer "num_ratings", default: 0
+    t.boolean "dryer", default: true
+    t.boolean "tv", default: true
+    t.boolean "workspace", default: true
+    t.boolean "self_check_in", default: true
     t.index ["city"], name: "index_listings_on_city"
     t.index ["country"], name: "index_listings_on_country"
     t.index ["host_id"], name: "index_listings_on_host_id"
@@ -97,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_16_031416) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "review_date"
+    t.string "author_name"
     t.index ["author_id"], name: "index_reviews_on_author_id"
     t.index ["listing_id"], name: "index_reviews_on_listing_id"
   end

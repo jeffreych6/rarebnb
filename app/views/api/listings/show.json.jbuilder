@@ -20,8 +20,14 @@ json.listing do
     :parking,
     :wifi,
     :washer,
+    :dryer,
     :air_con,
-    :pets
+    :pets,
+    :tv,
+    :workspace,
+    :self_check_in,
+    :rating,
+    :num_ratings
 
     if @listing.photos.attached?
       json.photos_url @listing.photos.map{|photo| url_for(photo)}
@@ -40,6 +46,7 @@ json.listing do
       :id,
       :author_id,
       :listing_id,
+      :author_name,
       :rating,
       :cleanliness,
       :accuracy,

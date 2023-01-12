@@ -6,4 +6,5 @@ class Api::ReviewsController < ApplicationController
 
         render :index
     end
+
 end

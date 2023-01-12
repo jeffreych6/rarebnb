@@ -243,7 +243,13 @@ wilderness_tower = Listing.create!(
   wifi: false,
   washer: true,
   air_con: false,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.5,
+  num_ratings: 6
 )
 
 the_grand_tiki = Listing.create!(
@@ -267,7 +273,13 @@ the_grand_tiki = Listing.create!(
   wifi: false,
   washer: true,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 the_shepherdess_hut = Listing.create!(
@@ -290,7 +302,13 @@ the_shepherdess_hut = Listing.create!(
   wifi: false,
   washer: true,
   air_con: false,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 guard_tower = Listing.create!(
@@ -314,7 +332,13 @@ guard_tower = Listing.create!(
   wifi: true,
   washer: false,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 log_cabin = Listing.create!(
@@ -338,7 +362,13 @@ log_cabin = Listing.create!(
   wifi: true,
   washer: true,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 glebs_car = Listing.create!(
@@ -362,7 +392,13 @@ glebs_car = Listing.create!(
   wifi: false,
   washer: false,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 4.87,
+  num_ratings: 23
 )
 
 glamping = Listing.create!(
@@ -386,7 +422,13 @@ glamping = Listing.create!(
   wifi: false,
   washer: false,
   air_con: false,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 aura_house = Listing.create!(
@@ -410,7 +452,13 @@ aura_house = Listing.create!(
   wifi: true,
   washer: false,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.67,
+  num_ratings: 6
 )
 
 highlands_castle = Listing.create!(
@@ -434,7 +482,13 @@ highlands_castle = Listing.create!(
   wifi: true,
   washer: true,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 moose_meadow_lodge = Listing.create!(
@@ -458,7 +512,13 @@ moose_meadow_lodge = Listing.create!(
   wifi: true,
   washer: true,
   air_con: false,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.5,
+  num_ratings: 6
 )
 
 earthouse = Listing.create!(
@@ -482,7 +542,13 @@ earthouse = Listing.create!(
   wifi: true,
   washer: true,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.17,
+  num_ratings: 6
 )
 
 forest_gully_farms = Listing.create!(
@@ -506,7 +572,13 @@ forest_gully_farms = Listing.create!(
   wifi: false,
   washer: true,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 2.83,
+  num_ratings: 6
 )
 
 paradise_island = Listing.create!(
@@ -530,7 +602,13 @@ paradise_island = Listing.create!(
   wifi: true,
   washer: true,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.5,
+  num_ratings: 6
 )
 
 navajo_hogan = Listing.create!(
@@ -554,7 +632,13 @@ navajo_hogan = Listing.create!(
   wifi: false,
   washer: false,
   air_con: false,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.5,
+  num_ratings: 6
 )
 
 orchard_views = Listing.create!(
@@ -578,7 +662,13 @@ orchard_views = Listing.create!(
   wifi: true,
   washer: false,
   air_con: true,
-  pets: true
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 3.5,
+  num_ratings: 6
 )
 
 # Listing.create!(
@@ -645,7 +735,7 @@ puts "Creating reviews..."
 # Need to make author_id and listing_id unique for each review
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
@@ -654,12 +744,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 2,
   rating: 4,
   cleanliness: 4,
@@ -668,12 +759,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 3,
   rating: 4,
   cleanliness: 4,
@@ -682,12 +774,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 4,
   rating: 4,
   cleanliness: 4,
@@ -696,13 +789,14 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
-  listing_id: 4,
+  author_id: jeffrey.id,
+  listing_id: 5,
   rating: 4,
   cleanliness: 4,
   accuracy: 4,
@@ -710,12 +804,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 6,
   rating: 4,
   cleanliness: 4,
@@ -724,12 +819,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "Wish I could drive this baby time",
-  review_date: '2022-11-15'
+  review: "Wish I could drive this baby home",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 7,
   rating: 4,
   cleanliness: 4,
@@ -738,12 +834,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 8,
   rating: 4,
   cleanliness: 4,
@@ -752,8 +849,9 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
@@ -766,12 +864,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 10,
   rating: 4,
   cleanliness: 4,
@@ -780,12 +879,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 11,
   rating: 4,
   cleanliness: 4,
@@ -794,12 +894,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 12,
   rating: 2,
   cleanliness: 2,
@@ -808,12 +909,13 @@ Review.create!(
   location: 2,
   check_in: 2,
   value: 2,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 13,
   rating: 4,
   cleanliness: 4,
@@ -822,12 +924,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 14,
   rating: 4,
   cleanliness: 4,
@@ -836,12 +939,13 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 Review.create!(
-  author_id: 2,
+  author_id: jeffrey.id,
   listing_id: 15,
   rating: 4,
   cleanliness: 4,
@@ -850,14 +954,15 @@ Review.create!(
   location: 4,
   check_in: 4,
   value: 4,
-  review: "This was the best RareBnB I've ever stayed at!",
-  review_date: '2022-11-15'
+  review: "This was the best RareBnB I've ever stayed at! Best host ever!",
+  review_date: '2023-01-05',
+  author_name: jeffrey.first_name
 )
 
 ##
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
@@ -867,11 +972,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 2,
   rating: 4,
   cleanliness: 4,
@@ -881,11 +987,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 3,
   rating: 4,
   cleanliness: 4,
@@ -895,11 +1002,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 4,
   rating: 4,
   cleanliness: 4,
@@ -909,12 +1017,13 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
-  listing_id: 4,
+  author_id: gleb.id,
+  listing_id: 5,
   rating: 4,
   cleanliness: 4,
   accuracy: 4,
@@ -923,11 +1032,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 6,
   rating: 4,
   cleanliness: 4,
@@ -937,11 +1047,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "My car is awesome",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 7,
   rating: 4,
   cleanliness: 4,
@@ -951,11 +1062,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 8,
   rating: 4,
   cleanliness: 4,
@@ -965,11 +1077,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 9,
   rating: 4,
   cleanliness: 4,
@@ -979,11 +1092,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 10,
   rating: 4,
   cleanliness: 4,
@@ -993,11 +1107,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 11,
   rating: 4,
   cleanliness: 4,
@@ -1007,11 +1122,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 12,
   rating: 2,
   cleanliness: 2,
@@ -1021,11 +1137,12 @@ Review.create!(
   check_in: 2,
   value: 2,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 13,
   rating: 4,
   cleanliness: 4,
@@ -1035,11 +1152,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 14,
   rating: 4,
   cleanliness: 4,
@@ -1049,11 +1167,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 Review.create!(
-  author_id: 3,
+  author_id: gleb.id,
   listing_id: 15,
   rating: 4,
   cleanliness: 4,
@@ -1063,13 +1182,14 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Absolutely loved staying in the middle of nowhere!",
-  review_date: '2022-11-15'
+  review_date: '2022-11-15',
+  author_name: gleb.first_name
 )
 
 #
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
@@ -1079,11 +1199,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 2,
   rating: 4,
   cleanliness: 4,
@@ -1093,11 +1214,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 3,
   rating: 4,
   cleanliness: 4,
@@ -1107,11 +1229,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 4,
   rating: 4,
   cleanliness: 4,
@@ -1121,11 +1244,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 5,
   rating: 4,
   cleanliness: 4,
@@ -1135,11 +1259,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 6,
   rating: 4,
   cleanliness: 4,
@@ -1149,11 +1274,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Took it for a ride around the block",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 7,
   rating: 4,
   cleanliness: 4,
@@ -1163,11 +1289,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 8,
   rating: 4,
   cleanliness: 4,
@@ -1177,11 +1304,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 9,
   rating: 4,
   cleanliness: 4,
@@ -1191,11 +1319,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 10,
   rating: 4,
   cleanliness: 4,
@@ -1205,12 +1334,13 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
-  listing_id: 12,
+  author_id: bonnie.id,
+  listing_id: 11,
   rating: 3,
   cleanliness: 5,
   accuracy: 3,
@@ -1219,11 +1349,12 @@ Review.create!(
   check_in: 3,
   value: 3,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 12,
   rating: 2,
   cleanliness: 2,
@@ -1233,11 +1364,12 @@ Review.create!(
   check_in: 2,
   value: 2,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 13,
   rating: 4,
   cleanliness: 4,
@@ -1247,11 +1379,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 14,
   rating: 4,
   cleanliness: 4,
@@ -1261,11 +1394,12 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 4,
+  author_id: bonnie.id,
   listing_id: 15,
   rating: 4,
   cleanliness: 4,
@@ -1275,81 +1409,87 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "Best host ever",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: bonnie.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 1,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 2,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 3,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 4,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 5,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -1359,81 +1499,87 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Drives better than my porsche!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 7,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 8,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 9,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 1,
+  cleanliness: 1,
+  accuracy: 1,
+  communication: 1,
+  location: 1,
+  check_in: 1,
+  value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 10,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
+  location: 2,
+  check_in: 2,
+  value: 2,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 11,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
+  location: 2,
+  check_in: 2,
+  value: 2,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 12,
   rating: 5,
   cleanliness: 5,
@@ -1443,53 +1589,57 @@ Review.create!(
   check_in: 5,
   value: 1,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 13,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 3,
+  cleanliness: 3,
+  accuracy: 3,
+  communication: 3,
+  location: 3,
+  check_in: 3,
+  value: 3,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 14,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 3,
+  cleanliness: 3,
+  accuracy: 3,
+  communication: 3,
+  location: 3,
+  check_in: 3,
+  value: 3,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 5,
+  author_id: justin.id,
   listing_id: 15,
-  rating: 5,
-  cleanliness: 5,
-  accuracy: 5,
-  communication: 5,
-  location: 5,
-  check_in: 5,
-  value: 5,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
+  location: 2,
+  check_in: 2,
+  value: 2,
   review: "Great host!",
-  review_date: '2022-12-15'
+  review_date: '2022-12-15',
+  author_name: justin.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
@@ -1499,361 +1649,387 @@ Review.create!(
   check_in: 4,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 2,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
+  rating: 2,
+  cleanliness: 3,
+  accuracy: 2,
+  communication: 1,
+  location: 3,
+  check_in: 2,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 3,
   rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
+  cleanliness: 1,
+  accuracy: 2,
+  communication: 3,
+  location: 2,
+  check_in: 3,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 4,
   rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
+  cleanliness: 3,
+  accuracy: 2,
+  communication: 1,
+  location: 2,
+  check_in: 3,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 5,
-  rating: 4,
+  rating: 3,
   cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  accuracy: 2,
+  communication: 3,
+  location: 2,
+  check_in: 1,
+  value: 2,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 6,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
   review: "Reminded me of Tokyo Drift!",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 7,
-  rating: 4,
+  rating: 2,
   cleanliness: 4,
   accuracy: 4,
   communication: 4,
-  location: 4,
-  check_in: 4,
+  location: 2,
+  check_in: 2,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 8,
   rating: 4,
   cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
+  accuracy: 1,
+  communication: 1,
   location: 4,
-  check_in: 4,
+  check_in: 1,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 9,
   rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
+  cleanliness: 1,
+  accuracy: 2,
+  communication: 2,
   location: 4,
-  check_in: 4,
-  value: 4,
+  check_in: 1,
+  value: 2,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 10,
   rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
+  cleanliness: 2,
+  accuracy: 2,
+  communication: 2,
   location: 4,
-  check_in: 4,
-  value: 4,
+  check_in: 1,
+  value: 2,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 11,
   rating: 4,
   cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
+  accuracy: 3,
+  communication: 2,
+  location: 2,
+  check_in: 3,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 12,
   rating: 2,
   cleanliness: 2,
-  accuracy: 3,
+  accuracy: 1,
   communication: 2,
   location: 2,
   check_in: 4,
   value: 2,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 13,
   rating: 4,
   cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
+  accuracy: 3,
+  communication: 2,
   location: 4,
-  check_in: 4,
+  check_in: 3,
   value: 4,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 14,
   rating: 4,
   cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  accuracy: 2,
+  communication: 3,
+  location: 1,
+  check_in: 2,
+  value: 3,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 6,
+  author_id: raymond.id,
   listing_id: 15,
   rating: 4,
-  cleanliness: 4,
+  cleanliness: 1,
   accuracy: 4,
   communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  location: 3,
+  check_in: 3,
+  value: 2,
   review: "10/10. Would book again",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: raymond.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 1,
   rating: 4,
   cleanliness: 4,
   accuracy: 4,
   communication: 4,
   location: 4,
-  check_in: 4,
-  value: 4,
+  check_in: 1,
+  value: 2,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 2,
   rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
+  cleanliness: 3,
+  accuracy: 2,
   communication: 4,
-  location: 4,
-  check_in: 4,
+  location: 2,
+  check_in: 1,
   value: 4,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 3,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
+  rating: 2,
+  cleanliness: 2,
+  accuracy: 1,
+  communication: 2,
   location: 4,
-  check_in: 4,
+  check_in: 3,
   value: 4,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 4,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
+  rating: 2,
+  cleanliness: 5,
+  accuracy: 2,
   communication: 4,
   location: 4,
-  check_in: 4,
-  value: 4,
+  check_in: 3,
+  value: 1,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 5,
-  rating: 4,
+  rating: 3,
   cleanliness: 4,
-  accuracy: 4,
+  accuracy: 1,
   communication: 4,
-  location: 4,
+  location: 2,
   check_in: 4,
-  value: 4,
+  value: 3,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 6,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 5,
+  check_in: 5,
+  value: 5,
   review: "Could be better. Really should have leather seats.",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 7,
   rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  cleanliness: 3,
+  accuracy: 2,
+  communication: 1,
+  location: 1,
+  check_in: 2,
+  value: 2,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 8,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
+  rating: 5,
+  cleanliness: 5,
+  accuracy: 5,
+  communication: 5,
+  location: 3,
   check_in: 4,
-  value: 4,
+  value: 2,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 9,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  rating: 2,
+  cleanliness: 3,
+  accuracy: 3,
+  communication: 1,
+  location: 5,
+  check_in: 3,
+  value: 1,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 10,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
+  rating: 3,
+  cleanliness: 2,
+  accuracy: 2,
   communication: 4,
-  location: 4,
-  check_in: 4,
-  value: 4,
+  location: 1,
+  check_in: 3,
+  value: 2,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 11,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
+  rating: 2,
+  cleanliness: 3,
+  accuracy: 3,
   communication: 4,
   location: 4,
-  check_in: 4,
-  value: 4,
+  check_in: 1,
+  value: 2,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 12,
   rating: 4,
   cleanliness: 4,
@@ -1863,53 +2039,57 @@ Review.create!(
   check_in: 1,
   value: 4,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 13,
-  rating: 4,
+  rating: 2,
   cleanliness: 4,
   accuracy: 4,
-  communication: 4,
-  location: 4,
+  communication: 1,
+  location: 2,
   check_in: 4,
   value: 4,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 14,
-  rating: 4,
-  cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
+  rating: 2,
+  cleanliness: 3,
+  accuracy: 2,
+  communication: 1,
   location: 4,
-  check_in: 4,
-  value: 4,
+  check_in: 2,
+  value: 3,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 7,
+  author_id: gigi.id,
   listing_id: 15,
-  rating: 4,
+  rating: 3,
   cleanliness: 4,
-  accuracy: 4,
-  communication: 4,
-  location: 4,
-  check_in: 4,
+  accuracy: 1,
+  communication: 2,
+  location: 1,
+  check_in: 2,
   value: 4,
   review: "Omg, I would buy this place if this were Zillow",
-  review_date: '2022-10-15'
+  review_date: '2022-10-15',
+  author_name: gigi.first_name
 )
 
 Review.create!(
-  author_id: 8,
+  author_id: anthony.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -1919,11 +2099,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: anthony.first_name
 )
 
 Review.create!(
-  author_id: 9,
+  author_id: arnob.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -1933,11 +2114,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: arnob.first_name
 )
 
 Review.create!(
-  author_id: 10,
+  author_id: brian.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -1947,11 +2129,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: brian.first_name
 )
 
 Review.create!(
-  author_id: 11,
+  author_id: cath.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -1961,11 +2144,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: cath.first_name
 )
 
 Review.create!(
-  author_id: 12,
+  author_id: chazz.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 2,
@@ -1975,11 +2159,12 @@ Review.create!(
   check_in: 2,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: chazz.first_name
 )
 
 Review.create!(
-  author_id: 13,
+  author_id: daniel.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -1989,11 +2174,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: daniel.first_name
 )
 
 Review.create!(
-  author_id: 14,
+  author_id: ethan.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2003,11 +2189,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: ethan.first_name
 )
 
 Review.create!(
-  author_id: 15,
+  author_id: evan.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2017,11 +2204,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: evan.first_name
 )
 
 Review.create!(
-  author_id: 16,
+  author_id: ish.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2031,11 +2219,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: ish.first_name
 )
 
 Review.create!(
-  author_id: 17,
+  author_id: jeremy.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2045,11 +2234,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: jeremy.first_name
 )
 
 Review.create!(
-  author_id: 18,
+  author_id: jimmy.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2059,11 +2249,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: jimmy.first_name
 )
 
 Review.create!(
-  author_id: 19,
+  author_id: julian.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2073,11 +2264,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: julian.first_name
 )
 
 Review.create!(
-  author_id: 20,
+  author_id: justink.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2087,11 +2279,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: justink.first_name
 )
 
 Review.create!(
-  author_id: 21,
+  author_id: kunju.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2101,11 +2294,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: kunju.first_name
 )
 
 Review.create!(
-  author_id: 22,
+  author_id: ming.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2115,11 +2309,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: ming.first_name
 )
 
 Review.create!(
-  author_id: 23,
+  author_id: ross.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2129,11 +2324,12 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: ross.first_name
 )
 
 Review.create!(
-  author_id: 24,
+  author_id: yong.id,
   listing_id: 6,
   rating: 5,
   cleanliness: 5,
@@ -2143,7 +2339,8 @@ Review.create!(
   check_in: 5,
   value: 5,
   review: "Best host ever",
-  review_date: '2010-10-15'
+  review_date: '2010-10-15',
+  author_name: yong.first_name
 )
 
 
@@ -2264,12 +2461,5 @@ ming.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_l
 qiao.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
 ross.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
 yong.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
-
-
-
-
-
-
-
 
 puts "Done!"
