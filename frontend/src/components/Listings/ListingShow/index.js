@@ -31,8 +31,8 @@ function ListingShowPage() {
                     <h1 className="listing-show-header-title">{listing.title}</h1>
                     <div className="listing-show-header-description">
                         <i className="fa-sharp fa-solid fa-star"></i>
-                        <span className="listing-show-rating">{listingsUtils.averageRating(listing.reviews).toFixed(2)} ·</span>
-                        <span className="listing-show-reviews">{listing.reviews.length} reviews</span> ·
+                        <span className="listing-show-rating">{listing.rating} ·</span>
+                        <span className="listing-show-reviews">{listing.num_ratings} reviews</span> ·
                         <span className="listing-show-location">{listing.city}, {listing.state}, {listing.country}</span>
                     </div>
                 </div>
@@ -60,12 +60,12 @@ function ListingShowPage() {
                     </div>
 
                     <div className="listing-show-reservations-container">
-                        <ReservationForm listing={listing} rating={listingsUtils.averageRating(listing.reviews)} />
+                        <ReservationForm listing={listing} rating={listing.rating} />
                     </div>
                 </div>
 
                 <div className="listing-show-reviews-container">
-                    <Reviews listing={listing} />
+                    <Reviews listing={listing} listingId={listingId} />
                 </div>
                 
                 <div className="listing-show-map-container">

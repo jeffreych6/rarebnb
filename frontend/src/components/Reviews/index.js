@@ -1,9 +1,19 @@
-import React from "react";
-import "./Reviews.css"
-import profile from "../../assets/profiles/profile.webp"
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 
-function Reviews({ listing }) {
+import * as reviewsActions from "../../store/reviews";
+import "./index.css"
+
+
+function Reviews({ listing, listingId }) {
+    const dispatch = useDispatch();
+    const reviews = useSelector(reviewsActions.getReviews)
+    
+    useEffect(() => {
+        dispatch(reviewsActions.fetchReview(listingId))
+    }, [])
 
     const averageRating = (listingReviews) => {
         let totalRating = 0
