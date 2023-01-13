@@ -7,24 +7,23 @@
 }
 
 .listing-show-image-large {
-    max-height: 560px;
-    padding-right: 8px;
-    width: 49.5%;
+    width: 50%;
+    margin-right: 4px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-
 }
 
 .listing-show-image-small-container {
     display: grid;
     grid-template-columns: auto auto;
+    margin-left: 4px;
     gap: 8px;
-    width: 50%
+    width: 50%;
 }
 
 .listing-show-image-small {
     height: 276px;
-    width: 276px;
+    width: 100%
 }
 
 #image-2 {

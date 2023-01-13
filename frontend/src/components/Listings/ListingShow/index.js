@@ -32,7 +32,7 @@ function ListingShowPage() {
                     <div className="listing-show-header-description">
                         <i className="fa-sharp fa-solid fa-star"></i>
                         <span className="listing-show-rating">{listing.rating} ·</span>
-                        <span className="listing-show-reviews">{listing.num_ratings} reviews</span> ·
+                        <span className="listing-show-reviews">{listing.numRatings} reviews</span> ·
                         <span className="listing-show-location">{listing.city}, {listing.state}, {listing.country}</span>
                     </div>
                 </div>
