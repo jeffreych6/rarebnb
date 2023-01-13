@@ -9,7 +9,7 @@ import ReservationForm from "../../ReservationForm"
 import MapContainer from "../../MapContainer"
 import Reviews from "../../Reviews"
 import "./index.css";
-import aircover from "../../../assets/amenities/aircover.png"
+import aircover from "../../../assets/aircover.png"
 
 function ListingShowPage() {
     const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function ListingShowPage() {
 
     useEffect(() => {
         dispatch(listingsActions.fetchListing(listingId))
-    },[dispatch, listingId]) // included dispatch in dependency to fix warning
+    },[dispatch, listingId])
 
     if (!listing) {
         return null;
@@ -66,6 +66,7 @@ function ListingShowPage() {
 
                 <div className="listing-show-reviews-container">
                     <Reviews listing={listing} listingId={listingId} />
+                    {/* <Reviews listing={listing} /> */}
                 </div>
                 
                 <div className="listing-show-map-container">

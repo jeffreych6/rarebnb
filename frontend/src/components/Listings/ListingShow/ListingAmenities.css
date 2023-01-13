@@ -1,6 +1,5 @@
 .listing-show-details-amenities {
     padding: 48px 0;
-    /* border-bottom: 1px solid #DDDDDD; */
 }
 
 .listing-show-details-amenities h1 {
@@ -18,12 +17,12 @@
 .listing-show-details-amenities-list-item {
     display: flex;
     align-items: center;
-    padding: 0 0 16px;
+    padding: 0 0 20px;
     font-size: 16px;
 }
 
 .listing-show-details-amenities-list-item img {
     height: 26px;
     width: 26px;
-    padding-right: 8px
+    padding-right: 15px;
 }

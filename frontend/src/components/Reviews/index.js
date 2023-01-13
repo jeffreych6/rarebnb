@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as reviewsActions from "../../store/reviews";
 import "./index.css"
 
-
 function Reviews({ listing, listingId }) {
     const dispatch = useDispatch();
+    // const {listingId} = useParams()
     const reviews = useSelector(reviewsActions.getReviews)
 
     useEffect(() => {
@@ -28,7 +29,6 @@ function Reviews({ listing, listingId }) {
     };
 
     const attributes = ["cleanliness", "accuracy", "communication", "location", "checkIn", "value"]
-
     
     const averageRating = (listingReviews, attribute) => {
         let totalRating = 0
@@ -98,11 +98,9 @@ function Reviews({ listing, listingId }) {
     return (
         <div className="reviews-container">
             <h1><i className="fa-sharp fa-solid fa-star"></i>  {parseFloat(listing.rating).toFixed(2)} · {reviews.length} {reviews.length === 1 ? "review" : "reviews"}</h1>
-
             <div className="reviews-grid-ratings">
                 {attributeRatings}
             </div>
-
             <div className="reviews-grid-comments">
                 {reviewContent}
             </div>
