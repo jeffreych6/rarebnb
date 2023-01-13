@@ -15,21 +15,8 @@
             :review,
             :review_date
 
-        # json.extract! review.listing,
-        #     :title,
-        #     :property_type,
-        #     :city,
-        #     :state,
-        #     :country,
-        #     :guests,
-        #     :price
-
-        # json.extract! review.author,
-        #     :first_name,
-        #     :last_name
-
-            # if review.author.photo.attached?
-            #     json.photo_url url_for(review.photo)
-            # end
+            if review.author.photo.attached?
+                json.photo_url url_for(review.author.photo)
+            end
     end
 end

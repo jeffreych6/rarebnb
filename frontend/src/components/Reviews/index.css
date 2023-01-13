@@ -5,7 +5,6 @@
     font-weight: 600;
     line-height: 26px;
     padding: 0 0 24px
-
 }
 
 .reviews-container i {
@@ -19,27 +18,19 @@
     margin-bottom: 24px
 }
 
-.reviews-grid-ratings-container {
-    margin-right: 20%;
-}
-
 .reviews-grid-ratings-content{
     display: flex;
     justify-content: space-between;
-}
-
-.reviews-grid-comments {
-    display: grid;
-    grid-template-columns: auto auto;
+    margin-bottom: 22px;
 }
 
 .reviews-grid-value {
     display: flex;
-    margin-right: 8px;
+    margin-right: 21%;
     width: 140px;
 }
 
-.reviews-grid-type h1{
+.reviews-grid-type {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -63,7 +54,7 @@
     font-size: 2px;
 }
 
-.reviews-grid-ratings-average h1{
+.reviews-grid-ratings-average {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-weight: 600;
     font-size: 12px;
@@ -71,21 +62,18 @@
     margin-left: 6px;
 }
 
+.reviews-grid-comments {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.review-content {
+    margin-bottom: 40px;
+}
+
 .review-author {
     display: flex;
     margin-bottom: 16px;
-}
-
-.review-author span {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-}
-
-.review-author h2 {
-    color: #717171;
-    font-size: 14px;
-    font-weight: 400
 }
 
 .review-author img {
@@ -95,14 +83,26 @@
     margin-right: 12px;
 }
 
+.review-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-author-info span {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.review-author-info h2 {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 400
+}
+
 .review-comment {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-}
-
-.review-content {
-    margin-right: 10%;
-    margin-bottom: 40px;
 }
