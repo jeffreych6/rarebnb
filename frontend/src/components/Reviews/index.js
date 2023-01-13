@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
-
 import * as reviewsActions from "../../store/reviews";
 import "./index.css"
 
@@ -15,71 +12,10 @@ function Reviews({ listing, listingId }) {
         dispatch(reviewsActions.fetchReview(listingId))
     }, [])
 
-    const averageRating = (listingReviews) => {
+    const averageRating = (listingReviews, attribute) => {
         let totalRating = 0
-
         listingReviews.forEach((review) => {
-            totalRating += review.rating
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const averageCleanliness = (listingReviews) => {
-        let totalRating = 0
-
-        listingReviews.forEach((review) => {
-            totalRating += review.cleanliness
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const averageAccuracy = (listingReviews) => {
-        let totalRating = 0
-
-        listingReviews.forEach((review) => {
-            totalRating += review.accuracy
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const averageCommunication = (listingReviews) => {
-        let totalRating = 0
-
-        listingReviews.forEach((review) => {
-            totalRating += review.communication
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const averageLocation = (listingReviews) => {
-        let totalRating = 0
-
-        listingReviews.forEach((review) => {
-            totalRating += review.location
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const averageCheckIn = (listingReviews) => {
-        let totalRating = 0
-
-        listingReviews.forEach((review) => {
-            totalRating += review.checkIn
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const averageValue = (listingReviews) => {
-        let totalRating = 0
-
-        listingReviews.forEach((review) => {
-            totalRating += review.value
+            totalRating += review[attribute]
         })
 
         return totalRating / listingReviews.length
@@ -110,7 +46,7 @@ function Reviews({ listing, listingId }) {
         '12': 'December'
     };
 
-    const reviewContent = displayedReviews(listing.reviews).map((review) => {
+    const reviewContent = displayedReviews(reviews).map((review) => {
 
         return (
             <div key={review.id} className="review-content">
@@ -131,7 +67,8 @@ function Reviews({ listing, listingId }) {
 
     return (
         <div className="reviews-container">
-            <h1><i className="fa-sharp fa-solid fa-star"></i>  {averageRating(listing.reviews).toFixed(2)} · {listing.reviews.length} {listing.reviews.length > 1 ? "reviews" : "review"}</h1>
+            <h1><i className="fa-sharp fa-solid fa-star"></i>  {parseFloat(listing.rating).toFixed(2)} · {reviews.length} {reviews.length === 1 ? "review" : "reviews"}</h1>
+
             <div className="reviews-grid-ratings">
                 <div className="reviews-grid-ratings-container">
                     <div className="reviews-grid-ratings-content">
@@ -140,10 +77,10 @@ function Reviews({ listing, listingId }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span style={{width: `${(averageCleanliness(listing.reviews)/5)*100}%`}}>.</span>
+                                <span style={{width: `${(averageRating(reviews, "cleanliness")/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCleanliness(listing.reviews).toFixed(1)}</h1>
+                                <h1>{averageRating(reviews, "cleanliness").toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -156,10 +93,10 @@ function Reviews({ listing, listingId }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span style={{width: `${(averageAccuracy(listing.reviews)/5)*100}%`}}>.</span>
+                                <span style={{width: `${(averageRating(reviews, "accuracy")/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageAccuracy(listing.reviews).toFixed(1)}</h1>
+                                <h1>{averageRating(reviews, "accuracy").toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -172,10 +109,10 @@ function Reviews({ listing, listingId }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span style={{width: `${(averageCommunication(listing.reviews)/5)*100}%`}}>.</span>
+                                <span style={{width: `${(averageRating(reviews, "communication")/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCommunication(listing.reviews).toFixed(1)}</h1>
+                                <h1>{averageRating(reviews, "communication").toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -188,10 +125,10 @@ function Reviews({ listing, listingId }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span style={{width: `${(averageLocation(listing.reviews)/5)*100}%`}}>.</span>
+                                <span style={{width: `${(averageRating(reviews, "location")/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageLocation(listing.reviews).toFixed(1)}</h1>
+                                <h1>{averageRating(reviews, "location").toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -204,10 +141,10 @@ function Reviews({ listing, listingId }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span style={{width: `${(averageCheckIn(listing.reviews)/5)*100}%`}}>.</span>
+                                <span style={{width: `${(averageRating(reviews, "checkIn")/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageCheckIn(listing.reviews).toFixed(1)}</h1>
+                                <h1>{averageRating(reviews, "checkIn").toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
@@ -220,10 +157,10 @@ function Reviews({ listing, listingId }) {
                         </div>
                         <div className="reviews-grid-value">
                             <div className="reviews-grid-rating-bar">
-                                <span style={{width: `${(averageValue(listing.reviews)/5)*100}%`}}>.</span>
+                                <span style={{width: `${(averageRating(reviews, "value")/5)*100}%`}}>.</span>
                             </div>
                             <div className="reviews-grid-ratings-average">
-                                <h1>{averageValue(listing.reviews).toFixed(1)}</h1>
+                                <h1>{averageRating(reviews, "value").toFixed(1)}</h1>
                             </div>
                         </div>
                     </div>
