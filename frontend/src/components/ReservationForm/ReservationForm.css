@@ -1,3 +1,9 @@
+.listing-show-reservations-form {
+    position: sticky;
+    top: 80px;
+    padding-bottom: 48px;
+}
+
 .reservation-form-container {
     margin-top: 10%;
     margin-left: 18%;
@@ -13,6 +19,7 @@
 .reservation-form-header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .reservation-form-header-price {
@@ -36,6 +43,12 @@
     font-size: 12px;
 }
 
+.reservation-form-header-rating a{
+    color:rgb(128, 128, 128);
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 4px
+}
 
 
 .reservation-form {

@@ -97,14 +97,7 @@
 
 
 .listing-show-reservations-container {
-    /* border: 1px solid black; */
     width: 70%;
-}
-
-.listing-show-reservations-form {
-    position: sticky;
-    top: 80px;
-    padding-bottom: 48px;
 }
 
 .listing-show-map-container {

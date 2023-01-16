@@ -1,36 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import * as reservationsActions from "../../store/reservations";
 import { useSelector, useDispatch } from "react-redux";
+import * as reservationsActions from "../../store/reservations";
+import * as listingsUtils from "../../utils/listings_utils"
 import "./ReservationForm.css";
 import logo from "../../assets/logo.png"
 import moment from 'moment';
 
-function ReservationForm({ listing, rating }) {
+function ReservationForm({ listing }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const listingId = listing.id;
 
-  const calculateEndDate = (startDate, days) => {
-    const date = new Date(Date.parse(startDate) + (days * 1000 * 3600 * 24))
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-
-    if (month > 12) {
-      month = month % 12
-    }
-
-    return (`${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`)
-  }
-
-  const calculateDays = (startDate, endDate) => {
-    return (Date.parse(endDate) - Date.parse(startDate)) / (1000 * 3600 * 24)
-  }
-
   const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"))
-  const [endDate, setEndDate] = useState(calculateEndDate(startDate, 6))
+  const [endDate, setEndDate] = useState(listingsUtils.calculateEndDate(startDate, 6))
   const [numGuests, setNumGuests] = useState("1")
   const [errors, setErrors] = useState([]);
   const cleaningFee = Math.round(parseInt(listing.price) * 0.5)
@@ -47,15 +31,14 @@ function ReservationForm({ listing, rating }) {
 
     setErrors([]);
     return dispatch(
-        reservationsActions.createReservation({ guestId, listingId, startDate, endDate, numGuests })
+      reservationsActions.createReservation({ guestId, listingId, startDate, endDate, numGuests })
     ).catch(async (res) => {
-        let data;
+      let data;
 
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
-
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
   };
 
   return (
@@ -66,7 +49,7 @@ function ReservationForm({ listing, rating }) {
             <span>${listing.price}</span> night
           </div>
           <div className="reservation-form-header-rating">
-            <i className="fa-sharp fa-solid fa-star"></i><span>{rating}</span>
+            <i className="fa-sharp fa-solid fa-star"></i><span>{listing.rating} ·</span><a href="#reviews">{listing.numRatings} reviews</a>
           </div>
         </div>
 
@@ -80,7 +63,7 @@ function ReservationForm({ listing, rating }) {
                       type="date"
                       value={startDate}
                       min={moment().format("YYYY-MM-DD")}
-                      max={calculateEndDate(endDate, -0.5)}
+                      max={listingsUtils.calculateEndDate(endDate, -0.5)}
                       onChange={(e) => setStartDate(e.target.value)}
                     />
                 </label>
@@ -91,7 +74,7 @@ function ReservationForm({ listing, rating }) {
                     className="reservation-form-date-input"
                     type="date"
                     value={endDate}
-                    min={calculateEndDate(startDate, 2)}
+                    min={listingsUtils.calculateEndDate(startDate, 2)}
                     onChange={(e) => setEndDate(e.target.value)}
                   />
                 </label>
@@ -113,8 +96,8 @@ function ReservationForm({ listing, rating }) {
         </form>
 
         <div className="reservation-form-rows">
-          <div className="reservation-form-row-type">${listing.price.toLocaleString("en-US")} x {calculateDays(startDate, endDate)} nights</div>
-          <div className="reservation-form-row-price">${(listing.price * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+          <div className="reservation-form-row-type">${listing.price.toLocaleString("en-US")} x {listingsUtils.calculateDays(startDate, endDate)} nights</div>
+          <div className="reservation-form-row-price">${(listing.price * listingsUtils.calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
         </div>
         <div className="reservation-form-rows">
           <div className="reservation-form-row-type">Cleaning fee</div>
@@ -122,12 +105,12 @@ function ReservationForm({ listing, rating }) {
         </div>
         <div className="reservation-form-rows">
           <div className="reservation-form-row-type">Service fee</div>
-          <div className="reservation-form-row-price">${(serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+          <div className="reservation-form-row-price">${(serviceFee * listingsUtils.calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
         </div>
         <div className="reservation-form-divider"></div>
         <div className="reservation-form-rows">
           <div className="reservation-form-row-total">Total before tax</div>
-          <div className="reservation-form-row-total">${(listing.price * calculateDays(startDate, endDate) + cleaningFee + serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+          <div className="reservation-form-row-total">${(listing.price * listingsUtils.calculateDays(startDate, endDate) + cleaningFee + serviceFee * listingsUtils.calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
         </div>
       </div>
 

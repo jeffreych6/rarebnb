@@ -37,7 +37,7 @@ function ListingShowPage() {
                     </div>
                 </div>
 
-                <ListingImages listingImages={listing.photosUrl} />
+                <ListingImages listingImages = {listing.photosUrl} />
 
                 <div className="listing-show-container">
                     <div className="listing-show-details">
@@ -60,18 +60,17 @@ function ListingShowPage() {
                     </div>
 
                     <div className="listing-show-reservations-container">
-                        <ReservationForm listing={listing} rating={listing.rating} />
+                        <ReservationForm listing = {listing} />
                     </div>
                 </div>
 
-                <div className="listing-show-reviews-container">
-                    <Reviews listing={listing} listingId={listingId} />
-                    {/* <Reviews listing={listing} /> */}
+                <div id="reviews" className="listing-show-reviews-container">
+                    <Reviews listing = {listing} listingId = {listingId} />
                 </div>
                 
                 <div className="listing-show-map-container">
                     <h1>Where you'll be</h1>
-                    <MapContainer listing={listing} />
+                    <MapContainer listing = {listing} />
                     <h2>{listing.city}, {listing.state}, {listing.country}</h2>
                 </div>
             </div>
