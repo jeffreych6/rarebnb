@@ -32,8 +32,8 @@ function ListingShowPage() {
                     <div className="listing-show-header-description">
                         <i className="fa-sharp fa-solid fa-star"></i>
                         <span className="listing-show-rating">{listing.rating} ·</span>
-                        <span className="listing-show-reviews">{listing.numRatings} reviews</span> ·
-                        <span className="listing-show-location">{listing.city}, {listing.state}, {listing.country}</span>
+                        <a href="#reviews" className="listing-show-reviews">{listing.numRatings} reviews</a> ·
+                        <a href="#map" className="listing-show-location">{listing.city}, {listing.state}, {listing.country}</a>
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@ function ListingShowPage() {
                     <Reviews listing = {listing} listingId = {listingId} />
                 </div>
                 
-                <div className="listing-show-map-container">
+                <div id="map" className="listing-show-map-container">
                     <h1>Where you'll be</h1>
                     <MapContainer listing = {listing} />
                     <h2>{listing.city}, {listing.state}, {listing.country}</h2>

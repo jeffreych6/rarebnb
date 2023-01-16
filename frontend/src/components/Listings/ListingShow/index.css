@@ -31,11 +31,13 @@
 
 .listing-show-reviews {
     margin-right: 5px;
+    color: black;
     text-decoration: underline;
 }
 
 .listing-show-location {
     text-decoration: underline;
+    color: black;
     margin-left: 5px;
 }
 
