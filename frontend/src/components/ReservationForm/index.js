@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as reservationsActions from "../../store/reservations";
@@ -91,7 +91,17 @@ function ReservationForm({ listing }) {
               />
             </label>
           </div>
-          <br />
+          <ul className="reservation-form-errors">
+            {numGuests > listing.guests && 
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" />Exceeded max number of guests</li>
+            }
+            {endDate < startDate && 
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" />no</li>
+            }
+            {startDate < moment().format("YYYY-MM-DD") &&
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" />no again</li>
+            }
+          </ul>
           {sessionUser ? <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button-disabled" type="submit" disabled>Reserve</button>}
         </form>
 

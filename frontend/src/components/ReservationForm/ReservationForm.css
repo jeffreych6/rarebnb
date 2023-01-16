@@ -124,13 +124,14 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 }
 
-.form-field-error {
+.reservation-form-errors {
     display: flex;
     flex-direction: column;
     color: rgb(193, 53, 21);
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
+    margin: 10px 0 10px;
 }
 
 .reservation-form-button {
