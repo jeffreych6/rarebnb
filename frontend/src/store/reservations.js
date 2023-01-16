@@ -1,8 +1,7 @@
 import csrfFetch from "./csrf";
 
 export const RECEIVE_RESERVATIONS = "reservations/RECEIVE_RESERVATIONS"
-export const ADD_RESERVATION = "reservations/ADD_RESERVATION"
-export const UPDATE_RESERVATION = "reservations/UPDATE_RESERVATIONS"
+export const RECEIVE_RESERVATION = "reservations/RECEIVE_RESERVATION"
 export const REMOVE_RESERVATION = "reservations/REMOVE_RESERVATIONS"
 
 
@@ -11,13 +10,8 @@ export const receiveReservations = (reservations) => ({
     reservations
 })
 
-export const addReservation = (reservation) => ({
-    type: ADD_RESERVATION,
-    reservation
-})
-
-export const updateReservation = (reservation) => ({
-    type: UPDATE_RESERVATION,
+export const receiveReservation = (reservation) => ({
+    type: RECEIVE_RESERVATION,
     reservation
 })
 
@@ -41,38 +35,24 @@ export const fetchReservations = () => async (dispatch) => {
 };
 
 export const createReservation = (reservation) => async (dispatch) => {
-    const { guestId, listingId, startDate, endDate, numGuests } = reservation;
     const response = await csrfFetch("/api/reservations", {
         method: "POST",
-        body: JSON.stringify({
-            guestId,
-            listingId,
-            startDate,
-            endDate,
-            numGuests
-        }),
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({reservation}),
     });
     const data = await response.json();
-    dispatch(addReservation(data.reservation));
-    return response;
+    dispatch(receiveReservation(data.reservation));
 };
 
 export const modifyReservation = (reservation) => async (dispatch) => {
     const { id, guestId, listingId, startDate, endDate, numGuests } = reservation;
     const response = await csrfFetch(`/api/reservations/${id}`, {
         method: "PATCH",
-        body: JSON.stringify({
-            id,
-            guestId,
-            listingId,
-            startDate,
-            endDate,
-            numGuests
-        }),
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({reservation}),
     });
     const data = await response.json();
-    dispatch(updateReservation(data.reservation));
-    return response
+    dispatch(receiveReservation(data.reservation));
 };
 
 export const deleteReservation = (reservationId) => async (dispatch) => {
@@ -89,8 +69,9 @@ const reservationsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_RESERVATIONS:
             return {...nextState, ...action.reservations}
-        case ADD_RESERVATION:
-            return {...nextState, ...action.reservation}
+        case RECEIVE_RESERVATION:
+            nextState[action.reservation.id] = action.reservation;
+            return nextState;
         case REMOVE_RESERVATION:
             delete nextState[action.reservationId]
             return nextState;

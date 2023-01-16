@@ -214,27 +214,3 @@
     margin-bottom: 10px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 }
-
-/* .reservation-form-rows {
-    display: flex;
-    justify-content: space-between;
-    margin: 5%;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400
-}
-
-.reservation-form-row-type {
-    text-decoration: underline;
-}
-
-.reservation-form-divider {
-    margin: 7% 5%;
-    border: 1px solid #DDDDDD;
-}
-
-.reservation-form-row-total {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600
-} */

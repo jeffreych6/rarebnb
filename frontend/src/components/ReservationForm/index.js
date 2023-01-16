@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as reservationsActions from "../../store/reservations";
 import * as listingsUtils from "../../utils/listings_utils"
-import "./ReservationForm.css";
+import "./index.css";
 import logo from "../../assets/logo.png"
 import moment from 'moment';
 
@@ -16,7 +16,7 @@ function ReservationForm({ listing }) {
   const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"))
   const [endDate, setEndDate] = useState(listingsUtils.calculateEndDate(startDate, 6))
   const [numGuests, setNumGuests] = useState("1")
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
   const cleaningFee = Math.round(parseInt(listing.price) * 0.5)
   const serviceFee = Math.round(parseInt(listing.price) * 0.15)
 
@@ -29,16 +29,17 @@ function ReservationForm({ listing }) {
     e.preventDefault();
     history.push("/reservations") 
 
-    setErrors([]);
+    // setErrors([]);
     return dispatch(
       reservationsActions.createReservation({ guestId, listingId, startDate, endDate, numGuests })
-    ).catch(async (res) => {
-      let data;
+    )
+    // .catch(async (res) => {
+    //   let data;
 
-      if (data?.errors) setErrors(data.errors);
-      else if (data) setErrors([data]);
-      else setErrors([res.statusText]);
-    });
+    //   if (data?.errors) setErrors(data.errors);
+    //   else if (data) setErrors([data]);
+    //   else setErrors([res.statusText]);
+    // });
   };
 
   return (
@@ -78,6 +79,7 @@ function ReservationForm({ listing }) {
                     value={endDate}
                     min={listingsUtils.calculateEndDate(startDate, 2)}
                     onChange={(e) => setEndDate(e.target.value)}
+                    // onKeyDown={(e) => e.preventDefault()} // Disable typing in date
                   />
                 </div>
             </div>
@@ -92,6 +94,7 @@ function ReservationForm({ listing }) {
                   min="1"
                   max={listing.guests}
                   onChange={(e) => setNumGuests(e.target.value)}
+                  // onKeyDown={(e) => e.preventDefault()} // Disable typing in date
                 />
               </div>
             </div>
@@ -104,7 +107,7 @@ function ReservationForm({ listing }) {
               <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid number of guests</li>
             }
             {endDate < startDate && 
-              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Checkout date cannot be earlier than Check-in date</li>
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Check-in date cannot be later than Checkout date</li>
             }
             {startDate < moment().format("YYYY-MM-DD") &&
               <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid Check-in date</li>
@@ -138,7 +141,7 @@ function ReservationForm({ listing }) {
             <div className="rare-find-text">
               <span>This is a rare find.</span> {listing.firstName}'s place on RareBnb is usually fully booked.
             </div>
-            <img className="rare-find-logo" src={logo}/>
+            <img className="rare-find-logo" src={logo} alt="logo"/>
           </div>
       </div>
     </div>

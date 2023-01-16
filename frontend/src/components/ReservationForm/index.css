@@ -127,6 +127,7 @@ input[type="date"] {
     font-weight: 400px;
     line-height: 20px;
     width: 18%;
+    min-width: 36px;
 }
 
 .reservation-form-errors {

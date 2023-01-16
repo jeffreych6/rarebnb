@@ -1,5 +1,6 @@
 .listing-show-images-container {
     display: flex;
+    min-width: 455px;
 }
 
 .listing-show-image-large-container {
