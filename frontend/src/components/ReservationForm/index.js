@@ -44,20 +44,22 @@ function ReservationForm({ listing }) {
   return (
     <div className="listing-show-reservations-form">
       <div className="reservation-form-container">
+
         <div className="reservation-form-header">
           <div className="reservation-form-header-price">
             <span>${listing.price}</span> night
           </div>
           <div className="reservation-form-header-rating">
-            <i className="fa-sharp fa-solid fa-star"></i><span>{listing.rating} ·</span><a href="#reviews">{listing.numRatings} reviews</a>
+            <i className="fa-sharp fa-solid fa-star" />
+            <span>{listing.rating} ·</span>
+            <a href="#reviews">{listing.numRatings} reviews</a>
           </div>
         </div>
 
         <form className="reservation-form" onSubmit={handleSubmit}>
-          <div className="reservation-form-inputs">
             <div className="reservation-form-dates-container">
-                <label className="reservation-form-start-date">
-                    <div className="reservation-form-date-text">CHECK-IN</div>
+                <div className="reservation-form-start-date">
+                    <div className="reservation-form-text">CHECK-IN</div>
                     <input 
                       className="reservation-form-date-input"
                       type="date"
@@ -66,10 +68,10 @@ function ReservationForm({ listing }) {
                       max={listingsUtils.calculateEndDate(endDate, -0.5)}
                       onChange={(e) => setStartDate(e.target.value)}
                     />
-                </label>
+                </div>
 
-                <label className="reservation-form-end-date">
-                  <div className="reservation-form-date-text">CHECKOUT</div>
+                <div className="reservation-form-end-date">
+                  <div className="reservation-form-text">CHECKOUT</div>
                   <input 
                     className="reservation-form-date-input"
                     type="date"
@@ -77,31 +79,38 @@ function ReservationForm({ listing }) {
                     min={listingsUtils.calculateEndDate(startDate, 2)}
                     onChange={(e) => setEndDate(e.target.value)}
                   />
-                </label>
+                </div>
             </div>
-            <label className="reservation-form-guests">
-              <div className="reservation-form-guests-text">GUESTS</div>
-              <input 
-                className="reservation-form-guests-input"
-                type="number"
-                value={numGuests}
-                min="1"
-                max={listing.guests}
-                onChange={(e) => setNumGuests(e.target.value)}
-              />
-            </label>
-          </div>
+
+            <div className="reservation-form-guests-container">
+              <div className="reservation-form-guests">
+                <div className="reservation-form-text">GUESTS</div>
+                <input 
+                  className="reservation-form-guests-input"
+                  type="number"
+                  value={numGuests}
+                  min="1"
+                  max={listing.guests}
+                  onChange={(e) => setNumGuests(e.target.value)}
+                />
+              </div>
+            </div>
+
           <ul className="reservation-form-errors">
             {numGuests > listing.guests && 
-              <li><i className="fa-sharp fa-solid fa-circle-exclamation" />Exceeded max number of guests</li>
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Exceeded max number of guests</li>
+            }
+            {numGuests <= 0 && 
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid number of guests</li>
             }
             {endDate < startDate && 
-              <li><i className="fa-sharp fa-solid fa-circle-exclamation" />no</li>
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Checkout date cannot be earlier than Check-in date</li>
             }
             {startDate < moment().format("YYYY-MM-DD") &&
-              <li><i className="fa-sharp fa-solid fa-circle-exclamation" />no again</li>
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid Check-in date</li>
             }
           </ul>
+
           {sessionUser ? <button className="reservation-form-button" type="submit">Reserve</button> : <button className="reservation-form-button-disabled" type="submit" disabled>Reserve</button>}
         </form>
 
@@ -129,9 +138,7 @@ function ReservationForm({ listing }) {
             <div className="rare-find-text">
               <span>This is a rare find.</span> {listing.firstName}'s place on RareBnb is usually fully booked.
             </div>
-            <div className="rare-find-logo">
-              <img src={logo}/>
-            </div>
+            <img className="rare-find-logo" src={logo}/>
           </div>
       </div>
     </div>

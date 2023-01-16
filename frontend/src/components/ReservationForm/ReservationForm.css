@@ -50,7 +50,6 @@
     padding-left: 4px
 }
 
-
 .reservation-form {
     margin: 5%;
 }
@@ -59,39 +58,56 @@
     display: flex;
     border: 1px solid #DDDDDD;
     border-radius: 8px 8px 0 0;
-    min-height: 56px;
-
+    height: 56px;
 }
 
 .reservation-form-start-date {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-right: 1px solid #DDDDDD;
     width: 50%;
-    margin: 0 10%;
-}
-
-.reservation-form-date-text {
-    font-size: 10px;
-    line-height: 12px;
-    font-weight: 800;
-    margin: 10px 10px 6px 10px;
-}
-
-.reservation-form-date-input {
-    cursor: pointer;
-    border: none;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    font-weight: 400px;
-    line-height: 20px;
-    margin-right: 20%
 }
 
 .reservation-form-end-date {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
+}
+
+.reservation-form-text {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.reservation-form-date-input {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: hidden;
+    width: 70%;
+    max-width: 110px;
+}
+
+input[type="date"] {
+    -webkit-text-fill-color: black;
+}
+
+.reservation-form-guests-container {
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 0 0 8px 8px;
 }
 
 .reservation-form-guests {
@@ -99,29 +115,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-left: 1px solid #DDDDDD;
-    border-right: 1px solid #DDDDDD;
-    border-bottom: 1px solid #DDDDDD;
-    border-radius: 0 0 8px 8px;
-    min-height: 56px;
-}
-
-.reservation-form-guests-text {
-    font-size: 10px;
-    line-height: 12px;
-    font-weight: 800;
-    margin: 10px 0 6px 0;
-    margin: 0 80% 0 18%
+    height: 56px;
+    width: 50%;
 }
 
 .reservation-form-guests-input {
     cursor: pointer;
     border: none;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     font-weight: 400px;
     line-height: 20px;
-    margin: 0 80% 0 18%;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    width: 18%;
 }
 
 .reservation-form-errors {
@@ -164,14 +169,13 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 }
 
-
 .reservation-form-rows {
     display: flex;
     justify-content: space-between;
     margin: 5%;
     font-size: 16px;
     line-height: 20px;
-    font-weight: 400
+    font-weight: 400;
 }
 
 .reservation-form-row-type {
@@ -206,7 +210,7 @@
     font-weight: 400;
     line-height: 20px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    padding-right: 16px
+    margin-right: 16px
 }
 
 .rare-find-text span {
@@ -214,11 +218,7 @@
     margin-right: 8px
 }
 
-.rare-find-logo img {
+.rare-find-logo {
     height: 32px;
     width: 32px;
 }
-
-input[type="date"] {
-    -webkit-text-fill-color: black;
-  }
