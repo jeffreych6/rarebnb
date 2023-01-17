@@ -41,7 +41,7 @@ export const createReservation = (reservation) => async (dispatch) => {
         body: JSON.stringify({reservation})
     });
     const data = await response.json();
-    dispatch(receiveReservation(data.reservation));
+    dispatch(receiveReservation(data));
 };
 
 export const modifyReservation = (reservation) => async (dispatch) => {
@@ -51,7 +51,7 @@ export const modifyReservation = (reservation) => async (dispatch) => {
         body: JSON.stringify({reservation})
     });
     const data = await response.json();
-    dispatch(receiveReservation(data.reservation));
+    dispatch(receiveReservation(data));
 };
 
 export const deleteReservation = (reservationId) => async (dispatch) => {
@@ -67,8 +67,10 @@ const reservationsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_RESERVATIONS:
+
             return {...nextState, ...action.reservations}
         case RECEIVE_RESERVATION:
+
             nextState[action.reservation.id] = action.reservation;
             return nextState;
         case REMOVE_RESERVATION:

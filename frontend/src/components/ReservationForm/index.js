@@ -16,6 +16,7 @@ function ReservationForm({ listing }) {
   const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"))
   const [endDate, setEndDate] = useState(listingsUtils.calculateEndDate(startDate, 6))
   const [numGuests, setNumGuests] = useState("1")
+  const [errors, setErrors] = useState([]);
   const cleaningFee = Math.round(parseInt(listing.price) * 0.5)
   const serviceFee = Math.round(parseInt(listing.price) * 0.15)
 
@@ -28,9 +29,16 @@ function ReservationForm({ listing }) {
     e.preventDefault();
     history.push("/reservations") 
 
+    setErrors([]);
     return dispatch(
       reservationsActions.createReservation({ guestId, listingId, startDate, endDate, numGuests })
-    )
+    ).catch(async (res) => {
+      let data;
+
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
   };
 
   return (

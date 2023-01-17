@@ -18,7 +18,7 @@ function Reservations() {
     
     useEffect(() => {
         dispatch(reservationsActions.fetchReservations())
-    },[dispatch])
+    },[dispatch, showReservationModal])
 
     if (!sessionUser) return <Redirect to="/" />;
 

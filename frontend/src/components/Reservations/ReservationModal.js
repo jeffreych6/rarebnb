@@ -39,9 +39,16 @@ function ReservationModal({ reservation, setShowReservationModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowReservationModal(false)
+    setErrors([]);
     return dispatch(
       reservationsActions.modifyReservation({ id, guestId, listingId, startDate, endDate, numGuests })
-    )
+    ).catch(async (res) => {
+      let data;
+
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
   };
 
   const handleErrors = (formFieldType) => {
