@@ -16,7 +16,6 @@ function ReservationForm({ listing }) {
   const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"))
   const [endDate, setEndDate] = useState(listingsUtils.calculateEndDate(startDate, 6))
   const [numGuests, setNumGuests] = useState("1")
-  // const [errors, setErrors] = useState([]);
   const cleaningFee = Math.round(parseInt(listing.price) * 0.5)
   const serviceFee = Math.round(parseInt(listing.price) * 0.15)
 
@@ -29,23 +28,14 @@ function ReservationForm({ listing }) {
     e.preventDefault();
     history.push("/reservations") 
 
-    // setErrors([]);
     return dispatch(
       reservationsActions.createReservation({ guestId, listingId, startDate, endDate, numGuests })
     )
-    // .catch(async (res) => {
-    //   let data;
-
-    //   if (data?.errors) setErrors(data.errors);
-    //   else if (data) setErrors([data]);
-    //   else setErrors([res.statusText]);
-    // });
   };
 
   return (
     <div className="listing-show-reservations-form">
       <div className="reservation-form-container">
-
         <div className="reservation-form-header">
           <div className="reservation-form-header-price">
             <span>${listing.price}</span> night
@@ -56,7 +46,6 @@ function ReservationForm({ listing }) {
             <a href="#reviews">{listing.numRatings} reviews</a>
           </div>
         </div>
-
         <form className="reservation-form" onSubmit={handleSubmit}>
             <div className="reservation-form-dates-container">
                 <div className="reservation-form-start-date">
@@ -70,7 +59,6 @@ function ReservationForm({ listing }) {
                       onChange={(e) => setStartDate(e.target.value)}
                     />
                 </div>
-
                 <div className="reservation-form-end-date">
                   <div className="reservation-form-text">CHECKOUT</div>
                   <input 
@@ -79,11 +67,9 @@ function ReservationForm({ listing }) {
                     value={endDate}
                     min={listingsUtils.calculateEndDate(startDate, 2)}
                     onChange={(e) => setEndDate(e.target.value)}
-                    // onKeyDown={(e) => e.preventDefault()} // Disable typing in date
                   />
                 </div>
             </div>
-
             <div className="reservation-form-guests-container">
               <div className="reservation-form-guests">
                 <div className="reservation-form-text">GUESTS</div>
@@ -94,7 +80,6 @@ function ReservationForm({ listing }) {
                   min="1"
                   max={listing.guests}
                   onChange={(e) => setNumGuests(e.target.value)}
-                  // onKeyDown={(e) => e.preventDefault()} // Disable typing in date
                 />
               </div>
             </div>

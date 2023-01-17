@@ -7,7 +7,7 @@ import "./Reservations.css";
 import moment from 'moment';
 
 
-function ReservationModal({ reservation }) {
+function ReservationModal({ reservation, setShowReservationModal }) {
   const dispatch = useDispatch();
   const id = reservation.id;
   const guestId = reservation.guestId;
@@ -38,22 +38,10 @@ function ReservationModal({ reservation }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    setErrors([]);
+    setShowReservationModal(false)
     return dispatch(
-        reservationsActions.modifyReservation({ id, guestId, listingId, startDate, endDate, numGuests })
-    ).catch(async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
+      reservationsActions.modifyReservation({ id, guestId, listingId, startDate, endDate, numGuests })
+    )
   };
 
   const handleErrors = (formFieldType) => {

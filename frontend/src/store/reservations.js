@@ -38,18 +38,17 @@ export const createReservation = (reservation) => async (dispatch) => {
     const response = await csrfFetch("/api/reservations", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({reservation}),
+        body: JSON.stringify({reservation})
     });
     const data = await response.json();
     dispatch(receiveReservation(data.reservation));
 };
 
 export const modifyReservation = (reservation) => async (dispatch) => {
-    const { id, guestId, listingId, startDate, endDate, numGuests } = reservation;
-    const response = await csrfFetch(`/api/reservations/${id}`, {
+    const response = await csrfFetch(`/api/reservations/${reservation.id}`, {
         method: "PATCH",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({reservation}),
+        body: JSON.stringify({reservation})
     });
     const data = await response.json();
     dispatch(receiveReservation(data.reservation));

@@ -3,7 +3,7 @@ import { NavLink, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal } from '../../context/Modal';
 import ReservationModal from './ReservationModal'
-import ReservationIndexItem from './ReservationIndexItem'
+import ReservationUpcomingTrips from './ReservationUpcomingTrips'
 import ReservationPastTrips from "./ReservationPastTrips";
 import * as reservationsActions from "../../store/reservations";
 import "./Reservations.css";
@@ -18,7 +18,7 @@ function Reservations() {
     
     useEffect(() => {
         dispatch(reservationsActions.fetchReservations())
-    },[])
+    },[dispatch])
 
     if (!sessionUser) return <Redirect to="/" />;
 
@@ -67,7 +67,7 @@ function Reservations() {
 
     const upcomingReservations = upcomingReservationsList(reservations).map((reservation) => {
         return (
-            <ReservationIndexItem key={reservation.id} reservation={reservation} />
+            <ReservationUpcomingTrips key={reservation.id} reservation={reservation} />
         )
     })
 
@@ -86,6 +86,7 @@ function Reservations() {
             <div className="reservation-index-upcoming-reservations">
                 Upcoming reservations
             </div>
+            {}
             {upcomingReservations}
             <div className="reservation-index-upcoming-reservations">
                 Where you've been

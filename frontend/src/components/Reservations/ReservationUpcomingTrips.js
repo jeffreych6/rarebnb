@@ -6,7 +6,7 @@ import ReservationModal from './ReservationModal'
 import * as reservationsActions from "../../store/reservations";
 import "./Reservations.css";
 
-function ReservationIndexItem({ reservation }) {
+function ReservationUpcomingTrips({ reservation }) {
     const history = useHistory()
     const dispatch = useDispatch()
     const reservations = useSelector(state => Object.values(state.reservations))
@@ -18,7 +18,7 @@ function ReservationIndexItem({ reservation }) {
     const handleClose = () => {
         // const payload = reservations[reservation.id]
         // dispatch()
-        history.push("/reservations")
+        // history.push("/reservations")
 
         setShowReservationModal(false)
     }
@@ -68,11 +68,11 @@ function ReservationIndexItem({ reservation }) {
             {showReservationModal && (
                 // <Modal onClose={(() => setShowReservationModal(false))}>
                 <LargeModal onClose={() => handleClose()}>
-                    <ReservationModal reservation={reservation} />
+                    <ReservationModal reservation={reservation} setShowReservationModal={setShowReservationModal}/>
                 </LargeModal>
             )}
         </>
     )
 }
 
-export default ReservationIndexItem;
+export default ReservationUpcomingTrips;
