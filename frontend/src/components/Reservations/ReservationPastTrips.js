@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, Redirect, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal } from '../../context/Modal';
+import ReviewForm from '../ReviewForm';
 import ReservationModal from './ReservationModal'
 import * as reservationsActions from "../../store/reservations";
 import "./Reservations.css";
@@ -12,15 +13,13 @@ function ReservationPastTrips({ reservation }) {
     const reservations = useSelector(state => Object.values(state.reservations))
 
 
-    const [showReservationModal, setShowReservationModal] = useState(false);
+    const [showReviewModal, setShowReviewModal] = useState(false);
 
 
     const handleClose = () => {
-        // const payload = reservations[reservation.id]
-        // dispatch()
-        history.push("/reservations")
 
-        setShowReservationModal(false)
+
+        setShowReviewModal(false)
     }
 
     const titleize = (word) => {
@@ -44,7 +43,7 @@ function ReservationPastTrips({ reservation }) {
 
     return (
         <>
-            {/* <div className="reservation-container" onClick={() => setShowReservationModal(true)}> */}
+            <div className="reservation-container" onClick={() => setShowReviewModal(true)}>
             <div className="reservation-container-past-trips">
                 <div className="reservation-detail-container">
                     <div className="reservation-detail-title">
@@ -65,12 +64,13 @@ function ReservationPastTrips({ reservation }) {
                 </div>
                 <img className="reservation-image" src={reservation.photosUrl[0]}></img>
             </div>
+            </div>
             
-            {/* {showReservationModal && (
+            {showReviewModal && (
                 <Modal onClose={() => handleClose()}>
-                    <ReservationModal reservation={reservation} />
+                    <ReviewForm reservation = {reservation} />
                 </Modal>
-            )} */}
+            )}
         </>
     )
 }

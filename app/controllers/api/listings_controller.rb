@@ -8,15 +8,15 @@ class Api::ListingsController < ApplicationController
         render :index
     end
 
-    def create
-        @listing = Listing.new(listing_params)
+    # def create
+    #     @listing = Listing.new(listing_params)
 
-        if @listing.save
-            render :show
-        else
-            render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
-        end
-    end
+    #     if @listing.save
+    #         render :show
+    #     else
+    #         render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
+    #     end
+    # end
 
     def show
         @listing = Listing.find_by(id: params[:id])
