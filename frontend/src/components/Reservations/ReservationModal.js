@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import * as reservationsActions from "../../store/reservations";
 import * as sessionActions from "../../store/session";
 import ReservationMap from "./ReservationMap"
@@ -8,6 +10,8 @@ import moment from 'moment';
 
 
 function ReservationModal({ reservation, setShowReservationModal }) {
+  const history = useHistory();
+
   const dispatch = useDispatch();
   const id = reservation.id;
   const guestId = reservation.guestId;
@@ -18,6 +22,10 @@ function ReservationModal({ reservation, setShowReservationModal }) {
   const [errors, setErrors] = useState([]);
   const cleaningFee = Math.round(parseInt(reservation.price) * 0.5)
   const serviceFee = Math.round(parseInt(reservation.price) * 0.15)
+
+  useEffect(() => {
+    dispatch(reservationsActions.fetchReservation(id))
+  },[dispatch, setShowReservationModal])
 
   const calculateEndDate = (startDate, days) => {
     const date = new Date(Date.parse(startDate) + (days * 1000 * 3600 * 24))
@@ -39,10 +47,15 @@ function ReservationModal({ reservation, setShowReservationModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowReservationModal(false)
+    // history.push("/")
     setErrors([]);
-    return dispatch(
+    dispatch(
       reservationsActions.modifyReservation({ id, guestId, listingId, startDate, endDate, numGuests })
-    ).catch(async (res) => {
+    ).then(res => {
+      setErrors([]);
+      setShowReservationModal(false);
+    }).
+      catch(async (res) => {
       let data;
 
       if (data?.errors) setErrors(data.errors);

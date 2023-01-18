@@ -34,24 +34,46 @@ export const fetchReservations = () => async (dispatch) => {
     dispatch(receiveReservations(data));
 };
 
-export const createReservation = (reservation) => async (dispatch) => {
-    const response = await csrfFetch("/api/reservations", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({reservation})
-    });
+export const fetchReservation = (reservationId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reservations/${reservationId}`);
     const data = await response.json();
     dispatch(receiveReservation(data));
+}
+
+export const createReservation = (reservation) => async (dispatch) => {
+    const { guestId, listingId, startDate, endDate, numGuests } = reservation;
+    const response = await csrfFetch("/api/reservations", {
+        method: "POST",
+        body: JSON.stringify({
+            guestId,
+            listingId,
+            startDate,
+            endDate,
+            numGuests
+        }),
+    });
+    const data = await response.json();
+    console.log(data)
+    dispatch(receiveReservation(data));
+    return response;
 };
 
 export const modifyReservation = (reservation) => async (dispatch) => {
+    const { id, guestId, listingId, startDate, endDate, numGuests } = reservation;
     const response = await csrfFetch(`/api/reservations/${reservation.id}`, {
         method: "PATCH",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({reservation})
+        body: JSON.stringify({
+            id,
+            guestId,
+            listingId,
+            startDate,
+            endDate,
+            numGuests
+        }),
     });
     const data = await response.json();
     dispatch(receiveReservation(data));
+    return response
 };
 
 export const deleteReservation = (reservationId) => async (dispatch) => {
@@ -67,10 +89,8 @@ const reservationsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_RESERVATIONS:
-
             return {...nextState, ...action.reservations}
         case RECEIVE_RESERVATION:
-
             nextState[action.reservation.id] = action.reservation;
             return nextState;
         case REMOVE_RESERVATION:
