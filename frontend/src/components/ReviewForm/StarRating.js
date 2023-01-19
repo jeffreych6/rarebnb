@@ -11,6 +11,7 @@ function StarRating({ rating, setRating }) {
           <button
             type="button"
             key={index}
+            id="star-button"
             className={index <= (hover || rating) ? "on" : "off"}
             onClick={() => setRating(index)}
             onMouseEnter={() => setHover(index)}

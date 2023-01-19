@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import { useSelector, useDispatch } from "react-redux";
+import * as reviewsActions from "../../store/reviews";
 
 import StarRating from './StarRating'
 import "./index.css";
@@ -9,6 +12,8 @@ function ReviewForm({ reservation }) {
   const sessionUser = useSelector((state) => state.session.user);
 
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const [rating, setRating] = useState(0);
   const [cleanliness, setCleanliness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
@@ -16,6 +21,7 @@ function ReviewForm({ reservation }) {
   const [location, setLocation] = useState(0);
   const [checkIn, setCheckIn] = useState(0);
   const [value, setValue] = useState(0);
+  const [review, setReview] = useState("")
   const [errors, setErrors] = useState([]);
   const listingId = reservation.listingId
   const reviewDate = moment().format("YYYY-MM-DD")
@@ -29,20 +35,30 @@ function ReviewForm({ reservation }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push(`/listings/${listingId}`) 
+
     setErrors([]);
-    // return dispatch(sessionActions.login({ email, password }))
-    //   .catch(async (res) => {
-    //     let data;
-    //     try {
-    //       data = await res.clone().json();
-    //     } catch {
-    //       data = await res.text();
-    //     }
-    //     if (data?.errors) setErrors(data.errors);
-    //     else if (data) setErrors([data]);
-    //     else setErrors([res.statusText]);
-    //   });
+
+    return dispatch(
+      reviewsActions.createReview({ authorId, listingId, authorName, rating, cleanliness, accuracy, communication, location, checkIn, value, review, reviewDate})
+      ).catch(async (res) => {
+        let data;
+
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
   };
+
+  console.log(rating)
+  console.log(cleanliness)
+  console.log(accuracy)
+  console.log(communication)
+  console.log(location)
+  console.log(checkIn)
+  console.log(value)
+  console.log(review)
+
 
 
   return (
@@ -60,44 +76,11 @@ function ReviewForm({ reservation }) {
         Location: <StarRating rating = {location} setRating = {setLocation}/>
         Check-in: <StarRating rating = {checkIn} setRating = {setCheckIn}/>
         Value: <StarRating rating = {value} setRating = {setValue}/>
-        Comment: <textarea />
+        Comment: <textarea onChange={(e) => setReview(e.target.value)}/>
         <button type="submit">Submit</button>
         </form>
       </div>
         
-        {/* <form onSubmit={handleSubmit}>
-          <div className="form-text-box">
-            <div className="form-text-box-caption">Email</div>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              required
-            />
-          </div>
-          <br />
-
-          <div className="form-text-box">
-            <div className="form-text-box-caption">Password</div>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-            />
-          </div>
-          {handleErrors()}
-
-          <div className="login-form-buttons">
-            <button type="submit">Log In</button>
-            <br />
-            <br />
-            <button onClick={loginDemo}>Demo User</button>
-          </div>
-        </form> */}
-      {/* </div> */}
     </>
   );
 }
