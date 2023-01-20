@@ -60,7 +60,6 @@ function ReviewForm({ reservation }) {
         else setErrors([res.statusText]);
       });
   };
-  console.log(errors)
 
   return (
     <>

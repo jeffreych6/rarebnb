@@ -12,7 +12,7 @@ function Footer() {
                 Designed by Jeffrey Cheng ·
                 <a href="/#"> Portfolio </a>
                 ·
-                <a href="https://github.com/jeffreych6"> GitHub </a>
+                <a href="https://github.com/jeffreych6/rarebnb"> GitHub </a>
                 ·
                 <a href="https://www.linkedin.com/in/jeffrey-cheng-38338290"> LinkedIn </a>
                 ·

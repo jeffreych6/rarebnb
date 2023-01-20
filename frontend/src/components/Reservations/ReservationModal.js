@@ -20,8 +20,8 @@ function ReservationModal({ reservation, setShowReservationModal }) {
   const serviceFee = Math.round(parseInt(reservation.price) * 0.15)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowReservationModal(false)
+    // e.preventDefault();
+    // setShowReservationModal(false)
 
     setErrors([]);
     dispatch(

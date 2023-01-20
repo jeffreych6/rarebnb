@@ -33,8 +33,6 @@ function SignupForm() {
     });
   };
 
-  console.log(errors)
-
   const handleErrors = (formFieldType) => {
     const errorList = []
 

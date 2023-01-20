@@ -53,7 +53,6 @@ export const createReservation = (reservation) => async (dispatch) => {
         }),
     });
     const data = await response.json();
-    console.log(data)
     dispatch(receiveReservation(data));
     return response;
 };

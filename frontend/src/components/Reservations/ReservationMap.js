@@ -27,7 +27,6 @@ const ReservationMap = ({reservation}) => {
   const onSelect = item => {
     setSelected(item);
   }
-  console.log(reservation)
   
   return (
      <LoadScript
