@@ -1,0 +1,11 @@
+.listing-map-name {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 6px;
+}
+
+.listing-map-image {
+    height: 100px;
+    width: auto;
+}

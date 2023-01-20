@@ -6,7 +6,7 @@ import * as listingsUtils from "../../../utils/listings_utils"
 import ListingImages from "./ListingImages"
 import ListingAmenities from "./ListingAmenities"
 import ReservationForm from "../../ReservationForm"
-import MapContainer from "../../MapContainer"
+import ListingMap from "./ListingMap"
 import Reviews from "../../Reviews"
 import "./index.css";
 import aircover from "../../../assets/aircover.png"
@@ -70,7 +70,7 @@ function ListingShowPage() {
                 
                 <div id="map" className="listing-show-map-container">
                     <h1>Where you'll be</h1>
-                    <MapContainer listing = {listing} />
+                    <ListingMap listing = {listing} />
                     <h2>{listing.city}, {listing.state}, {listing.country}</h2>
                 </div>
             </div>

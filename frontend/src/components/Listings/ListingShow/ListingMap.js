@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import './MapContainer.css';
+import './ListingMap.css';
 
-const MapContainer = ({listing}) => {
+const ListingMap = ({listing}) => {
   const [selected, setSelected] = useState({});
   
   const locations = [
@@ -11,7 +11,8 @@ const MapContainer = ({listing}) => {
       location: {
         lat: listing.lat,
         lng: listing.lng
-      }
+      },
+      photo: listing.photosUrl[0]
     }
   ]
 
@@ -43,7 +44,8 @@ const MapContainer = ({listing}) => {
           {selected.location && (
             <InfoWindow position={selected.location} clickable={true} onCloseClick={() => setSelected({})}>
               <>
-                <p>{selected.name}</p>
+                <p className="listing-map-name">{selected.name}</p>
+                <img className="listing-map-image" src={selected.photo} alt="map"></img>
               </>
             </InfoWindow>
             )
@@ -53,4 +55,4 @@ const MapContainer = ({listing}) => {
   )
 }
 
-export default MapContainer;
+export default ListingMap;
