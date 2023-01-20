@@ -13,6 +13,7 @@
 }
 
 .listings-index-image {
+    object-fit: cover;
     height: 277px;
     width: 291px;
     border-radius: 10px;

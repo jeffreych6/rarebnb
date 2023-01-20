@@ -3,6 +3,7 @@ import './StarRating.css'
 
 function StarRating({ rating, setRating }) {
   const [hover, setHover] = useState(0);
+    
   return (
     <div className="star-rating">
       {[...Array(5)].map((star, index) => {

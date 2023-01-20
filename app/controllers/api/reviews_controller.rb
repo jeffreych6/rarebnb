@@ -15,7 +15,7 @@ class Api::ReviewsController < ApplicationController
             @listing.num_ratings += 1
             @listing.save
         else
-            render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
+            render json: { errors: @review.errors.full_messages }, status: 422
         end
     end
 

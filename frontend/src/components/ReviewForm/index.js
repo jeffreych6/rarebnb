@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
 import { useSelector, useDispatch } from "react-redux";
 import * as reviewsActions from "../../store/reviews";
-
 import StarRating from './StarRating'
 import "./index.css";
 import moment from 'moment';
 
 function ReviewForm({ reservation }) {
-  const sessionUser = useSelector((state) => state.session.user);
-
   const dispatch = useDispatch();
   const history = useHistory();
+  const sessionUser = useSelector((state) => state.session.user);
 
   const [rating, setRating] = useState(0);
   const [cleanliness, setCleanliness] = useState(0);
@@ -33,12 +30,26 @@ function ReviewForm({ reservation }) {
     authorName = sessionUser.firstName
   }
 
+  const month = {
+    '01': 'Jan',
+    '02': 'Feb',
+    '03': 'Mar',
+    '04': 'Apr',
+    '05': 'May',
+    '06': 'Jun',
+    '07': 'Jul',
+    '08': 'Aug',
+    '09': 'Sep',
+    '10': 'Oct',
+    '11': 'Nov',
+    '12': 'Dec',
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/listings/${listingId}`) 
-
+    history.push(`/listings/${listingId}`)
+    
     setErrors([]);
-
     return dispatch(
       reviewsActions.createReview({ authorId, listingId, authorName, rating, cleanliness, accuracy, communication, location, checkIn, value, review, reviewDate})
       ).catch(async (res) => {
@@ -49,38 +60,56 @@ function ReviewForm({ reservation }) {
         else setErrors([res.statusText]);
       });
   };
-
-  console.log(rating)
-  console.log(cleanliness)
-  console.log(accuracy)
-  console.log(communication)
-  console.log(location)
-  console.log(checkIn)
-  console.log(value)
-  console.log(review)
-
-
+  console.log(errors)
 
   return (
     <>
-      <header className="form-header">
-        <h1>Leave a Review</h1>
-      </header>
+      <header className="review-form-header">Leave a Review</header>
+      <div className="review-description">
+          <h1>{reservation.title}</h1>
+          <h2>Hosted by {reservation.firstName} {reservation.lastName}</h2>
+          <h2>{month[reservation.startDate.slice(5, 7)]} {reservation.startDate[8] === "0" ? reservation.startDate.slice(9) : reservation.startDate.slice(8)}{reservation.startDate.slice(5, 7) === reservation.endDate.slice(5, 7) ? "-" : ` - ${month[reservation.endDate.slice(5, 7)]} `}{reservation.endDate[8] === "0" ? reservation.endDate.slice(9) : reservation.endDate.slice(8)}, {reservation.endDate.slice(0, 4)}</h2>
+      </div>
 
-      <div className="form-content">
+      <div className="review-form-content">
         <form onSubmit={handleSubmit}>
-        Rating: <StarRating rating = {rating} setRating = {setRating}/>
-        Cleanliness: <StarRating rating = {cleanliness} setRating = {setCleanliness}/>
-        Accuracy: <StarRating rating = {accuracy} setRating = {setAccuracy}/>
-        Communication: <StarRating rating = {communication} setRating = {setCommunication}/>
-        Location: <StarRating rating = {location} setRating = {setLocation}/>
-        Check-in: <StarRating rating = {checkIn} setRating = {setCheckIn}/>
-        Value: <StarRating rating = {value} setRating = {setValue}/>
-        Comment: <textarea onChange={(e) => setReview(e.target.value)}/>
-        <button type="submit">Submit</button>
+          <div className="attribute-ratings-container">
+            <div className="attribute-rating">
+              <h1>Cleanliness</h1>
+              <StarRating rating = {cleanliness} setRating = {setCleanliness}/>
+            </div>
+            <div className="attribute-rating">
+              <h1>Accuracy</h1>
+              <StarRating rating = {accuracy} setRating = {setAccuracy}/>
+            </div>
+            <div className="attribute-rating">
+              <h1>Communication</h1>
+              <StarRating rating = {communication} setRating = {setCommunication}/>
+            </div>
+            <div className="attribute-rating">
+              <h1>Location</h1>
+              <StarRating rating = {location} setRating = {setLocation}/>
+            </div>
+            <div className="attribute-rating">
+              <h1>Check-in</h1>
+              <StarRating rating = {checkIn} setRating = {setCheckIn}/>
+            </div>
+            <div className="attribute-rating">
+              <h1>Value</h1>
+              <StarRating rating = {value} setRating = {setValue}/>
+            </div>
+          </div>
+          <div className="attribute-rating">
+            <h1>Rating</h1>
+            <StarRating rating = {rating} setRating = {setRating}/>
+          </div>
+          <div className="attribute-rating">
+            <h1>Comment</h1>
+            <textarea className="review-comment" onChange={(e) => setReview(e.target.value)}/>
+          </div>
+          <button className="review-submit" type="submit">Submit</button>
         </form>
       </div>
-        
     </>
   );
 }

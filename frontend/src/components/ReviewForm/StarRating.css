@@ -3,6 +3,7 @@
     border: none;
     outline: none;
     cursor: pointer;
+    font-size: 18px;
   }
   .on {
     color: #000;

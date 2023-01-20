@@ -1,0 +1,11 @@
+.reservation-map-listing-name {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 6px;
+}
+
+.reservation-map-listing-image {
+    height: 100px;
+    width: auto;
+}

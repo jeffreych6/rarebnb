@@ -13,13 +13,10 @@
 }
 
 .reservation-form-header {
-    margin: 8% 5%;
-}
-
-.reservation-form-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin: 8% 5%;
 }
 
 .reservation-form-header-price {

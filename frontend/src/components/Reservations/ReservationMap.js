@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-// import './MapContainer.css';
+import "./ReservationMap.css"
 
 const ReservationMap = ({reservation}) => {
   const [selected, setSelected] = useState({});
@@ -11,7 +11,8 @@ const ReservationMap = ({reservation}) => {
       location: {
         lat: reservation.lat,
         lng: reservation.lng
-      }
+      },
+      photo: reservation.photosUrl[0]
     }
   ]
 
@@ -26,6 +27,7 @@ const ReservationMap = ({reservation}) => {
   const onSelect = item => {
     setSelected(item);
   }
+  console.log(reservation)
   
   return (
      <LoadScript
@@ -43,8 +45,8 @@ const ReservationMap = ({reservation}) => {
           {selected.location && (
             <InfoWindow position={selected.location} clickable={true} onCloseClick={() => setSelected({})}>
               <>
-                <p>{selected.name}</p>
-                <p>hellooooooooooooooo this working!!!!!</p>
+                <p className="reservation-map-listing-name">{selected.name}</p>
+                <img className="reservation-map-listing-image" src={selected.photo} alt="map"></img>
               </>
             </InfoWindow>
             )

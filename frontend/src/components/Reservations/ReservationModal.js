@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-
 import * as reservationsActions from "../../store/reservations";
-import * as sessionActions from "../../store/session";
+import * as listingsUtils from "../../utils/listings_utils"
 import ReservationMap from "./ReservationMap"
 import "./ReservationModal.css";
 import moment from 'moment';
 
 
 function ReservationModal({ reservation, setShowReservationModal }) {
-  const history = useHistory();
-
   const dispatch = useDispatch();
   const id = reservation.id;
   const guestId = reservation.guestId;
@@ -23,39 +19,14 @@ function ReservationModal({ reservation, setShowReservationModal }) {
   const cleaningFee = Math.round(parseInt(reservation.price) * 0.5)
   const serviceFee = Math.round(parseInt(reservation.price) * 0.15)
 
-  useEffect(() => {
-    dispatch(reservationsActions.fetchReservation(id))
-  },[dispatch, setShowReservationModal])
-
-  const calculateEndDate = (startDate, days) => {
-    const date = new Date(Date.parse(startDate) + (days * 1000 * 3600 * 24))
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-
-    if (month > 12) {
-      month = month % 12
-    }
-
-    return (`${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`)
-  }
-
-  const calculateDays = (startDate, endDate) => {
-    return (Date.parse(endDate) - Date.parse(startDate)) / (1000 * 3600 * 24)
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowReservationModal(false)
-    // history.push("/")
+
     setErrors([]);
     dispatch(
       reservationsActions.modifyReservation({ id, guestId, listingId, startDate, endDate, numGuests })
-    ).then(res => {
-      setErrors([]);
-      setShowReservationModal(false);
-    }).
-      catch(async (res) => {
+    ).catch(async (res) => {
       let data;
 
       if (data?.errors) setErrors(data.errors);
@@ -64,62 +35,37 @@ function ReservationModal({ reservation, setShowReservationModal }) {
     });
   };
 
-  const handleErrors = (formFieldType) => {
-    const errorList = []
-
-    errors.map(error => {
-      const fieldType = formFieldType.split(" ").length > 1 ? error.split(" ")[0] + " " + error.split(" ")[1] : error.split(" ")[0]
-      const errorMessage = formFieldType.split(" ").length > 1 ? error.split(" ").slice(2).join(" ") : error.split(" ").slice(1).join(" ")
-
-      if (fieldType === formFieldType && !errorList.includes(errorMessage)) {
-        errorList.push(errorMessage)
-      }
-      return null;
-    })
-
-    return (
-      <ul className="form-field-error">
-          {errorList.map(error => <li key={error}><i className="fa-sharp fa-solid fa-circle-exclamation"></i>{error}</li>)}
-      </ul>
-    )
-  }
-
-
   return (
     <div className="edit-reservation-modal">
         <div className="edit-reservation-form-container">
           <h1 className="edit-reservation-form-header">Change your reservation</h1>
-          <br />
-          <form className="edit-reservation-form"onSubmit={handleSubmit}>
-            <div className="edit-reservation-form-inputs">
+          <form className="edit-reservation-form" onSubmit={handleSubmit}>
               <div className="edit-reservation-form-dates-container">
-                <label className="edit-reservation-form-start-date">
-                  <div className="edit-reservation-form-date-text">CHECK-IN</div>
+                <div className="edit-reservation-form-start-date">
+                  <div className="edit-reservation-form-text">CHECK-IN</div>
                   <input 
                       className="edit-reservation-form-date-input"
                       type="date"
                       value={startDate}
                       min={moment().format("YYYY-MM-DD")}
-                      max={calculateEndDate(endDate, -0.5)}
+                      max={listingsUtils.calculateEndDate(endDate, -0.5)}
                       onChange={(e) => setStartDate(e.target.value)}
                   />
-                </label>
-
-
-                <label className="edit-reservation-form-end-date">
-                  <div className="edit-reservation-form-date-text">CHECKOUT</div>
+                </div>
+                <div className="edit-reservation-form-end-date">
+                  <div className="edit-reservation-form-text">CHECKOUT</div>
                   <input 
                       className="edit-reservation-form-date-input"
                       type="date"
                       value={endDate}
-                      min={calculateEndDate(startDate, 2)}
+                      min={listingsUtils.calculateEndDate(startDate, 2)}
                       onChange={(e) => setEndDate(e.target.value)}
                   />
-                </label>
+                </div>
               </div>
-
-                <label className="edit-reservation-form-guests">
-                <div className="edit-reservation-form-guests-text">GUESTS</div>
+              <div className="reservation-form-guests-container">
+                <div className="edit-reservation-form-guests">
+                  <div className="edit-reservation-form-text">GUESTS</div>
                   <input 
                       className="edit-reservation-form-guests-input"
                       type="number"
@@ -128,33 +74,45 @@ function ReservationModal({ reservation, setShowReservationModal }) {
                       max={reservation.guests}
                       onChange={(e) => setNumGuests(e.target.value)}
                   />
-                </label>
-                  {/* {handleErrors("End date")} */}
-              </div>
-              <br />
-              <button className="edit-reservation-form-button" type="submit">Modify Reservation</button>
+                </div>
+            </div>
+
+              <ul className="reservation-form-errors">
+              {numGuests > reservation.guests && 
+                <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Exceeded max number of guests</li>
+              }
+              {numGuests <= 0 && 
+                <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid number of guests</li>
+              }
+              {endDate < startDate && 
+                <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Check-in date cannot be later than Checkout date</li>
+              }
+              {startDate < moment().format("YYYY-MM-DD") &&
+                <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid Check-in date</li>
+              }
+            </ul>
+
+            <button className="edit-reservation-form-button" type="submit">Modify Reservation</button>
           </form>
 
-          <div className="reservation-form-rows">
-              <div>${reservation.price.toLocaleString("en-US")} x {calculateDays(startDate, endDate)} nights</div>
-              <div>${(reservation.price * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+          <div className="edit-reservation-form-rows">
+              <div>${reservation.price.toLocaleString("en-US")} x {listingsUtils.calculateDays(startDate, endDate)} nights</div>
+              <div className="edit-reservation-form-row-price">${(reservation.price * listingsUtils.calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
           </div>
-          <div className="reservation-form-rows">
+          <div className="edit-reservation-form-rows">
               <div>Cleaning fee</div>
-              <div>${cleaningFee.toLocaleString("en-US")}</div>
+              <div className="edit-reservation-form-row-price">${cleaningFee.toLocaleString("en-US")}</div>
           </div>
-          <div className="reservation-form-rows">
+          <div className="edit-reservation-form-rows">
               <div>Service fee</div>
-              <div>${(serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+              <div className="edit-reservation-form-row-price">${(serviceFee * listingsUtils.calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
           </div>
-          <div className="reservation-form-divider"></div>
-          <div className="reservation-form-rows">
-              <div>Total before tax</div>
-              <div>${(reservation.price * calculateDays(startDate, endDate) + cleaningFee + serviceFee * calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
+          <div className="edit-reservation-form-divider"></div>
+          <div className="edit-reservation-form-rows">
+              <div className="edit-reservation-form-row-total">Total before tax</div>
+              <div className="edit-reservation-form-row-total">${(reservation.price * listingsUtils.calculateDays(startDate, endDate) + cleaningFee + serviceFee * listingsUtils.calculateDays(startDate, endDate)).toLocaleString("en-US")}</div>
           </div>
-          <br />
-          <button className="edit-reservation-form-button" onClick={() => dispatch(reservationsActions.deleteReservation(reservation.id))}>Cancel Reservation</button>
-
+          <button className="edit-reservation-delete-button" onClick={() => dispatch(reservationsActions.deleteReservation(reservation.id))}>Cancel Reservation</button>
         </div>
 
         <ReservationMap reservation={reservation} />
