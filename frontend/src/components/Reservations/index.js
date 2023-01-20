@@ -1,45 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Modal } from '../../context/Modal';
-import ReservationModal from './ReservationModal'
-import ReservationUpcomingTrips from './ReservationUpcomingTrips'
-import ReservationPastTrips from "./ReservationPastTrips";
+import UpcomingReservations from './UpcomingReservations'
+import PastReservations from "./PastReservations";
 import * as reservationsActions from "../../store/reservations";
-import "./Reservations.css";
-import moment from 'moment'
+import "./index.css";
 
 function Reservations() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const reservations = useSelector(state => Object.values(state.reservations))
-    const [showReservationModal, setShowReservationModal] = useState(false);
-
     
     useEffect(() => {
         dispatch(reservationsActions.fetchReservations())
-    },[dispatch, showReservationModal])
+    },[dispatch])
 
     if (!sessionUser) return <Redirect to="/" />;
-
-    const titleize = (word) => {
-        return word[0].toUpperCase() + word.slice(1)
-    }
-
-    const month = {
-        '01': 'Jan',
-        '02': 'Feb',
-        '03': 'Mar',
-        '04': 'Apr',
-        '05': 'May',
-        '06': 'Jun',
-        '07': 'Jul',
-        '08': 'Aug',
-        '09': 'Sep',
-        '10': 'Oct',
-        '11': 'Nov',
-        '12': 'Dec',
-    };
 
     const upcomingReservationsList = (reservations) => {
         const upcomingReservations = []
@@ -67,31 +43,35 @@ function Reservations() {
 
     const upcomingReservations = upcomingReservationsList(reservations).map((reservation) => {
         return (
-            <ReservationUpcomingTrips key={reservation.id} reservation={reservation} />
+            <UpcomingReservations key={reservation.id} reservation={reservation} />
         )
     })
 
     const pastReservations = pastReservationsList(reservations).map((reservation) => {
         return (
-            <ReservationPastTrips key={reservation.id} reservation={reservation} />
+            <PastReservations key={reservation.id} reservation={reservation} />
         )
     })
 
 
     return (
         <div className="reservations-index-container">
-            <h1 className="reservations-index-trip-title">
-                Trips
-            </h1>
-            <div className="reservation-index-upcoming-reservations">
-                Upcoming reservations
-            </div>
-            {}
-            {upcomingReservations}
-            <div className="reservation-index-upcoming-reservations">
-                Where you've been
-            </div>
-            {pastReservations}
+            <h1 className="reservations-index-trips">Trips</h1>
+            <div className="reservation-index-reservations">Upcoming reservations</div>
+            {upcomingReservations.length > 0 ? 
+                upcomingReservations 
+                : 
+                <div className="no-reservations-message">You have no upcoming reservations</div>
+            }
+
+            <div className="reservation-index-reservations">Where you've been</div>
+            {pastReservations.length > 0 ? 
+                <div className="reservation-container-past-trips">
+                    {pastReservations} 
+                </div>
+                : 
+                <div className="no-reservations-message">You have no past reservations</div>
+            }
         </div>
     )
 }

@@ -1,27 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, Redirect, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
 import { LargeModal } from '../../context/Modal';
 import ReservationModal from './ReservationModal'
-import * as reservationsActions from "../../store/reservations";
-import "./Reservations.css";
+import "./UpcomingReservations.css";
 
-function ReservationUpcomingTrips({ reservation }) {
-    const history = useHistory()
-    const dispatch = useDispatch()
-    const reservations = useSelector(state => Object.values(state.reservations))
-
-
+function UpcomingReservations({ reservation }) {
     const [showReservationModal, setShowReservationModal] = useState(false);
-
-
-    const handleClose = () => {
-        // const payload = reservations[reservation.id]
-        // dispatch()
-        // history.push("/reservations")
-
-        setShowReservationModal(false)
-    }
 
     const titleize = (word) => {
         return word[0].toUpperCase() + word.slice(1)
@@ -62,12 +45,11 @@ function ReservationUpcomingTrips({ reservation }) {
                         </div>
                     </div>
                 </div>
-                <img className="reservation-image" src={reservation.photosUrl[0]}></img>
+                <img className="reservation-image" src={reservation.photosUrl[0]} alt="reservation" />
             </div>
             
             {showReservationModal && (
-                // <Modal onClose={(() => setShowReservationModal(false))}>
-                <LargeModal onClose={() => handleClose()}>
+                <LargeModal onClose={() => setShowReservationModal(false)}>
                     <ReservationModal reservation={reservation} setShowReservationModal={setShowReservationModal}/>
                 </LargeModal>
             )}
@@ -75,4 +57,4 @@ function ReservationUpcomingTrips({ reservation }) {
     )
 }
 
-export default ReservationUpcomingTrips;
+export default UpcomingReservations;

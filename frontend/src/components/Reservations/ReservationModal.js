@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import * as reservationsActions from "../../store/reservations";
 import * as sessionActions from "../../store/session";
 import ReservationMap from "./ReservationMap"
-import "./Reservations.css";
+import "./ReservationModal.css";
 import moment from 'moment';
 
 

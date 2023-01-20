@@ -8,4 +8,7 @@
     background-color: #fff;
     margin: 0;
     -webkit-font-smoothing: antialiased;
+    display:grid; 
+    grid-template-rows: auto 1fr auto;
+    min-height:100vh; 
 }

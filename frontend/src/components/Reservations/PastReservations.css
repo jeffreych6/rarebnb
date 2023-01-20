@@ -1,0 +1,32 @@
+.past-reservation-container {
+    display: flex;
+    padding: 12px 0;
+}
+
+.past-reservation-container:hover {
+    cursor: pointer;
+}
+
+.past-reservation-image {
+    object-fit: cover;
+    border-radius: 8px;
+    height: 72px;
+    width: 72px;
+}
+
+.past-reservation-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.past-reservation-description h1 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.past-reservation-description h2 {
+    font-size: 14px;
+    color: rgb(113, 113, 113);
+}

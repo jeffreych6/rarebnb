@@ -1,0 +1,88 @@
+.reservation-container {
+    display: flex;
+    cursor: pointer;
+    border-width: 1px solid #DDDDDD;
+    border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    margin: 20px 0;
+    height: 250px;
+    width: 66%;
+}
+
+.reservation-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.reservation-detail-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 0 5%
+}
+
+.reservation-detail-title h1 {
+    font-size: 26px;
+    font-weight: 600
+}
+
+.reservation-detail-title h2 {
+    font-size: 16px;
+    font-weight: 400
+}
+
+
+.reservation-detail-description {
+    display: flex;
+    height: 50%;
+    margin: 0 5%
+}
+
+.reservation-detail-description-dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #DDDDDD;
+    font-size: 16px;
+    font-weight: 400;
+    width: 25%;
+    margin: 5% 0;
+}
+
+.reservation-detail-description-dates h1 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px
+}
+
+.reservation-detail-description-dates h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.reservation-detail-description-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%
+}
+
+.reservation-detail-description-location h1 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.reservation-detail-description-location h2 {
+    font-size: 16px;
+    font-weight: 400
+}
+
+.reservation-image {
+    object-fit: cover;
+    width: 50%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
