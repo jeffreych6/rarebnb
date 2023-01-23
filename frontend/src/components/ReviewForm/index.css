@@ -53,6 +53,16 @@
     resize: none;
 }
 
+.review-form-errors {
+    display: flex;
+    flex-direction: column;
+    color: rgb(193, 53, 21);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    margin: 10px 0 10px;
+}
+
 .review-submit {
     cursor: pointer;
     text-align: center;
@@ -62,25 +72,8 @@
     font-weight: 600;
     border-radius: 8px;
     padding: 14px 24px;
-    margin-top: 12px;
     border: none;
     background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
-    color: rgb(255, 255, 255);
-    width: 100%;
-}
-
-.review-submit-disabled {
-    cursor: pointer;
-    text-align: center;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 14px 24px;
-    margin-top: 12px;
-    border: none;
-    background: rgb(128, 128, 128);
     color: rgb(255, 255, 255);
     width: 100%;
 }

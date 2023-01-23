@@ -18,8 +18,9 @@
 #  review_date   :date
 #
 class Review < ApplicationRecord
-    validates :author_id, :listing_id, presence: true
-    validates :rating, :cleanliness, :accuracy, :communication, :location, :check_in, :value, numericality: { in: 1..5 }
+    validates :author_id, :listing_id, :review, presence: true
+    validates :review, presence: { message: "Comment cannot be blank." }
+    validates :rating, :cleanliness, :accuracy, :communication, :location, :check_in, :value, numericality: { in: 1..5, message: "Rating cannot be blank." }
 
     belongs_to :author,
         primary_key: :id,

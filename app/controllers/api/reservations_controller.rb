@@ -29,16 +29,10 @@ class Api::ReservationsController < ApplicationController
 
     def update
         @reservation = Reservation.find_by(id: params[:id])
-        # debugger
-        if !(@reservation.update(reservation_params))
 
+        if !(@reservation.update(reservation_params))
             render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
         end
-        # if (@reservation.update(reservation_params))
-        #     render :show
-        # else
-        #     render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
-        # end
     end
 
     def destroy

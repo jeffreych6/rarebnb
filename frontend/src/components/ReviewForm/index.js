@@ -47,19 +47,50 @@ function ReviewForm({ reservation }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/listings/${listingId}`)
+
+    if ((rating && cleanliness && accuracy && communication && location && checkIn && value && review !== 0) && (review)) {
+      history.push(`/listings/${listingId}`)
+    }
     
     setErrors([]);
     return dispatch(
       reviewsActions.createReview({ authorId, listingId, authorName, rating, cleanliness, accuracy, communication, location, checkIn, value, review, reviewDate})
       ).catch(async (res) => {
         let data;
-
+        try {
+          data = await res.clone().json();
+        } catch {
+          data = await res.text();
+        }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
   };
+
+  const handleRatingErrors = () => {
+    const ratingErrorTypes = ["Rating", "Cleanliness", "Accuracy", "Communication", "Location", "Check", "Value"]
+
+    for (let i = 0; i < errors.length; i++) {
+      for (let j = 0; j < ratingErrorTypes.length; j++) {
+        if (ratingErrorTypes[j] === errors[i].split(" ")[0]) {
+          return true
+        }
+      }
+    }
+
+    return false
+  }
+
+  const handleCommentError = () => {
+    for (let i = 0; i < errors.length; i++) {
+      if (errors[i].split(" ")[0] === "Review") {
+        return true
+      }
+    }
+
+    return false
+  }
 
   return (
     <>
@@ -106,6 +137,14 @@ function ReviewForm({ reservation }) {
             <h1>Comment</h1>
             <textarea className="review-comment" onChange={(e) => setReview(e.target.value)}/>
           </div>
+          <ul className="review-form-errors">
+            {handleRatingErrors() && 
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Ratings cannot be blank</li>
+            }
+            {handleCommentError() && 
+              <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Comment cannot be blank</li>
+            }
+          </ul>
           <button className="review-submit" type="submit">Submit</button>
         </form>
       </div>

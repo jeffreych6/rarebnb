@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as reservationsActions from "../../store/reservations";
 import * as listingsUtils from "../../utils/listings_utils"

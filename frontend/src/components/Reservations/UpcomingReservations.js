@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as reservationsActions from "../../store/reservations";
 
 import { LargeModal } from '../../context/Modal';
@@ -13,7 +13,7 @@ function UpcomingReservations({ reservation }) {
 
     useEffect(() => {
         dispatch(reservationsActions.fetchReservations())
-    },[dispatch])
+    },[dispatch, showReservationModal])
 
     const titleize = (word) => {
         return word[0].toUpperCase() + word.slice(1)
@@ -61,6 +61,7 @@ function UpcomingReservations({ reservation }) {
                 <LargeModal onClose={() => setShowReservationModal(false)}>
                     <ReservationModal 
                         reservation={reservation} 
+                        showReservationModal={showReservationModal}
                         setShowReservationModal={setShowReservationModal}
                     />
                 </LargeModal>
