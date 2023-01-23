@@ -1,4 +1,4 @@
-json.reservation do
+json.set! @reservation.id do
     json.extract! @reservation, 
         :id,
         :guest_id,

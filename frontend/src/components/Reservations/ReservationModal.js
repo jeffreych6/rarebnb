@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as reservationsActions from "../../store/reservations";
 import * as listingsUtils from "../../utils/listings_utils"
@@ -20,8 +20,8 @@ function ReservationModal({ reservation, setShowReservationModal }) {
   const serviceFee = Math.round(parseInt(reservation.price) * 0.15)
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // setShowReservationModal(false)
+    e.preventDefault();
+    setShowReservationModal(false)
 
     setErrors([]);
     dispatch(

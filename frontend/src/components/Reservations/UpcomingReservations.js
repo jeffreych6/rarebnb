@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import * as reservationsActions from "../../store/reservations";
+
 import { LargeModal } from '../../context/Modal';
 import ReservationModal from './ReservationModal'
 import "./UpcomingReservations.css";
 
 function UpcomingReservations({ reservation }) {
+    const dispatch = useDispatch();
+
     const [showReservationModal, setShowReservationModal] = useState(false);
+
+    useEffect(() => {
+        dispatch(reservationsActions.fetchReservations())
+    },[dispatch])
 
     const titleize = (word) => {
         return word[0].toUpperCase() + word.slice(1)
@@ -50,7 +59,10 @@ function UpcomingReservations({ reservation }) {
             
             {showReservationModal && (
                 <LargeModal onClose={() => setShowReservationModal(false)}>
-                    <ReservationModal reservation={reservation} setShowReservationModal={setShowReservationModal}/>
+                    <ReservationModal 
+                        reservation={reservation} 
+                        setShowReservationModal={setShowReservationModal}
+                    />
                 </LargeModal>
             )}
         </>

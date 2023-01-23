@@ -31,6 +31,7 @@ export const getReservations = (state) => {
 export const fetchReservations = () => async (dispatch) => {
     const response = await csrfFetch(`/api/reservations`);
     const data = await response.json();
+    console.log(data)
     dispatch(receiveReservations(data));
 };
 
@@ -71,6 +72,7 @@ export const modifyReservation = (reservation) => async (dispatch) => {
         }),
     });
     const data = await response.json();
+    // console.log(data)
     dispatch(receiveReservation(data));
     return response
 };

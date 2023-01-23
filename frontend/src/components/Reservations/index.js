@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import UpcomingReservations from './UpcomingReservations'
@@ -10,7 +10,7 @@ function Reservations() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const reservations = useSelector(state => Object.values(state.reservations))
-    
+
     useEffect(() => {
         dispatch(reservationsActions.fetchReservations())
     },[dispatch])
@@ -59,7 +59,7 @@ function Reservations() {
             <h1 className="reservations-index-trips">Trips</h1>
             <div className="reservation-index-reservations">Upcoming reservations</div>
             {upcomingReservations.length > 0 ? 
-                upcomingReservations 
+                upcomingReservations
                 : 
                 <div className="no-reservations-message">You have no upcoming reservations</div>
             }
