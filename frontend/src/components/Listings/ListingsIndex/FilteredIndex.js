@@ -10,7 +10,10 @@ function FilteredIndex() {
     const dispatch = useDispatch();
     const { filter } = useParams();
     // const listings = useSelector(state => Object.values(state.listings).filter((listing) => listing.propertyType === filter))
-    const listings = useSelector(state => Object.values(state.listings).filter((listing) => filter.includes(listing.propertyType)))
+    const listings = useSelector(state => filter === "all" ? 
+    Object.values(state.listings)
+    :
+    Object.values(state.listings).filter((listing) => filter.includes(listing.propertyType)))
 
     useEffect(() => {
         dispatch(listingsActions.fetchListings())
@@ -72,13 +75,13 @@ function FilteredIndex() {
                 <FilterBar />
             </div>
             <div className="filtered-listings-index-container">
+                {/* <div>{locations.length} homes</div> */}
                 <div className="filtered-listings-index">
                     {listing}
                 </div>
                 <div className="filtered-listings-map-container">
                     <div className="filtered-listings-map">
-
-                    <FilteredMap listings={locations} />
+                        <FilteredMap listings={locations} />
                     </div>
                 </div>
             </div>

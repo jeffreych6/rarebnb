@@ -20,6 +20,11 @@ import treehouse from "../../../assets/filters/treehouse.png"
 function FilterBar() {
     return (
         <div className="filter-bar">
+            <NavLink className="filter-container" to={"/all"}>
+                <img className="filter-icon" src={pool} />
+                <div className="filter-name">All</div>
+            </NavLink>
+
             <NavLink className="filter-container" to={"/barnboatcabincampercastlecavedomeearthfarmhouseboatislandmansionpoolsktreehousecartowerhutentirehomevilla"}>
                 <img className="filter-icon" src={barn} />
                 <div className="filter-name">Barn</div>
@@ -78,11 +83,6 @@ function FilterBar() {
             <NavLink className="filter-container" to={"/mansion"}>
                 <img className="filter-icon" src={mansion} />
                 <div className="filter-name">Mansion</div>
-            </NavLink>
-
-            <NavLink className="filter-container" to={"/pool"}>
-                <img className="filter-icon" src={pool} />
-                <div className="filter-name">Pool</div>
             </NavLink>
 
             <NavLink className="filter-container" to={"/ski"}>

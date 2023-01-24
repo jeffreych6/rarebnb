@@ -12,7 +12,7 @@ const FilteredMap = ({listings}) => {
 
   const defaultCenter = {
     lat: 0, 
-    lng: 0
+    lng: -15
   }
 
   const onSelect = item => {
@@ -38,8 +38,8 @@ const FilteredMap = ({listings}) => {
           {selected.location && (
             <InfoWindow position={selected.location} clickable={true} onCloseClick={() => setSelected({})}>
               <>
-                <p className="filtered-map-listing-name">{selected.title}</p>
-                <img className="filtered-map-listing-image" src={selected.photo} alt="map"></img>
+                <p className="filtered-listing-map-name">{selected.title}</p>
+                <img className="filtered-listing-map-image" src={selected.photo} alt="map"></img>
               </>
             </InfoWindow>
             )
