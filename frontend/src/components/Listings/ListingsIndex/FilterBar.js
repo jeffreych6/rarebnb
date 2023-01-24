@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink, useParams } from "react-router-dom";
 import "./FilterBar.css";
 import barn from "../../../assets/filters/barn.png"
 import beach from "../../../assets/filters/beach.png"
@@ -19,80 +20,80 @@ import treehouse from "../../../assets/filters/treehouse.png"
 function FilterBar() {
     return (
         <div className="filter-bar">
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/barn"}>
                 <img className="filter-icon" src={barn} />
                 <div className="filter-name">Barn</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
-                <img className="filter-icon" src={beach} />
-                <div className="filter-name">Beach</div>
-            </div>
-
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/boat"}>
                 <img className="filter-icon" src={boat} />
                 <div className="filter-name">Boat</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/cabin"}>
                 <img className="filter-icon" src={cabin} />
                 <div className="filter-name">Cabin</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/camper"}>
                 <img className="filter-icon" src={camper} />
                 <div className="filter-name">Camper</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/castle"}>
                 <img className="filter-icon" src={castle} />
                 <div className="filter-name">Castle</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/cave"}>
                 <img className="filter-icon" src={cave} />
                 <div className="filter-name">Cave</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/dome"}>
                 <img className="filter-icon" src={dome} />
                 <div className="filter-name">Dome</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/earthHome"}>
                 <img className="filter-icon" src={earthHome} />
-                <div className="filter-name">EarthHome</div>
-            </div>
+                <div className="filter-name">Earth Home</div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/farm"}>
                 <img className="filter-icon" src={farm} />
                 <div className="filter-name">Farm</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/houseboat"}>
                 <img className="filter-icon" src={houseboat} />
                 <div className="filter-name">Houseboat</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/island"}>
+                <img className="filter-icon" src={beach} />
+                <div className="filter-name">Island</div>
+            </NavLink>
+
+            <NavLink className="filter-container" to={"/mansion"}>
                 <img className="filter-icon" src={mansion} />
                 <div className="filter-name">Mansion</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/pool"}>
                 <img className="filter-icon" src={pool} />
                 <div className="filter-name">Pool</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/ski"}>
                 <img className="filter-icon" src={ski} />
                 <div className="filter-name">Skiing</div>
-            </div>
+            </NavLink>
 
-            <div className="filter-container">
+            <NavLink className="filter-container" to={"/treehouse"}>
                 <img className="filter-icon" src={treehouse} />
                 <div className="filter-name">Treehouse</div>
-            </div>
+            </NavLink>
         </div>
     )
 }
