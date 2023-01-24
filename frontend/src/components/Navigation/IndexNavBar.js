@@ -6,9 +6,9 @@ import LoggedOutDropDown from "./LoggedOutDropDown";
 import "./index.css";
 import logo from "../../assets/logo.png"
 
-function Navigation() {
+function IndexNavBar() {
   const sessionUser = useSelector((state) => state.session.user);
-  // const location = useLocation();
+//   const location = useLocation();
 
   let sessionLinks;
   if (sessionUser) {
@@ -19,8 +19,7 @@ function Navigation() {
 
   return (
     <nav className="nav-bar-container">
-      {/* <div className={location.pathname === "/" ? "nav-bar-index" : "nav-bar"}> */}
-      <div className="nav-bar">
+      <div className="nav-bar-index">
         <div className="left-nav">
           <NavLink exact to="/">
             <button className="logo-button">
@@ -46,4 +45,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default IndexNavBar;
