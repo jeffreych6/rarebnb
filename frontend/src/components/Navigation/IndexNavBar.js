@@ -18,7 +18,7 @@ function IndexNavBar() {
   }
 
   return (
-    <nav className="nav-bar-container">
+    <nav className="nav-bar-index-container">
       <div className="nav-bar-index">
         <div className="left-nav">
           <NavLink exact to="/">

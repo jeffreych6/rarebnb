@@ -3,6 +3,15 @@
     border-bottom: 1px solid #DDDDDD;
 }
 
+.nav-bar-index-container {
+    height: 80px;
+    border-bottom: 1px solid #DDDDDD;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
 .nav-bar {
     display: flex;
     justify-content:space-between;

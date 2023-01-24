@@ -1,15 +1,21 @@
+.listings-index-filter-container {
+    height: 90px;
+    position: sticky;
+    top: 81px;
+    background-color: white;
+}
+
 .listings-index {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 70px;
+    margin: -20px 70px 0 70px;
 }
 
 .listings-index-container {
     text-decoration: none;
     color: #222222;
     margin: 20px 11px;
-
 }
 
 .listings-index-image {
