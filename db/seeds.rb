@@ -405,7 +405,7 @@ glamping = Listing.create!(
   host_id: jeffrey.id,
   title: "Glamping",
   description: "Off-grid Tiny Cabin Upstate NY at Bellfire Farm - this rustic artisan cabin is our third unique lodging experience that builds on the same principles of sustainability and connection to nature via lovingly handcrafted structures. Cook over an open fire, stargaze, enjoy miles of forest and the sprawling, lush landscape. Perfect for groups of 4 and families.",
-  property_type: "tiny home",
+  property_type: "camper",
   price: 192,
   city: 'Roxbury',
   state: 'New York',
@@ -435,7 +435,7 @@ aura_house = Listing.create!(
   host_id: jeffrey.id,
   title: "Aura House",
   description: "Aura house is a beautiful & unique eco bamboo house built on the west bank of the River Ayung facing east to catch sunrise. Aura House is situated 25min away from Ubud, and 35min away from Canggu. ",
-  property_type: "entire villa",
+  property_type: "treehouse",
   price: 360,
   city: 'Abiansemal',
   state: 'Bali',
@@ -585,7 +585,7 @@ paradise_island = Listing.create!(
   host_id: jeffrey.id,
   title: "Paradise Island",
   description: "Take a trip to Paradise Island and feel the fantasy of  renting a island right here in Michigan its only Island rental. This will bring memories of a lifetime for your group that will top none of the past rentals. Upon arrival you will can see the special character of this exquisite estate and all it has to offer with fire and water! Rest and relax a getaway for the mind body and soul with options for experiences and getaways with our experience concierge app that gives you options for all!",
-  property_type: "entire home",
+  property_type: "island",
   price: 4600,
   city: 'Battle Creek',
   state: 'Michigan',
@@ -614,7 +614,7 @@ paradise_island = Listing.create!(
 navajo_hogan = Listing.create!(
   host_id: jeffrey.id,
   title: "Navajo Hogan",
-  description: "Our unique home will provide a once in a life time off-the-grid experience.   Located in a secluded and remote location of the Western Navajo Nation, our home is easily accessible to local restaurants, stores, and not far from two natural wonders, the Grand Canyon and Monument Valley.",
+  description: "Our unique home will provide a once in a life time off-the-grid experience. Located in a secluded and remote location of the Western Navajo Nation, our home is easily accessible to local restaurants, stores, and not far from two natural wonders, the Grand Canyon and Monument Valley.",
   property_type: "earthen home",
   price: 215,
   city: 'Cameron',
@@ -633,7 +633,7 @@ navajo_hogan = Listing.create!(
   washer: false,
   air_con: false,
   pets: true,
-  dryer: true,
+  dryer: false,
   tv: true,
   workspace: true,
   self_check_in: true,
@@ -644,8 +644,8 @@ navajo_hogan = Listing.create!(
 orchard_views = Listing.create!(
   host_id: jeffrey.id,
   title: "Orchard Views",
-  description: "Wake up in a lofted bedroom wrapped in windows and descend a knotty wood staircase into the open layout of this radiant tiny home. Make coffee in a cozy kitchen, then gather around a slate fire pit in the evening and wait for the stars to emerge. Seen in Travel+Leisure, Time Out Airbnb press,  #Tinyescapeny for more pics! Tv, Lux amenities, more!",
-  property_type: "tiny home",
+  description: "Wake up in a lofted bedroom wrapped in windows and descend a knotty wood staircase into the open layout of this radiant tiny home. Make coffee in a cozy kitchen, then gather around a slate fire pit in the evening and wait for the stars to emerge. Seen in Travel+Leisure, Time Out RareBnB press,  #Tinyescapeny for more pics! Tv, Lux amenities, more!",
+  property_type: "camper",
   price: 192,
   city: 'Marlboro',
   state: 'New York',
@@ -663,12 +663,312 @@ orchard_views = Listing.create!(
   washer: false,
   air_con: true,
   pets: true,
-  dryer: true,
+  dryer: false,
   tv: true,
   workspace: true,
   self_check_in: true,
   rating: 3.5,
   num_ratings: 6
+)
+
+lord_mill = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Lord's Mill",
+  description: "Beautiful mill of the seventeenth century restored. It enjoys all the modern comforts while preserving the authenticity of the building. In the heart of nature near the GR34, it will allow you to visit the Crozon Peninsula, its unique beaches and landscapes while relaxing in an unforgettable setting. You can also kayak and paddle in Brest harbour from the small port of Roscanvel!",
+  property_type: "windmill",
+  price: 120,
+  city: 'Roscanvel',
+  state: 'Bretagne',
+  country: 'France',
+  lat: 48.3154,
+  lng: -4.5480,
+  zip_code: 29570,
+  guests: 2,
+  bedrooms: 2,
+  beds: 3,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+riverside_hideout = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Riverside Hideout",
+  description: "A unique oasis tucked into the woods & hills along Tuscarawas River. Mini kitchen, bedroom,  bath & living room. Sit on the patio & take in the views of the river from the hot tub. Near Ohio/Erie Canal trail, ProFootball Hall of Fame,  Amish Country  Berlin & Walnut Creek, Atwood & Tappan Lake, Historic Zoar, Swiss Festival & Wineries.  No cleaning fee or Dog fee! Paid-Wifi.",
+  property_type: "shipping container",
+  price: 164,
+  city: 'Dover',
+  state: 'Ohio',
+  country: 'United States',
+  lat: 40.5206,
+  lng: -81.4740,
+  zip_code: 44622,
+  guests: 4,
+  bedrooms: 1,
+  beds: 1,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: false,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+prince_road = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Prince Road",
+  description: "Featured in Apartment Therapy and news outlets around the world, the PRCH is a unique art-filled combo of top line tech and vintage mid-century; working 50's jukebox with classic records, 65' Sony Bravia 4k OLED TV with Bose sound, Chef's Kitchen featuring a 6 burner Viking Gas Range, Slayer Commercial Espresso Machine, 50's restaurant booth , Intellibed Midnight bed in master suite and premium beds in others plus vintage MCM furniture and chargepoint 50amp Level 2 EV smart charging station.",
+  property_type: "shipping container",
+  price: 495,
+  city: 'St. Augustine',
+  state: 'Florida',
+  country: 'United States',
+  lat: 29.9012,
+  lng: -81.3124,
+  zip_code: 32080,
+  guests: 6,
+  bedrooms: 4,
+  beds: 5,
+  baths: 2,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: true,
+  air_con: true,
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+bedrock_homestead = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Bedrock Homestead",
+  description: "Winter is here, restaurants closed. Please be prepared with groceries and water. 4 wheel drive with high clearance is necessary! You'll enjoy a view of the Grand Staircase Monument from this fascinating work of art. Grant lives here year-round farming and raising animals. Bedrock is a master example of sustainable living, and a work of beauty created from the natural surrounding land. a Full Cave rental is also available for total privacy, through RareBnB listing--Bedrock Full Cave.",
+  property_type: "cave",
+  price: 950,
+  city: 'Boulder',
+  state: 'Utah',
+  country: 'United States',
+  lat: 37.9221,
+  lng: -111.4395,
+  zip_code: 84716,
+  guests: 8,
+  bedrooms: 3,
+  beds: 4,
+  baths: 2,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: false,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+rocks_and_glasses = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Between Rocks and Glasses",
+  description: "Between Rocks and Crystals is located in a mountainous area where you can find abundant nature, desert areas, peace, tranquility and very good energy since it is located in a place where the wonders of nature produce quartz, channeler and conductor of good energies.",
+  property_type: "cave",
+  price: 44,
+  city: 'Ráquira',
+  state: 'Boyaca',
+  country: 'Colombia',
+  lat: 5.5383,
+  lng: -73.6322,
+  zip_code: 153801,
+  guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: true,
+  air_con: false,
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+alpaca_farm = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Alpaca Farm",
+  description: "",
+  property_type: "farm",
+  price: 120,
+  city: 'Hillsboro',
+  state: 'Oregon',
+  country: 'United States',
+  lat: 45.5201,
+  lng: -122.9898,
+  zip_code: 97123,
+  guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: true,
+  washer: true,
+  air_con: true,
+  pets: true,
+  dryer: true,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+the_barn_loft = Listing.create!(
+  host_id: jeffrey.id,
+  title: "The Barn Loft",
+  description: "",
+  property_type: "farm",
+  price: 105,
+  city: 'Benton',
+  state: 'Tennessee',
+  country: 'United States',
+  lat: 35.1742,
+  lng: -84.6535,
+  zip_code: 37307,
+  guests: 3,
+  bedrooms: 1,
+  beds: 2,
+  baths: 1,
+  kitchen: false,
+  parking: true,
+  wifi: false,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: false,
+  tv: false,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+desert_adventure = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Desert Adventure",
+  description: "Sleeping in the open-air desert under thousands of stars . Try glamping out, having your very own desert 'hotel', a vacation like no other. A perfect and unforgettable desert adventure. Be at one with nature while we ensure the best, most comfortable conditions for you: large glamping tents with solar lighting, comfortable mattresses, bedding, duvets, pillows, towels etc.. Including desert breakfast & dinner",
+  property_type: "tent",
+  price: 594,
+  city: "Be'er Milka",
+  state: 'South District',
+  country: 'Israel',
+  lat: 30.9341,
+  lng: 34.4056,
+  zip_code: 8551700,
+  guests: 4,
+  bedrooms: 1,
+  beds: 2,
+  baths: 3,
+  kitchen: false,
+  parking: true,
+  wifi: false,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: false,
+  tv: false,
+  workspace: false,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+glamping_ficus = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Glamping Ficus",
+  description: "Romantic get-together? A proposal, an anniversary, or just a break from reality? I don't know a better place than our Fikus Glamping:) The whole is maintained in an unprecedented climate of greenery and wood. The tent has a mini kitchen equipped with everything you need. You can also use the entire facility, including a bonfire, gazebo, swimming pool, pond. We will also do our best to make your stay more enjoyable and help you prepare a surprise. We are open to ideas ;-)",
+  property_type: "tent",
+  price: 62,
+  city: 'Dąbrówka',
+  state: 'Mazowieckie',
+  country: 'Poland',
+  lat: 52.4837,
+  lng: 21.2978,
+  zip_code: 05252,
+  guests: 2,
+  bedrooms: 1,
+  beds: 2,
+  baths: 1,
+  kitchen: false,
+  parking: true,
+  wifi: true,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: false,
+  tv: false,
+  workspace: false,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
+)
+
+houseboat = Listing.create!(
+  host_id: jeffrey.id,
+  title: "Houseboat",
+  description: "116 R, also known as Johnny Buck Rock. This four-season, solar powered houseboat showcases a cozy main floor with kitchen, living and dining room. 2 beds (1 queen - 1 double), 1 bathroom. 600 sq ft of deck space. Swim, fish and local eateries near by! You'll love this unique and romantic escape. Aluminum boat included to get to your vacation destination!",
+  property_type: "boat",
+  price: 262,
+  city: 'Mallorytown',
+  state: 'Ontario',
+  country: 'Canada',
+  lat: 44.4774,
+  lng: -75.8794,
+  zip_code: 00000,
+  guests: 4,
+  bedrooms: 2,
+  beds: 2,
+  baths: 1,
+  kitchen: true,
+  parking: true,
+  wifi: false,
+  washer: false,
+  air_con: false,
+  pets: true,
+  dryer: false,
+  tv: true,
+  workspace: true,
+  self_check_in: true,
+  rating: 0,
+  num_ratings: 0
 )
 
 # Listing.create!(
@@ -692,8 +992,15 @@ orchard_views = Listing.create!(
 #   wifi: false,
 #   washer: false,
 #   air_con: false,
-#   pets: true
+#   pets: true,
+#   dryer: true,
+#   tv: true,
+#   workspace: true,
+#   self_check_in: true,
+#   rating: 0,
+#   num_ratings: 0
 # )
+
 
 
 
@@ -2435,6 +2742,68 @@ paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.c
 paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_3.webp'), filename: 'paradise_island_3.webp')
 paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_4.webp'), filename: 'paradise_island_4.webp')
 paradise_island.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/paradise_island/paradise_island_5.webp'), filename: 'paradise_island_5.webp')
+
+lord_mill.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/lord_mill/lord_mill_1.webp'), filename: 'lord_mill_1.webp')
+lord_mill.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/lord_mill/lord_mill_2.webp'), filename: 'lord_mill_2.webp')
+lord_mill.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/lord_mill/lord_mill_3.webp'), filename: 'lord_mill_3.webp')
+lord_mill.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/lord_mill/lord_mill_4.webp'), filename: 'lord_mill_4.webp')
+lord_mill.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/lord_mill/lord_mill_5.webp'), filename: 'lord_mill_5.webp')
+
+riverside_hideout.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/riverside_hideout/riverside_hideout_1.webp'), filename: 'riverside_hideout_1.webp')
+riverside_hideout.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/riverside_hideout/riverside_hideout_2.webp'), filename: 'riverside_hideout_2.webp')
+riverside_hideout.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/riverside_hideout/riverside_hideout_3.webp'), filename: 'riverside_hideout_3.webp')
+riverside_hideout.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/riverside_hideout/riverside_hideout_4.webp'), filename: 'riverside_hideout_4.webp')
+riverside_hideout.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/riverside_hideout/riverside_hideout_5.webp'), filename: 'riverside_hideout_5.webp')
+
+prince_road.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/prince_road/prince_road_1.webp'), filename: 'prince_road_1.webp')
+prince_road.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/prince_road/prince_road_2.webp'), filename: 'prince_road_2.webp')
+prince_road.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/prince_road/prince_road_3.webp'), filename: 'prince_road_3.webp')
+prince_road.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/prince_road/prince_road_4.webp'), filename: 'prince_road_4.webp')
+prince_road.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/prince_road/prince_road_5.webp'), filename: 'prince_road_5.webp')
+
+bedrock_homestead.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/bedrock_homestead/bedrock_homestead_1.webp'), filename: 'bedrock_homestead_1.webp')
+bedrock_homestead.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/bedrock_homestead/bedrock_homestead_2.webp'), filename: 'bedrock_homestead_2.webp')
+bedrock_homestead.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/bedrock_homestead/bedrock_homestead_3.webp'), filename: 'bedrock_homestead_3.webp')
+bedrock_homestead.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/bedrock_homestead/bedrock_homestead_4.webp'), filename: 'bedrock_homestead_4.webp')
+bedrock_homestead.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/bedrock_homestead/bedrock_homestead_5.webp'), filename: 'bedrock_homestead_5.webp')
+
+rocks_and_glasses.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/rocks_and_glasses/rocks_and_glasses_1.webp'), filename: 'rocks_and_glasses_1.webp')
+rocks_and_glasses.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/rocks_and_glasses/rocks_and_glasses_2.webp'), filename: 'rocks_and_glasses_2.webp')
+rocks_and_glasses.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/rocks_and_glasses/rocks_and_glasses_3.webp'), filename: 'rocks_and_glasses_3.webp')
+rocks_and_glasses.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/rocks_and_glasses/rocks_and_glasses_4.webp'), filename: 'rocks_and_glasses_4.webp')
+rocks_and_glasses.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/rocks_and_glasses/rocks_and_glasses_5.webp'), filename: 'rocks_and_glasses_5.webp')
+
+alpaca_farm.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/alpaca_farm/alpaca_farm_1.webp'), filename: 'alpaca_farm_1.webp')
+alpaca_farm.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/alpaca_farm/alpaca_farm_2.webp'), filename: 'alpaca_farm_2.webp')
+alpaca_farm.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/alpaca_farm/alpaca_farm_3.webp'), filename: 'alpaca_farm_3.webp')
+alpaca_farm.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/alpaca_farm/alpaca_farm_4.webp'), filename: 'alpaca_farm_4.webp')
+alpaca_farm.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/alpaca_farm/alpaca_farm_5.webp'), filename: 'alpaca_farm_5.webp')
+
+the_barn_loft.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_barn_loft/the_barn_loft_1.webp'), filename: 'the_barn_loft_1.webp')
+the_barn_loft.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_barn_loft/the_barn_loft_2.webp'), filename: 'the_barn_loft_2.webp')
+the_barn_loft.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_barn_loft/the_barn_loft_3.webp'), filename: 'the_barn_loft_3.webp')
+the_barn_loft.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_barn_loft/the_barn_loft_4.webp'), filename: 'the_barn_loft_4.webp')
+the_barn_loft.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/the_barn_loft/the_barn_loft_5.webp'), filename: 'the_barn_loft_5.webp')
+
+desert_adventure.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/desert_adventure/desert_adventure_1.webp'), filename: 'desert_adventure_1.webp')
+desert_adventure.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/desert_adventure/desert_adventure_2.webp'), filename: 'desert_adventure_2.webp')
+desert_adventure.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/desert_adventure/desert_adventure_3.webp'), filename: 'desert_adventure_3.webp')
+desert_adventure.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/desert_adventure/desert_adventure_4.webp'), filename: 'desert_adventure_4.webp')
+desert_adventure.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/desert_adventure/desert_adventure_5.webp'), filename: 'desert_adventure_5.webp')
+
+glamping_ficus.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glamping_ficus/glamping_ficus_1.webp'), filename: 'glamping_ficus_1.webp')
+glamping_ficus.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glamping_ficus/glamping_ficus_2.webp'), filename: 'glamping_ficus_2.webp')
+glamping_ficus.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glamping_ficus/glamping_ficus_3.webp'), filename: 'glamping_ficus_3.webp')
+glamping_ficus.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glamping_ficus/glamping_ficus_4.webp'), filename: 'glamping_ficus_4.webp')
+glamping_ficus.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/glamping_ficus/glamping_ficus_5.webp'), filename: 'glamping_ficus_5.webp')
+
+houseboat.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/houseboat/houseboat_1.webp'), filename: 'houseboat_1.webp')
+houseboat.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/houseboat/houseboat_2.webp'), filename: 'houseboat_2.webp')
+houseboat.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/houseboat/houseboat_3.webp'), filename: 'houseboat_3.webp')
+houseboat.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/houseboat/houseboat_4.webp'), filename: 'houseboat_4.webp')
+houseboat.photos.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/houseboat/houseboat_5.webp'), filename: 'houseboat_5.webp')
+
+
 
 demo.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/profile.png'), filename: 'profile.png')
 jeffrey.photo.attach(io: URI.open('https://rarebnb-seeds.s3.amazonaws.com/rarebnb_listings/profiles/jeffrey.webp'), filename: 'jeffrey.webp')

@@ -9,10 +9,9 @@ import car from "../../../assets/filters/car.png"
 import castle from "../../../assets/filters/castle.png"
 import cave from "../../../assets/filters/cave.png"
 import container from "../../../assets/filters/container.png"
-import dome from "../../../assets/filters/dome.png"
 import earthHome from "../../../assets/filters/earth_home.png"
 import farm from "../../../assets/filters/farm.png"
-import houseboat from "../../../assets/filters/houseboat.png"
+import hut from "../../../assets/filters/hut.png"
 import tent from "../../../assets/filters/tent.png"
 import treehouse from "../../../assets/filters/treehouse.png"
 import tower from "../../../assets/filters/tower.png"
@@ -56,11 +55,6 @@ function FilterBar() {
                 <div className="filter-name">Container</div>
             </NavLink>
 
-            <NavLink className="filter-container" to={"/dome"}>
-                <img className="filter-icon" src={dome} />
-                <div className="filter-name">Dome</div>
-            </NavLink>
-
             <NavLink className="filter-container" to={"/earth"}>
                 <img className="filter-icon" src={earthHome} />
                 <div className="filter-name">Earth Home</div>
@@ -69,6 +63,11 @@ function FilterBar() {
             <NavLink className="filter-container" to={"/farm"}>
                 <img className="filter-icon" src={farm} />
                 <div className="filter-name">Farm</div>
+            </NavLink>
+
+            <NavLink className="filter-container" to={"/hut"}>
+                <img className="filter-icon" src={hut} />
+                <div className="filter-name">Hut</div>
             </NavLink>
 
             <NavLink className="filter-container" to={"/island"}>
