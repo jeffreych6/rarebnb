@@ -1,5 +1,6 @@
 .edit-reservation-modal {
     display: flex;
+    height: 100%
 }
 
 .edit-reservation-form-container {

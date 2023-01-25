@@ -9,12 +9,11 @@ import "./FilteredIndex.css";
 function FilteredIndex() {
     const dispatch = useDispatch();
     const { filter } = useParams();
-    // const listings = useSelector(state => Object.values(state.listings).filter((listing) => listing.propertyType === filter))
+
     const listings = useSelector(state => filter === "all" ? 
-    Object.values(state.listings)
-    :
-    // Object.values(state.listings).filter((listing) => filter.includes(listing.propertyType)))
-    Object.values(state.listings).filter((listing) => listing.propertyType.includes(filter)))
+        Object.values(state.listings)
+        :
+        Object.values(state.listings).filter((listing) => listing.propertyType.includes(filter)))
 
     useEffect(() => {
         dispatch(listingsActions.fetchListings())
@@ -47,22 +46,22 @@ function FilteredIndex() {
     
     const listing = listings.map((listing) => {
         return (
-            <NavLink className="listings-index-container" to={`listings/${listing.id}`} key={listing.id}>
-                <img className="listings-index-image" src={listing.photosUrl[0]} />
-                <div className="listings-index-description-container">
-                    <div className="listings-index-description">
-                        <div className="listings-index-location">
+            <NavLink className="iltered-listings-index-container" to={`listings/${listing.id}`} key={listing.id}>
+                <img className="filtered-listings-index-image" src={listing.photosUrl[0]} />
+                <div className="filtered-listings-index-description-container">
+                    <div className="filtered-listings-index-description">
+                        <div className="filtered-listings-index-location">
                             {listing.city}, {listing.state}
                         </div>
-                        <div className="listings-index-rating">
+                        <div className="filtered-listings-index-rating">
                             <i className="fa-sharp fa-solid fa-star"></i> 
                             <span>{parseFloat(listing.rating).toFixed(2)}</span>
                         </div>
                     </div>
-                    <div className="listings-index-title">
+                    <div className="filtered-listings-index-title">
                         {listing.title} 
                     </div>
-                    <div className="listings-index-price">
+                    <div className="filtered-listings-index-price">
                         <span>${listing.price.toLocaleString("en-US")}</span> night
                     </div>
                 </div>
@@ -75,7 +74,7 @@ function FilteredIndex() {
             <div className="filtered-listings-index-filter-container">
                 <FilterBar />
             </div>
-            <div className="filtered-listings-index-container">
+            <div className="filtered-listings-container">
                 <div className="filtered-listings-index">
                     {listing}
                 </div>

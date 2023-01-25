@@ -26,6 +26,8 @@ function Reservations() {
             }
         })
 
+        upcomingReservations.sort((a, b) => (a.startDate > b.startDate) ? 1 : -1)
+
         return upcomingReservations
     }
 
@@ -37,6 +39,8 @@ function Reservations() {
                 pastReservationsList.push(reservation)
             }
         })
+
+        pastReservationsList.sort((a, b) => (a.endDate < b.endDate) ? 1 : -1)
 
         return pastReservationsList
     }

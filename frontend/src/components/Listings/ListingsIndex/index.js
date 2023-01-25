@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../../store/listings";
-import * as listingsUtils from "../../../utils/listings_utils"
 import FilterBar from "./FilterBar"
 import "./index.css";
 

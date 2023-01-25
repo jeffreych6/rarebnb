@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-// import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as reviewsActions from "../../store/reviews";
 import "./index.css"
 
 function Reviews({ listing, listingId }) {
     const dispatch = useDispatch();
-    // const {listingId} = useParams()
     const reviews = useSelector(reviewsActions.getReviews)
     reviews.sort((a, b) => (a.reviewDate < b.reviewDate) ? 1 : -1)
 

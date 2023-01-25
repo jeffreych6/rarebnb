@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./FilterBar.css";
 import all from "../../../assets/filters/all.png"
 import beach from "../../../assets/filters/beach.png"

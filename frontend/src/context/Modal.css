@@ -53,7 +53,11 @@
   animation-iteration-count: 1;
   animation-fill-mode: both;
   animation-name: keyframe_d37zz3;
-  overflow: clip;
+  overflow: scroll
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
 }
 
 .large-modal {
@@ -72,5 +76,9 @@
   animation-iteration-count: 1;
   animation-fill-mode: both;
   animation-name: keyframe_d37zz3;
-  overflow: clip;
+  overflow: scroll
+}
+
+.large-modal::-webkit-scrollbar {
+  display: none;
 }

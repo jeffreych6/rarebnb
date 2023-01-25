@@ -8,7 +8,6 @@ import "./UpcomingReservations.css";
 
 function UpcomingReservations({ reservation }) {
     const dispatch = useDispatch();
-
     const [showReservationModal, setShowReservationModal] = useState(false);
 
     useEffect(() => {

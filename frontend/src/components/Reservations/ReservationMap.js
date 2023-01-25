@@ -17,7 +17,7 @@ const ReservationMap = ({reservation}) => {
   ]
 
   const mapStyles = {        
-    height: "80vh",
+    height: "100%",
     width: "100%"};
   
   const defaultCenter = {
