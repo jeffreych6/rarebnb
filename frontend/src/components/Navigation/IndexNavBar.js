@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
@@ -7,14 +7,22 @@ import "./index.css";
 import logo from "../../assets/logo.png"
 
 function IndexNavBar() {
+  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
-//   const location = useLocation();
+  const [searchTerm, setSearchTerm] = useState("")
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = <LoggedInDropDown />;
   } else {
     sessionLinks = <LoggedOutDropDown />;
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.length > 0) {
+      history.push(`/${searchTerm}`);
+    }
   }
 
   return (
@@ -29,12 +37,18 @@ function IndexNavBar() {
         </div>
 
         <div className="search-bar">
-          <div className="search-text-container">
+          <form className="search-text-container">
             <div className="search-text-box">
-              <input className="search-text" type="text" placeholder="Start your search"/>
+              <input 
+              className="search-text" 
+              type="text" 
+              placeholder="Start your search (Coming Soon)"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
-            <button className="search-button"><i className="fa-solid fa-magnifying-glass"></i></button>
-          </div>
+            <button className="search-button" type="submit" onClick={handleSubmit}><i className="fa-solid fa-magnifying-glass"></i></button>
+          </form>
         </div>
 
         <div className="right-nav">

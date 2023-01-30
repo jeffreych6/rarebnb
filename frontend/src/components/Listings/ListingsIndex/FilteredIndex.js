@@ -13,11 +13,12 @@ function FilteredIndex() {
     const listings = useSelector(state => filter === "all" ? 
         Object.values(state.listings)
         :
-        Object.values(state.listings).filter((listing) => listing.propertyType.includes(filter)))
+        Object.values(state.listings).filter((listing) => listing.propertyType.includes(filter) || listing.city.toLowerCase().includes(filter) || listing.country.toLowerCase().includes(filter))
+    )
 
     useEffect(() => {
         dispatch(listingsActions.fetchListings())
-    },[filter])
+    },[dispatch, filter])
 
     if (!listings) {
         return null;
@@ -47,7 +48,7 @@ function FilteredIndex() {
     const listing = listings.map((listing) => {
         return (
             <NavLink className="iltered-listings-index-container" to={`listings/${listing.id}`} key={listing.id}>
-                <img className="filtered-listings-index-image" src={listing.photosUrl[0]} />
+                <img className="filtered-listings-index-image" src={listing.photosUrl[0]} alt="listing"/>
                 <div className="filtered-listings-index-description-container">
                     <div className="filtered-listings-index-description">
                         <div className="filtered-listings-index-location">

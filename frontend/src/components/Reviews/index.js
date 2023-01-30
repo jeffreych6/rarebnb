@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as reviewsActions from "../../store/reviews";
+import * as listingsUtils from "../../utils/listings_utils"
 import "./index.css"
 
 function Reviews({ listing, listingId }) {
@@ -28,30 +29,6 @@ function Reviews({ listing, listingId }) {
     };
 
     const attributes = ["cleanliness", "accuracy", "communication", "location", "checkIn", "value"]
-    
-    const averageRating = (listingReviews, attribute) => {
-        let totalRating = 0
-        listingReviews.forEach((review) => {
-            totalRating += review[attribute]
-        })
-
-        return totalRating / listingReviews.length
-    }
-
-    const titleize = (word) => {
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWYXZ'
-        let title = ""
-
-        for (let i = 0; i < word.length; i++) {
-            if (letters.includes(word[i])) {
-                title += "-" + word[i].toLowerCase()
-            } else {
-                title += word[i]
-            }
-        }
-
-        return title[0].toUpperCase() + title.slice(1)
-    }
 
     const displayedReviews = (reviews) => {
         const reviewsArray = []
@@ -66,12 +43,12 @@ function Reviews({ listing, listingId }) {
     const attributeRatings = attributes.map((attribute) => {
         return (
             <div className="reviews-grid-ratings-content" key={attribute}>
-                <div className="reviews-grid-type">{titleize(attribute)}</div>
+                <div className="reviews-grid-type">{listingsUtils.titleize(attribute)}</div>
                 <div className="reviews-grid-value">
                     <div className="reviews-grid-rating-bar">
-                        <span style={{width: `${(averageRating(reviews, attribute)/5)*100}%`}}>.</span>
+                        <span style={{width: `${(listingsUtils.averageRating(reviews, attribute)/5)*100}%`}}>.</span>
                     </div>
-                    <div className="reviews-grid-ratings-average">{averageRating(reviews, attribute).toFixed(1)}</div>
+                    <div className="reviews-grid-ratings-average">{listingsUtils.averageRating(reviews, attribute).toFixed(1)}</div>
                 </div>
             </div>
         )

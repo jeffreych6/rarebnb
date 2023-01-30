@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
@@ -7,8 +7,10 @@ import "./index.css";
 import logo from "../../assets/logo.png"
 
 function Navigation() {
+  const history = useHistory();
+  const location = useLocation();
   const sessionUser = useSelector((state) => state.session.user);
-  // const location = useLocation();
+  const [searchTerm, setSearchTerm] = useState("")
 
   let sessionLinks;
   if (sessionUser) {
@@ -17,10 +19,17 @@ function Navigation() {
     sessionLinks = <LoggedOutDropDown />;
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.length > 0) {
+      history.push(`/${searchTerm}`);
+    }
+  }
+
   return (
-    <nav className="nav-bar-container">
-      {/* <div className={location.pathname === "/" ? "nav-bar-index" : "nav-bar"}> */}
-      <div className="nav-bar">
+    <nav className={location.pathname.startsWith("/listings/") || location.pathname.startsWith("/reservations") ? "nav-bar-container" : "nav-bar-index-container"}>
+      <div className={location.pathname.startsWith("/listings/") || location.pathname.startsWith("/reservations") ? "nav-bar" : "nav-bar-index"}>
+      {/* <div className="nav-bar"> */}
         <div className="left-nav">
           <NavLink exact to="/">
             <button className="logo-button">
@@ -30,12 +39,18 @@ function Navigation() {
         </div>
 
         <div className="search-bar">
-          <div className="search-text-container">
+          <form className="search-text-container">
             <div className="search-text-box">
-              <input className="search-text" type="text" placeholder="Start your search"/>
+              <input 
+              className="search-text" 
+              type="text" 
+              placeholder="Start your search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
-            <button className="search-button"><i className="fa-solid fa-magnifying-glass"></i></button>
-          </div>
+            <button className="search-button" type="submit" onClick={handleSubmit}><i className="fa-solid fa-magnifying-glass"></i></button>
+          </form>
         </div>
 
         <div className="right-nav">
