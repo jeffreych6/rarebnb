@@ -87,9 +87,9 @@ function ReservationModal({ reservation, setShowReservationModal }) {
               {endDate < startDate && 
                 <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Check-in date cannot be later than Checkout date</li>
               }
-              {startDate < moment().format("YYYY-MM-DD") &&
+              {/* {startDate < moment().format("YYYY-MM-DD") &&
                 <li><i className="fa-sharp fa-solid fa-circle-exclamation" /> Invalid Check-in date</li>
-              }
+              } */}
             </ul>
 
             <button className="edit-reservation-form-button" type="submit">Modify Reservation</button>

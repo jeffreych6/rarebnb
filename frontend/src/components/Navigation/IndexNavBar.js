@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LoggedInDropDown from './LoggedInDropDown';
 import LoggedOutDropDown from "./LoggedOutDropDown";
@@ -8,6 +8,7 @@ import logo from "../../assets/logo.png"
 
 function IndexNavBar() {
   const history = useHistory();
+  const location = useLocation();
   const sessionUser = useSelector((state) => state.session.user);
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -18,7 +19,7 @@ function IndexNavBar() {
     sessionLinks = <LoggedOutDropDown />;
   }
 
-  const handleSubmit = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.length > 0) {
       history.push(`/${searchTerm}`);
@@ -26,11 +27,13 @@ function IndexNavBar() {
   }
 
   return (
-    <nav className="nav-bar-index-container">
-      <div className="nav-bar-index">
+    <nav className={location.pathname.startsWith("/listings/") ? "nav-bar-container" : "nav-bar-index-container"}>
+      <div className={location.pathname.startsWith("/listings/") ? "nav-bar" : "nav-bar-index"}>
+    {/* <nav className="nav-bar-index-container">
+      <div className="nav-bar-index"> */}
         <div className="left-nav">
           <NavLink exact to="/">
-            <button className="logo-button">
+            <button className="logo-button" onClick={() => setSearchTerm("")}>
               <h1><img src={logo} alt="rarbnb-logo"/> rarebnb</h1>
             </button>
           </NavLink>
@@ -42,12 +45,12 @@ function IndexNavBar() {
               <input 
               className="search-text" 
               type="text" 
-              placeholder="Start your search (Coming Soon)"
+              placeholder="Start your search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <button className="search-button" type="submit" onClick={handleSubmit}><i className="fa-solid fa-magnifying-glass"></i></button>
+            <button className="search-button" type="submit" onClick={handleSearch}><i className="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </div>
 
