@@ -30,7 +30,7 @@ const FilteredMap = ({listings}) => {
           {listings.map(item => {
               return (
                 <Marker key={item.name} 
-                position={item.location} 
+                position={item.location}
                 onClick={() => onSelect(item)}/>
               )
             })

@@ -13,7 +13,7 @@ function FilteredIndex() {
     const listings = useSelector(state => filter === "all" ? 
         Object.values(state.listings)
         :
-        Object.values(state.listings).filter((listing) => listing.propertyType.includes(filter) || listing.city.toLowerCase().includes(filter) || listing.country.toLowerCase().includes(filter))
+        Object.values(state.listings).filter((listing) => listing.propertyType.toLowerCase().includes(filter.toLowerCase()) || listing.city.toLowerCase().includes(filter.toLowerCase()) || listing.country.toLowerCase().includes(filter.toLowerCase()))
     )
 
     useEffect(() => {
@@ -47,7 +47,7 @@ function FilteredIndex() {
     
     const listing = listings.map((listing) => {
         return (
-            <NavLink className="iltered-listings-index-container" to={`listings/${listing.id}`} key={listing.id}>
+            <NavLink className="filtered-listings-index-container" to={`listings/${listing.id}`} key={listing.id}>
                 <img className="filtered-listings-index-image" src={listing.photosUrl[0]} alt="listing"/>
                 <div className="filtered-listings-index-description-container">
                     <div className="filtered-listings-index-description">
@@ -77,7 +77,11 @@ function FilteredIndex() {
             </div>
             <div className="filtered-listings-container">
                 <div className="filtered-listings-index">
-                    {listing}
+                    {listings.length > 0 ? 
+                        listing
+                        :
+                        <div className="filtered-listings-none-message">No listings found</div>
+                    }
                 </div>
                 <div className="filtered-listings-map-container">
                     <div className="filtered-listings-map">

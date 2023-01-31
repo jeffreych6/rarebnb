@@ -18,7 +18,14 @@
     width: 60%
 }
 
-.iltered-listings-index-container {
+.filtered-listings-none-message {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(113, 113, 113);
+    margin-top: 20px
+}
+
+.filtered-listings-index-container {
     text-decoration: none;
     color: #222222;
     margin: 20px 11px;
