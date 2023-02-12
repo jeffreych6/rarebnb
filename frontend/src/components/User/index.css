@@ -1,0 +1,31 @@
+.user-show-page-container {
+    display: flex;
+    margin: 45px 25%;
+    border: 1px solid black;
+}
+
+.user-show-left-container {
+    border: 1px solid black;
+    width: 33%;
+}
+
+.user-show-left-box {
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    width: 90%;
+}
+
+.user-show-profile {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 1px solid black;
+}
+
+
+
+.user-show-right-container {
+    border: 1px solid black;
+    width: 67%;
+}

@@ -6,6 +6,7 @@ import FilteredIndex from "./components/Listings/ListingsIndex/FilteredIndex";
 import ListingShow from "./components/Listings/ListingShow";
 import Navigation from "./components/Navigation";
 import IndexNavBar from "./components/Navigation/IndexNavBar";
+import User from "./components/User";
 
 import Reservations from "./components/Reservations";
 import Footer from "./components/Footer";
@@ -27,6 +28,10 @@ function App() {
         <Route path="/listings/:listingId">
           <IndexNavBar />
           <ListingShow />
+        </Route>
+        <Route path="/users/:userId">
+          <IndexNavBar />
+          <User />
         </Route>
         <Route path="/:filter">
           <IndexNavBar />

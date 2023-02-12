@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import * as listingsActions from "../../../store/listings";
 import * as listingsUtils from "../../../utils/listings_utils"
@@ -46,7 +46,9 @@ function ListingShowPage() {
                                 <h1>{listingsUtils.titleize(listing.propertyType)} hosted by {listing.firstName} {listing.lastName}</h1>
                                 <h2>{listing.guests} {listing.guests > 1 ? "guests" : "guest"} · {listing.bedrooms} {listing.bedrooms > 1 ? "bedrooms" : "bedroom"} · {listing.beds} {listing.beds > 1 ? "beds" : "bed"} · {listing.baths} {listing.baths > 1 ? "baths" : "bath"}</h2>
                             </div>
-                            <img className="listing-show-details-title-profile" src={listing.photoUrl} alt="profile" />
+                            <NavLink to={`/users/${listing.hostId}`}>
+                                <img className="listing-show-details-title-profile" src={listing.photoUrl} alt="profile" />
+                            </NavLink>
                         </div>
 
                         <div className="listing-show-aircover">

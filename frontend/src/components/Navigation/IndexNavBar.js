@@ -27,10 +27,8 @@ function IndexNavBar() {
   }
 
   return (
-    <nav className={location.pathname.startsWith("/listings/") ? "nav-bar-container" : "nav-bar-index-container"}>
-      <div className={location.pathname.startsWith("/listings/") ? "nav-bar" : "nav-bar-index"}>
-    {/* <nav className="nav-bar-index-container">
-      <div className="nav-bar-index"> */}
+    <nav className={(location.pathname.startsWith("/listings/") || location.pathname.startsWith("/users/")) ? "nav-bar-container" : "nav-bar-index-container"}>
+      <div className={(location.pathname.startsWith("/listings/") || location.pathname.startsWith("/users/")) ? "nav-bar" : "nav-bar-index"}>
         <div className="left-nav">
           <NavLink exact to="/">
             <button className="logo-button" onClick={() => setSearchTerm("")}>
