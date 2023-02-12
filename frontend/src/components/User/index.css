@@ -6,13 +6,15 @@
 
 .user-show-left-container {
     border: 1px solid black;
-    width: 33%;
+    width: 40%;
+    padding: 0 8px;
 }
 
 .user-show-left-box {
     border: 1px solid #DDDDDD;
     border-radius: 12px;
-    width: 90%;
+    padding: 24px;
+    max-width: 260px;
 }
 
 .user-show-profile {
@@ -27,5 +29,44 @@
 
 .user-show-right-container {
     border: 1px solid black;
-    width: 67%;
+    width: 60%;
+    margin: 0 60px
+}
+
+.user-show-right-title {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+.user-show-right-date {
+    font-size: 13px;
+    line-height: 18px;
+    color: #717171;
+    margin-bottom: 8px;
+}
+
+.user-show-right-about {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #DDDDDD;
+    margin-top: 48px;
+}
+
+.user-show-right-about h1 {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.user-show-right-description {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 32px;
+}
+
+.user-show-right-bullets {
+    margin-bottom: 16px
 }
