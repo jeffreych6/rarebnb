@@ -29,7 +29,7 @@ function User() {
                                 <img className="user-show-profile"src={user.photoUrl} />
                             </div>
                             <div className="user-show-left-upper-bullets">
-                                <i class="fa-regular fa-star"></i>
+                            <i class="fa-solid fa-medal"></i>
                                 <h1>Superhost</h1>
                             </div>
                             <div className="user-show-left-upper-bullets">
@@ -96,7 +96,7 @@ function User() {
                     <div className="user-show-right-about">
                         <h1>About</h1>
                         {user.id === 2 ? 
-                            <span className="user-show-right-description">I am the superhost of most of the rare, amazing listings on RareBnB. I am also a software engineer based in New York, NY. Building this Airbnb clone was very enjoyable and was a great learning experience. Feel free to check out my other listings and projects below.</span>
+                            <span className="user-show-right-description">I am the superhost of most of these rare, amazing listings on RareBnB. I am also a software engineer based in New York, NY. Building this Airbnb clone was very enjoyable and was a great learning experience. Feel free to check out my listings and projects.</span>
                             :
                             <span className="user-show-right-description">RareBnb is the best platform ever for booking and hosting. Thanks Jeffrey!</span>
                         }

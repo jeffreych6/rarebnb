@@ -30,7 +30,7 @@ function App() {
           <ListingShow />
         </Route>
         <Route path="/users/:userId">
-          <IndexNavBar />
+          <Navigation />
           <User />
         </Route>
         <Route path="/:filter">

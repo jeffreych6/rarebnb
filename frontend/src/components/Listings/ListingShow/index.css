@@ -41,10 +41,6 @@
     margin-left: 5px;
 }
 
-
-
-
-
 .listing-show-container {
     display: flex;
     border-bottom: 1px solid #DDDDDD;
@@ -94,16 +90,13 @@
     margin-bottom: 16px;
 }
 
-
-
-
-
 .listing-show-reservations-container {
     width: 70%;
 }
 
 .listing-show-map-container {
     padding: 48px 0;
+    border-bottom: 1px solid #DDDDDD;
 }
 
 .listing-show-map-container h1 {
@@ -117,10 +110,121 @@
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
-    margin: 24px 0 16px;
+    margin-top: 24px;
 }
 
 .listing-show-reviews-container {
     padding: 48px 0;
     border-bottom: 1px solid #DDDDDD;
 }
+
+.listing-show-host-container {
+    padding: 48px 0;
+}
+
+.listing-show-host-details-left {
+    width: 50%;
+    margin-right: 100px; 
+}
+
+.listing-show-host-title-container {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+
+.listing-show-host-details-container {
+    display: flex;
+}
+
+.listing-show-host-profile {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.listing-show-host-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listing-show-host-name h1 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.listing-show-host-name span {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    padding-top: 8px;
+}
+
+.listing-show-host-attributes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.listing-show-host-attribute {
+    display: flex;
+    align-items: center;
+}
+
+.listing-show-host-attribute i {
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.listing-show-host-attribute h1 {
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.listing-show-host-description {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+}
+
+.listing-show-host-superhost {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.listing-show-host-superhost-description {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.listing-show-host-details-right {
+    width: 50%;
+}
+
+.listing-show-host-right-attribute {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+.listing-show-host-contact-button {
+    cursor: pointer;
+    background: #FFFFFF;
+    color: black;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #222222;
+    line-height: 20px;
+    padding: 12px 23px;
+    margin-top: 32px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+

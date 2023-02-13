@@ -46,9 +46,9 @@ function ListingShowPage() {
                                 <h1>{listingsUtils.titleize(listing.propertyType)} hosted by {listing.firstName} {listing.lastName}</h1>
                                 <h2>{listing.guests} {listing.guests > 1 ? "guests" : "guest"} · {listing.bedrooms} {listing.bedrooms > 1 ? "bedrooms" : "bedroom"} · {listing.beds} {listing.beds > 1 ? "beds" : "bed"} · {listing.baths} {listing.baths > 1 ? "baths" : "bath"}</h2>
                             </div>
-                            <NavLink to={`/users/${listing.hostId}`}>
+                            <a href="#host">
                                 <img className="listing-show-details-title-profile" src={listing.photoUrl} alt="profile" />
-                            </NavLink>
+                            </a>
                         </div>
 
                         <div className="listing-show-aircover">
@@ -74,6 +74,54 @@ function ListingShowPage() {
                     <h1>Where you'll be</h1>
                     <ListingMap listing = {listing} />
                     <h2>{listing.city}, {listing.state}, {listing.country}</h2>
+                </div>
+
+                <div id="host" className="listing-show-host-container">
+                    <div className="listing-show-host-title-container">
+                        <NavLink to={`/users/${listing.hostId}`}>
+                            <img className="listing-show-host-profile" src={listing.photoUrl} alt="profile" />
+                        </NavLink>
+
+                        <div className="listing-show-host-name">
+                            <h1>Hosted by {listing.firstName}</h1>
+                            <span>Joined in September 2022</span>
+                        </div>
+                    </div>
+
+                    <div className="listing-show-host-details-container">
+                        <div className="listing-show-host-details-left">
+                            <div className="listing-show-host-attributes">
+                                <div className="listing-show-host-attribute">
+                                    <i class="fa-solid fa-laptop"></i>
+                                    <h1>Software Engineer</h1>
+                                </div>
+                                <div className="listing-show-host-attribute">
+                                    <i class="fa-solid fa-check"></i>
+                                    <h1>Identity verified</h1>
+                                </div>
+                                <div className="listing-show-host-attribute">
+                                    <i class="fa-solid fa-medal"></i>
+                                    <h1>Superhost</h1>
+                                </div>
+                            </div>
+                            {listing.hostId === 2 ? 
+                                <div className="listing-show-host-description">I am the superhost of most of these rare, amazing listings on RareBnB. I am also a software engineer based in New York, NY. Building this Airbnb clone was very enjoyable and was a great learning experience. Feel free to check out my listings and projects</div>
+                                :
+                                <div className="listing-show-host-description">RareBnb is the best platform ever for booking and hosting. Thanks Jeffrey!</div>
+                            }
+                            <h1 className="listing-show-host-superhost">{listing.firstName} is a Superhost</h1>
+                            <div className="listing-show-host-superhost-description">Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</div>
+                        </div>
+
+                        <div className="listing-show-host-details-right">
+                            <div className="listing-show-host-right-attribute">Language: English</div>
+                            <div className="listing-show-host-right-attribute">Response rate: 100%</div>
+                            <div className="listing-show-host-right-attribute">Response time: within a few hours</div>
+                            <NavLink to={`/users/${listing.hostId}`}>
+                                <button className="listing-show-host-contact-button">Contact Host</button>
+                            </NavLink>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
