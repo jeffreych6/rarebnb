@@ -10,7 +10,7 @@ function Footer() {
             </div>
             <div className="footer-right">
                 Designed by Jeffrey Cheng ·
-                <a href="/#"> Portfolio </a>
+                <a href="https://www.jeffreycheng.dev/"> Portfolio </a>
                 ·
                 <a href="https://github.com/jeffreych6/rarebnb"> GitHub </a>
                 ·

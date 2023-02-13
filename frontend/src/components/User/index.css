@@ -1,29 +1,30 @@
 .user-show-page-container {
     display: flex;
-    margin: 45px 25%;
-    border: 1px solid black;
+    margin: 45px 23%;
 }
 
 .user-show-left-container {
-    border: 1px solid black;
     width: 40%;
     padding: 0 8px;
-    min-width: 240px;
+    min-width: 260px;
 }
 
 .user-show-left-box {
     border: 1px solid #DDDDDD;
     border-radius: 12px;
     padding: 24px;
-    width: 240px;
+}
+
+.user-show-profile-container {
+    display: flex;
+    justify-content: center;
 }
 
 .user-show-profile {
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    margin: 20px 0;
-    border: 1px solid black;
+    margin-bottom: 20px;
 }
 
 .user-show-left-upper-bullets {
@@ -35,6 +36,8 @@
 }
 
 .user-show-left-upper-bullets i {
+    font-size: 20px;
+    width: 25px;
     margin-right: 8px;
 }
 
@@ -61,10 +64,29 @@
     margin-right: 8px;
 }
 
+.user-show-left-lower-bullets a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.user-show-left-lower-bullets a:hover {
+    font-weight: 600;
+}
+
+.user-show-left-lower-message {
+    font-size: 12px;
+    padding-top: 16px;
+}
+
+.user-show-left-lower-message span {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .user-show-right-container {
-    border: 1px solid black;
     width: 60%;
-    margin: 0 60px
+    margin: 0 60px;
+    min-width: 632px;
 }
 
 .user-show-right-title {
@@ -86,6 +108,7 @@
     flex-direction: column;
     border-bottom: 1px solid #DDDDDD;
     margin-top: 48px;
+    padding-bottom: 12px;
 }
 
 .user-show-right-about h1 {
@@ -96,7 +119,7 @@
 }
 
 .user-show-right-description {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     margin-bottom: 32px;
 }
@@ -108,3 +131,47 @@
 .user-show-right-bullets i {
     margin-right: 8px;
 }
+
+.user-show-right-projects-container {
+    padding: 20px 0;
+    /* border-bottom: 1px solid #DDDDDD; */
+}
+
+.user-show-right-projects-title {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.user-show-right-projects {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-show-project {
+    display: flex;
+    flex-direction: column;
+    width: 306px;
+    color: black;
+    text-decoration: none;
+}
+
+.user-show-project-image {
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.user-show-project h1 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 6px;
+}
+
+.user-show-project span {
+    line-height: 18px;
+    margin-bottom: 6px;
+}
+
