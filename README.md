@@ -2,7 +2,7 @@
 
 ## Background
 
-<a href='https://rarebnb.onrender.com'>RareBnb</a> is a full-stack clone of AirBnb which not only displays listings of rare places to stay, but also what is considered rare finds on AirBnb!
+<a href='https://rarebnb.onrender.com'>RareBnb</a> is a full-stack clone of AirBnb which not only displays listings of rare places to stay, but also what are considered rare finds on AirBnb!
 
 ## Technologies, Libraries, APIS
 * Javascript
