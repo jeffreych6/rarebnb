@@ -1,11 +1,30 @@
+.listing-map-container {
+    color: black;
+    text-decoration: none;
+}
+
+.listing-map-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listing-map-title i {
+    margin-right: 4px;
+}
+
 .listing-map-name {
     text-align: center;
     font-size: 14px;
     font-weight: 500;
-    margin: 6px;
 }
 
 .listing-map-image {
-    height: 100px;
-    width: auto;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.listing-map-price {
+    font-weight: 600;
 }

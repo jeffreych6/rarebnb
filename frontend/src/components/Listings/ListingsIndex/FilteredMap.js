@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import "./FilteredMap.css"
 
@@ -38,8 +39,15 @@ const FilteredMap = ({listings}) => {
           {selected.location && (
             <InfoWindow position={selected.location} clickable={true} onCloseClick={() => setSelected({})}>
               <>
-                <p className="filtered-listing-map-name">{selected.title}</p>
-                <img className="filtered-listing-map-image" src={selected.photo} alt="map"></img>
+                <NavLink className="filtered-listings-map-container" to={`listings/${selected.id}`} key={selected.id}>
+                  <img className="filtered-listings-map-image" src={selected.photo} alt="map"></img>
+                  <div className="filtered-listings-map-title">
+                    <p className="filtered-listings-map-name">{selected.title}</p>
+                    <span><i className="fa-sharp fa-solid fa-star"></i>{parseFloat(selected.rating).toFixed(2)}</span>
+                  </div>
+                  <div className="filtered-listings-location">{selected.city}, {selected.state}</div>
+                  <span className="filtered-listings-map-price">${selected.price.toLocaleString("en-US")}</span> night
+                </NavLink>
               </>
             </InfoWindow>
             )

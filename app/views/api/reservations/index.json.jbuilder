@@ -17,7 +17,8 @@
             :lat,
             :lng,
             :guests,
-            :price
+            :price,
+            :rating
 
         json.extract! reservation.listing.host,
             :first_name,

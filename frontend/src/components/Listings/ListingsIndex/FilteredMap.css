@@ -1,11 +1,30 @@
-.filtered-listing-map-name {
+.filtered-listings-map-container {
+    color: black;
+    text-decoration: none;
+}
+
+.filtered-listings-map-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filtered-listings-map-title i {
+    margin-right: 4px;
+}
+
+.filtered-listings-map-name {
     text-align: center;
     font-size: 14px;
     font-weight: 500;
-    margin: 6px;
 }
 
-.filtered-listing-map-image {
-    height: 100px;
-    width: auto;
+.filtered-listings-map-image {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.filtered-listings-map-price {
+    font-weight: 600;
 }

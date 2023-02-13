@@ -35,6 +35,7 @@ function FilteredIndex() {
                 city: listings[i].city,
                 state: listings[i].state,
                 country: listings[i].country,
+                price: listings[i].price,
                 rating: listings[i].rating,
                 location: {
                     lat: listings[i].lat,

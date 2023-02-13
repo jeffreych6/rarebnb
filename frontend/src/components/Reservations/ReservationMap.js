@@ -8,6 +8,11 @@ const ReservationMap = ({reservation}) => {
   const locations = [
     {
       name: reservation.title,
+      city: reservation.city,
+      state: reservation.state,
+      country: reservation.country,
+      price: reservation.price,
+      rating: reservation.rating,
       location: {
         lat: reservation.lat,
         lng: reservation.lng
@@ -44,8 +49,15 @@ const ReservationMap = ({reservation}) => {
           {selected.location && (
             <InfoWindow position={selected.location} clickable={true} onCloseClick={() => setSelected({})}>
               <>
-                <p className="reservation-map-listing-name">{selected.name}</p>
-                <img className="reservation-map-listing-image" src={selected.photo} alt="map"></img>
+              <div className="reservation-map-container">
+                  <img className="reservation-map-image" src={selected.photo} alt="map"></img>
+                  <div className="reservation-map-title">
+                    <p className="reservation-map-name">{selected.name}</p>
+                    <span><i className="fa-sharp fa-solid fa-star"></i>{parseFloat(selected.rating).toFixed(2)}</span>
+                  </div>
+                  <div className="filtered-reservation-location">{selected.city}, {selected.state}</div>
+                  <span className="filter-reservation-map-price">${selected.price.toLocaleString("en-US")}</span> night
+                </div>
               </>
             </InfoWindow>
             )

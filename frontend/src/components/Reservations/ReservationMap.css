@@ -1,11 +1,30 @@
-.reservation-map-listing-name {
+.reservation-map-container {
+    color: black;
+    text-decoration: none;
+}
+
+.reservation-map-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation-map-title i {
+    margin-right: 4px;
+}
+
+.reservation-map-name {
     text-align: center;
     font-size: 14px;
     font-weight: 500;
-    margin: 6px;
 }
 
-.reservation-map-listing-image {
-    height: 100px;
-    width: auto;
+.reservation-map-image {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.reservation-map-price {
+    font-weight: 600;
 }
